@@ -33,6 +33,7 @@ export default function Hero() {
       </AnimatePresence>
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-background/60" />
       <div className="absolute inset-0 opacity-20 [background-image:linear-gradient(to_right,rgba(255,255,255,.15)_1px,transparent_1px)] [background-size:25%_100%]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(var(--primary)/0.18),transparent_55%)]" />
 
       <div className="relative max-w-[1440px] mx-auto w-full px-6 sm:px-10 pt-40 pb-10">
         <div className="flex flex-wrap items-center gap-3 label-mono text-foreground/90 mb-6">

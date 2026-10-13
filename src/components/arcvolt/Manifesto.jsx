@@ -12,7 +12,7 @@ export default function Manifesto() {
       <Reveal className="lg:col-span-5 relative">
         <div className="relative aspect-[4/5] rounded-3xl overflow-hidden">
           <Image src={IMG.team} alt="Engineers reviewing plans on site" className="w-full h-full" />
-          <div className="absolute bottom-5 right-5 w-28 h-28 rounded-full bg-primary text-primary-foreground grid place-items-center text-center font-display font-extrabold text-sm leading-tight">
+          <div className="absolute bottom-5 right-5 w-28 h-28 rounded-full bg-primary text-primary-foreground grid place-items-center text-center font-display font-bold text-sm leading-tight shadow-xl shadow-primary/30 ring-4 ring-background/60">
             CANADA<br />& USA ↗
           </div>
         </div>

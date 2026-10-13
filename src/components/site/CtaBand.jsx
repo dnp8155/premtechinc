@@ -8,7 +8,7 @@ export default function CtaBand({ title = "Have a complex structure to engineer?
     <section className="max-w-[1440px] mx-auto px-6 sm:px-10 pb-24">
       <Reveal>
         <div className="relative overflow-hidden rounded-[2.5rem] border hairline bg-card p-8 sm:p-16">
-          <div className="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-primary/20 blur-3xl" />
+          <div className="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-primary/15 blur-3xl" />
           <div className="relative">
             <div className="flex items-center gap-3 mb-6">
               <span className="w-8 h-px bg-primary" />
