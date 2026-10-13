@@ -25,7 +25,7 @@ export default function ProjectsPage() {
           <Reveal key={a.n} y={20}>
             <div className="rounded-[2rem] border hairline bg-card p-7 sm:p-10 hover:border-primary transition-colors">
               <div className="flex flex-wrap items-baseline justify-between gap-3">
-                <h3 className="font-display font-extrabold text-3xl sm:text-5xl tracking-tight"><span className="text-primary mr-4">{a.n}</span>{a.title}</h3>
+                <h3 className="font-display font-extrabold text-2xl sm:text-4xl lg:text-5xl tracking-tight"><span className="text-primary mr-4">{a.n}</span>{a.title}</h3>
                 <span className="label-mono text-muted-foreground">{a.sector}</span>
               </div>
               <dl className="mt-8 grid lg:grid-cols-3 gap-6">

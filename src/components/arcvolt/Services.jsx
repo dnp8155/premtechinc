@@ -6,12 +6,12 @@ import { SERVICES } from "@/lib/siteData";
 
 export default function Services() {
   return (
-    <section id="services" className="bg-card py-32">
+    <section id="services" className="bg-card py-16 sm:py-24 lg:py-32">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 grid lg:grid-cols-12 gap-12">
         <div className="lg:col-span-5 lg:sticky lg:top-32 self-start">
           <Reveal>
             <span className="label-mono text-primary">What we do</span>
-            <h2 className="display-title text-6xl sm:text-8xl mt-4">
+            <h2 className="display-title text-4xl min-[400px]:text-5xl sm:text-7xl lg:text-8xl break-words mt-4">
               Four focus <span className="text-primary">areas.</span>
             </h2>
             <p className="mt-8 max-w-md text-muted-foreground text-lg leading-relaxed">

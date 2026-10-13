@@ -21,7 +21,7 @@ export default function CareersPage() {
         aside={{ label: "Disciplines", value: String(DISCIPLINES.length).padStart(2, "0"), sub: "Recruited" }}
       />
 
-      <section className="max-w-[1440px] mx-auto px-6 sm:px-10 py-24">
+      <section className="max-w-[1440px] mx-auto px-6 sm:px-10 py-14 sm:py-20 lg:py-24">
         <SectionHead kicker="Primary disciplines recruited" title="Join the" outline="practice." text="Exposure to demanding structures across transmission, temporary works and heavy civil infrastructure." />
         <div className="border-t hairline">
           {DISCIPLINES.map((d, i) => (
@@ -36,7 +36,7 @@ export default function CareersPage() {
         </div>
       </section>
 
-      <section className="bg-card py-24">
+      <section className="bg-card py-14 sm:py-20 lg:py-24">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-10">
           <SectionHead kicker="Core practice values" title="What you can" outline="expect." />
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">

@@ -35,8 +35,8 @@ export default function Hero() {
       <div className="absolute inset-0 opacity-20 [background-image:linear-gradient(to_right,rgba(255,255,255,.15)_1px,transparent_1px)] [background-size:25%_100%]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(var(--primary)/0.18),transparent_55%)]" />
 
-      <div className="relative max-w-[1440px] mx-auto w-full px-6 sm:px-10 pt-40 pb-10">
-        <div className="flex flex-wrap items-center gap-3 label-mono text-foreground/90 mb-6">
+      <div className="relative max-w-[1440px] mx-auto w-full px-5 sm:px-10 pt-32 sm:pt-40 pb-6 sm:pb-10">
+        <div className="flex flex-wrap items-center gap-3 label-mono text-[10px] sm:text-[11px] text-foreground/90 mb-5 sm:mb-6">
           <span className="w-2.5 h-2.5 rounded-full bg-primary animate-pulse" />
           Structural Engineering
           <span className="text-foreground/40">/</span>
@@ -47,24 +47,24 @@ export default function Hero() {
           <span className="block overflow-hidden"><motion.span className="block" {...line(0.35)}><span className="text-primary">Complex</span> infrastructure.</motion.span></span>
         </h1>
 
-        <div className="mt-10 flex flex-col lg:flex-row lg:items-end justify-between gap-8">
-          <p className="max-w-xl text-foreground/80 text-lg leading-relaxed">
+        <div className="mt-8 sm:mt-10 flex flex-col lg:flex-row lg:items-end justify-between gap-8">
+          <p className="max-w-xl text-foreground/80 text-base sm:text-lg leading-relaxed">
             Specialized structural engineering for transmission structures, temporary works and heavy civil infrastructure across Canada and the USA.
           </p>
-          <div className="flex flex-wrap gap-3">
-            <Link to="/projects" className="inline-flex items-center gap-3 rounded-full bg-primary text-primary-foreground px-7 h-14 font-semibold hover:brightness-110 transition">
+          <div className="flex flex-col min-[480px]:flex-row gap-3">
+            <Link to="/projects" className="inline-flex items-center justify-center gap-3 rounded-full bg-primary text-primary-foreground px-7 h-12 sm:h-14 font-semibold hover:brightness-110 transition">
               Explore projects <ArrowUpRight className="w-4 h-4" />
             </Link>
-            <Link to="/contact" className="inline-flex items-center gap-3 rounded-full border hairline bg-black/30 backdrop-blur px-7 h-14 font-semibold hover:border-primary transition">
+            <Link to="/contact" className="inline-flex items-center justify-center gap-3 rounded-full border hairline bg-black/30 backdrop-blur px-7 h-12 sm:h-14 font-semibold hover:border-primary transition">
               Discuss Your Project <ArrowUpRight className="w-4 h-4" />
             </Link>
           </div>
         </div>
 
-        <div className="mt-14 grid grid-cols-2 lg:grid-cols-4 border-t hairline">
+        <div className="mt-10 sm:mt-14 grid grid-cols-2 lg:grid-cols-4 border-t hairline">
           {HERO_SLIDES.map((s, k) => (
-            <button key={s.n} onClick={() => setI(k)} className={`flex items-center gap-4 py-6 px-2 sm:px-6 border-r hairline last:border-r-0 text-left transition-colors ${k === i ? "text-primary" : "text-foreground/60 hover:text-foreground"}`}>
-              <span className="font-display font-extrabold text-4xl tracking-tight">{s.n}</span>
+            <button key={s.n} onClick={() => setI(k)} className={`flex items-center gap-2 sm:gap-4 py-4 sm:py-6 px-3 sm:px-6 border-r hairline last:border-r-0 [&:nth-child(2)]:border-r-0 lg:[&:nth-child(2)]:border-r [&:nth-child(-n+2)]:border-b lg:[&:nth-child(-n+2)]:border-b-0 text-left transition-colors ${k === i ? "text-primary" : "text-foreground/60 hover:text-foreground"}`}>
+              <span className="font-display font-extrabold text-2xl sm:text-4xl tracking-tight">{s.n}</span>
               <span className="label-mono leading-snug">{s.label}</span>
             </button>
           ))}

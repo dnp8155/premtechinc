@@ -23,11 +23,11 @@ export default function ContactPage() {
         aside={{ label: "Coverage", value: "Canada & USA", sub: "All provinces and US states" }}
       />
 
-      <section className="bg-[#eef2f7] text-[#0c1420] py-24">
+      <section className="bg-[#eef2f7] text-[#0c1420] py-14 sm:py-20 lg:py-24">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-10 grid lg:grid-cols-2 gap-14">
           <Reveal>
             <span className="label-mono text-[#0a63d1]">Project enquiry</span>
-            <h2 className="mt-4 font-display font-extrabold tracking-[-0.04em] leading-[0.98] text-5xl sm:text-6xl">What are you building?</h2>
+            <h2 className="mt-4 font-display font-extrabold tracking-[-0.04em] leading-[0.98] text-4xl sm:text-5xl lg:text-6xl">What are you building?</h2>
             <p className="mt-6 text-[#3a4757] max-w-md">Use the form for new projects, technical reviews or early-stage engineering conversations.</p>
             <div className="mt-10 border-t border-black/15">
               <a href={CONTACT.phoneHref} className={rowCls}>

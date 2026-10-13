@@ -46,8 +46,8 @@ function DesktopItem({ item }) {
 export default function SiteHeader() {
   const [open, setOpen] = useState(false);
   return (
-    <header className="fixed top-4 left-0 right-0 z-50 px-4">
-      <div className="mx-auto max-w-[1440px] rounded-full border hairline bg-black/50 backdrop-blur-xl px-4 sm:px-6 h-[72px] flex items-center justify-between">
+    <header className="fixed top-2 sm:top-4 left-0 right-0 z-50 px-2 sm:px-4">
+      <div className="mx-auto max-w-[1440px] rounded-full border hairline bg-black/50 backdrop-blur-xl pl-3 pr-2 sm:px-6 h-16 sm:h-[72px] flex items-center justify-between gap-2">
         <Link to="/" className="flex items-center gap-3">
           <span className="w-9 h-9 rounded-xl bg-primary text-primary-foreground grid place-items-center font-display font-extrabold">P</span>
           <span className="leading-none">
@@ -55,11 +55,11 @@ export default function SiteHeader() {
             <span className="block label-mono text-[9px] text-muted-foreground mt-0.5">Technology Inc.</span>
           </span>
         </Link>
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-5 xl:gap-8">
           {NAV_MENU.map((n) => <DesktopItem key={n.label} item={n} />)}
         </nav>
         <div className="flex items-center gap-2">
-          <Link to="/contact" className="hidden sm:inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-5 h-11 text-sm font-semibold hover:brightness-110 transition">
+          <Link to="/contact" className="hidden md:inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-4 xl:px-5 h-11 text-sm whitespace-nowrap font-semibold hover:brightness-110 transition">
             Discuss Your Project <ArrowUpRight className="w-4 h-4" />
           </Link>
           <button onClick={() => setOpen(!open)} className="lg:hidden w-11 h-11 rounded-full border hairline grid place-items-center" aria-label="Menu">
@@ -68,7 +68,7 @@ export default function SiteHeader() {
         </div>
       </div>
       {open && (
-        <div className="lg:hidden mt-2 mx-auto max-w-[1440px] rounded-3xl border hairline bg-black/95 backdrop-blur-xl p-6 max-h-[75vh] overflow-y-auto space-y-5">
+        <div className="lg:hidden mt-2 mx-auto max-w-[1440px] rounded-3xl border hairline bg-black/95 backdrop-blur-xl p-5 sm:p-6 max-h-[80vh] overflow-y-auto space-y-5">
           {NAV_MENU.map((n) => (
             <div key={n.label}>
               <NavLink to={n.to} onClick={() => setOpen(false)} className="font-display font-bold text-xl">{n.label}</NavLink>

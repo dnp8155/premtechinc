@@ -20,7 +20,7 @@ export default function ServicesPage() {
         aside={{ label: "Service groups", value: "04", sub: "Core offerings" }}
       />
 
-      <section className="bg-[#eef2f7] text-[#0c1420] py-24">
+      <section className="bg-[#eef2f7] text-[#0c1420] py-14 sm:py-20 lg:py-24">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-10 grid md:grid-cols-2 gap-5">
           {SERVICE_GROUPS.map((s, i) => (
             <Reveal key={s.n} delay={(i % 2) * 0.07} y={20}>

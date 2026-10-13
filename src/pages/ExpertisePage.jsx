@@ -19,7 +19,7 @@ export default function ExpertisePage() {
         aside={{ label: "Practice areas", value: "09", sub: "Specialized engineering" }}
       />
 
-      <section className="max-w-[1440px] mx-auto px-6 sm:px-10 py-24">
+      <section className="max-w-[1440px] mx-auto px-6 sm:px-10 py-14 sm:py-20 lg:py-24">
         <SectionHead kicker="Practice areas" title="Specialized" outline="by design." />
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {EXPERTISE.map((e, i) => (
@@ -34,11 +34,11 @@ export default function ExpertisePage() {
         </div>
       </section>
 
-      <section className="bg-[#eef2f7] text-[#0c1420] py-24">
+      <section className="bg-[#eef2f7] text-[#0c1420] py-14 sm:py-20 lg:py-24">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-10 grid lg:grid-cols-2 gap-14">
           <Reveal>
             <span className="label-mono text-[#0a63d1]">Core engineering deliverables</span>
-            <h2 className="mt-4 font-display font-extrabold tracking-[-0.04em] leading-[0.98] text-5xl sm:text-6xl">What we put in your hands.</h2>
+            <h2 className="mt-4 font-display font-extrabold tracking-[-0.04em] leading-[0.98] text-4xl sm:text-5xl lg:text-6xl">What we put in your hands.</h2>
           </Reveal>
           <Reveal delay={0.1}>
             <div className="flex flex-wrap gap-3">

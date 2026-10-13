@@ -16,13 +16,13 @@ function ListCard({ title, items }) {
 
 export default function Technology() {
   return (
-    <section id="why-prem" className="bg-card py-32">
+    <section id="why-prem" className="bg-card py-16 sm:py-24 lg:py-32">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <Reveal>
               <span className="label-mono text-primary">Why Prem</span>
-              <h2 className="display-title text-6xl sm:text-8xl mt-4">
+              <h2 className="display-title text-4xl min-[400px]:text-5xl sm:text-7xl lg:text-8xl break-words mt-4">
                 Precision where <span className="text-primary">it counts.</span>
               </h2>
               <p className="mt-8 max-w-lg text-muted-foreground text-lg leading-relaxed">

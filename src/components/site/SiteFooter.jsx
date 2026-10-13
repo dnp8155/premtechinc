@@ -9,8 +9,8 @@ const linkCls = "text-sm text-muted-foreground hover:text-foreground transition"
 export default function SiteFooter() {
   return (
     <footer className="border-t hairline bg-background pt-16 pb-8">
-      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 grid sm:grid-cols-2 lg:grid-cols-[1.4fr_0.8fr_1fr_1fr_1fr] gap-10">
-        <div>
+      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 grid grid-cols-2 lg:grid-cols-[1.4fr_0.8fr_1fr_1fr_1fr] gap-x-6 gap-y-10 sm:gap-10">
+        <div className="col-span-2 lg:col-span-1">
           <Link to="/" className="flex items-center gap-3">
             <span className="w-9 h-9 rounded-xl bg-primary text-primary-foreground grid place-items-center font-display font-extrabold">P</span>
             <span className="leading-none">
@@ -39,8 +39,8 @@ export default function SiteFooter() {
         </div>
         <div>
           <h4 className="label-mono text-primary mb-4">Stay connected</h4>
-          <ul className="space-y-2">
-            <li><a href={CONTACT.emailHref} className={linkCls}>{CONTACT.email}</a></li>
+          <ul className="space-y-2 break-words">
+            <li><a href={CONTACT.emailHref} className={`${linkCls} break-all`}>{CONTACT.email}</a></li>
             <li><a href={CONTACT.phoneHref} className={linkCls}>{CONTACT.phone}</a></li>
             <li><a href="https://www.linkedin.com" target="_blank" rel="noreferrer" className={linkCls}>LinkedIn</a></li>
             <li><a href="https://www.youtube.com" target="_blank" rel="noreferrer" className={linkCls}>YouTube</a></li>
@@ -49,7 +49,7 @@ export default function SiteFooter() {
       </div>
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 mt-14 pt-6 border-t hairline flex flex-col sm:flex-row justify-between gap-3 text-xs text-muted-foreground">
         <span>© 2026 Prem Technology Inc. All rights reserved.</span>
-        <div className="flex gap-6">
+        <div className="flex flex-wrap gap-x-6 gap-y-2">
           <Link to="/privacy" className="hover:text-primary transition">Privacy Policy</Link>
           <Link to="/terms" className="hover:text-primary transition">Terms of Engagement</Link>
           <a href="#top" className="hover:text-primary transition">Back to top ↑</a>

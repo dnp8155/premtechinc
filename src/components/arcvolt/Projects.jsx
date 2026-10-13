@@ -7,11 +7,11 @@ import { CORE_EXPERTISE } from "@/lib/siteData";
 
 export default function Projects() {
   return (
-    <section id="projects" className="max-w-[1440px] mx-auto px-6 sm:px-10 py-32">
+    <section id="projects" className="max-w-[1440px] mx-auto px-6 sm:px-10 py-16 sm:py-24 lg:py-32">
       <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16">
         <Reveal>
           <span className="label-mono text-primary">Core expertise</span>
-          <h2 className="display-title text-6xl sm:text-8xl mt-4">
+          <h2 className="display-title text-4xl min-[400px]:text-5xl sm:text-7xl lg:text-8xl break-words mt-4">
             Built for <span className="text-primary">demanding work.</span>
           </h2>
         </Reveal>

@@ -20,12 +20,12 @@ export default function Manifesto() {
       <div className="lg:col-span-7 flex flex-col justify-center">
         <Reveal>
           <div className="flex items-baseline gap-4 mb-6">
-            <span className="font-display font-extrabold text-8xl text-foreground/15">01</span>
+            <span className="font-display font-extrabold text-6xl sm:text-8xl text-foreground/15">01</span>
             <span className="label-mono text-primary">Complexity & constructability</span>
           </div>
         </Reveal>
         <Reveal delay={0.1}>
-          <h2 className="font-display font-extrabold text-4xl sm:text-6xl leading-[1.02] tracking-tight">
+          <h2 className="font-display font-extrabold text-3xl sm:text-5xl lg:text-6xl leading-[1.02] tracking-tight">
             Where technical precision, constructability and <span className="text-primary italic font-semibold">reliability matter.</span>
           </h2>
         </Reveal>

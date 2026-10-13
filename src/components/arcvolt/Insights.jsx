@@ -6,12 +6,12 @@ import { ARTICLES } from "@/lib/pagesData";
 
 export default function Insights() {
   return (
-    <section id="insights" className="bg-card py-32">
+    <section id="insights" className="bg-card py-16 sm:py-24 lg:py-32">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10">
         <div className="flex items-end justify-between gap-6 mb-14">
           <Reveal>
             <span className="label-mono text-primary">Technical insights</span>
-            <h2 className="display-title text-6xl sm:text-8xl mt-4">
+            <h2 className="display-title text-4xl min-[400px]:text-5xl sm:text-7xl lg:text-8xl break-words mt-4">
               Ideas that <span className="text-primary">move projects.</span>
             </h2>
           </Reveal>
