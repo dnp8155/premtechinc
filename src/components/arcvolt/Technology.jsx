@@ -16,7 +16,7 @@ function ListCard({ title, items }) {
 
 export default function Technology() {
   return (
-    <section id="why-prem" className="bg-card py-16 sm:py-24 lg:py-32">
+    <section id="why-prem" className="bg-card py-16 sm:py-24 lg:py-16 sm:py-24 lg:py-32">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>

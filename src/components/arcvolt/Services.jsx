@@ -6,7 +6,7 @@ import { SERVICES } from "@/lib/siteData";
 
 export default function Services() {
   return (
-    <section id="services" className="bg-card py-16 sm:py-24 lg:py-32">
+    <section id="services" className="bg-card py-16 sm:py-24 lg:py-16 sm:py-24 lg:py-32">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 grid lg:grid-cols-12 gap-12">
         <div className="lg:col-span-5 lg:sticky lg:top-32 self-start">
           <Reveal>

@@ -8,7 +8,7 @@ import { CORE_AREAS } from "@/lib/siteData";
 
 export default function Manifesto() {
   return (
-    <section id="manifesto" className="max-w-[1440px] mx-auto px-6 sm:px-10 py-32 grid lg:grid-cols-12 gap-12">
+    <section id="manifesto" className="max-w-[1440px] mx-auto px-6 sm:px-10 py-16 sm:py-24 lg:py-32 grid lg:grid-cols-12 gap-12">
       <Reveal className="lg:col-span-5 relative">
         <div className="relative aspect-[4/5] rounded-3xl overflow-hidden">
           <Image src={IMG.team} alt="Engineers reviewing plans on site" className="w-full h-full" />

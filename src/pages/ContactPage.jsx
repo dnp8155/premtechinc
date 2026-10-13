@@ -57,7 +57,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="max-w-[1440px] mx-auto px-6 sm:px-10 py-28">
+      <section className="max-w-[1440px] mx-auto px-6 sm:px-10 py-14 sm:py-20 lg:py-28">
         <SectionHead kicker="Client inquiry workflow" title="Three steps to" outline="engagement." />
         <div className="grid md:grid-cols-3 gap-5">
           {INQUIRY_STEPS.map((s, i) => (

@@ -49,7 +49,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="max-w-[1440px] mx-auto px-6 sm:px-10 py-28">
+      <section className="max-w-[1440px] mx-auto px-6 sm:px-10 py-14 sm:py-20 lg:py-28">
         <SectionHead kicker="Four strategic pillars" title="How we" outline="practice." text="Our approach, expertise, markets and commitment." />
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {PILLARS.map((p, i) => {

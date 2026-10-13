@@ -20,7 +20,7 @@ export default function ProjectsPage() {
         aside={{ label: "Applications", value: "06", sub: "Sector portfolio" }}
       />
 
-      <section className="max-w-[1440px] mx-auto px-6 sm:px-10 py-24 space-y-5">
+      <section className="max-w-[1440px] mx-auto px-6 sm:px-10 py-14 sm:py-20 lg:py-24 space-y-5">
         {APPLICATIONS.map((a) => (
           <Reveal key={a.n} y={20}>
             <div className="rounded-[2rem] border hairline bg-card p-7 sm:p-10 hover:border-primary transition-colors">

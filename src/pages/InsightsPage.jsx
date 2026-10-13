@@ -18,7 +18,7 @@ export default function InsightsPage() {
         aside={{ label: "Articles", value: "06", sub: "Knowledge base" }}
       />
 
-      <section className="max-w-[1440px] mx-auto px-6 sm:px-10 py-24 grid md:grid-cols-2 gap-5">
+      <section className="max-w-[1440px] mx-auto px-6 sm:px-10 py-14 sm:py-20 lg:py-24 grid md:grid-cols-2 gap-5">
         {ARTICLES.map((a, i) => (
           <Reveal key={a.n} delay={(i % 2) * 0.07} y={20}>
             <article className="h-full rounded-[2rem] border hairline bg-card p-7 sm:p-9 hover:border-primary transition-colors flex flex-col">

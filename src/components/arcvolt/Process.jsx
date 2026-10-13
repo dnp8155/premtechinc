@@ -4,7 +4,7 @@ import { STEPS } from "@/lib/siteData";
 
 export default function Process() {
   return (
-    <section id="process" className="max-w-[1440px] mx-auto px-6 sm:px-10 py-32 grid lg:grid-cols-12 gap-12">
+    <section id="process" className="max-w-[1440px] mx-auto px-6 sm:px-10 py-16 sm:py-24 lg:py-32 grid lg:grid-cols-12 gap-12">
       <div className="lg:col-span-5 lg:sticky lg:top-32 self-start">
         <Reveal>
           <span className="label-mono text-primary">Our approach</span>

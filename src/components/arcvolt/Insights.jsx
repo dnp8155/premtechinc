@@ -6,7 +6,7 @@ import { ARTICLES } from "@/lib/pagesData";
 
 export default function Insights() {
   return (
-    <section id="insights" className="bg-card py-16 sm:py-24 lg:py-32">
+    <section id="insights" className="bg-card py-16 sm:py-24 lg:py-16 sm:py-24 lg:py-32">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10">
         <div className="flex items-end justify-between gap-6 mb-14">
           <Reveal>
