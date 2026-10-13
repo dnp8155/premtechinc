@@ -20,18 +20,18 @@ export default function ServicesPage() {
         aside={{ label: "Service groups", value: "04", sub: "Core offerings" }}
       />
 
-      <section className="bg-[#f1eee6] text-[#0b0c0a] py-24">
+      <section className="bg-[#eef2f7] text-[#0c1420] py-24">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-10 grid md:grid-cols-2 gap-5">
           {SERVICE_GROUPS.map((s, i) => (
             <Reveal key={s.n} delay={(i % 2) * 0.07} y={20}>
               <div className="h-full rounded-[2rem] bg-white/60 border border-black/10 p-7 sm:p-9">
-                <span className="label-mono text-[#5b6b00]">Service group {s.n}</span>
+                <span className="label-mono text-[#0a63d1]">Service group {s.n}</span>
                 <h3 className="mt-4 font-display font-extrabold text-3xl tracking-tight">{s.title}</h3>
                 <dl className="mt-8 border-t border-black/10">
                   {ROWS.map(([label, key]) => (
                     <div key={key} className="grid sm:grid-cols-[130px_1fr] gap-1 sm:gap-4 py-4 border-b border-black/10">
                       <dt className="label-mono text-black/50">{label}</dt>
-                      <dd className="text-sm text-[#3b3d36] leading-relaxed">{s[key]}</dd>
+                      <dd className="text-sm text-[#3a4757] leading-relaxed">{s[key]}</dd>
                     </div>
                   ))}
                 </dl>

@@ -6,8 +6,8 @@ import { Textarea } from "@/components/ui/textarea";
 
 const CATEGORIES = ["Transmission", "Temporary Works", "Shoring", "Heavy Civil", "LRT", "Bridge", "Tunnel", "Water", "Other"];
 const STAGES = ["Planning", "Design", "Pre-construction", "Active Construction"];
-const labelCls = "label-mono text-[#0b0c0a]/70 block mb-2";
-const fieldCls = "bg-white border-black/15 text-[#0b0c0a] placeholder:text-black/40";
+const labelCls = "label-mono text-[#0c1420]/70 block mb-2";
+const fieldCls = "bg-white border-black/15 text-[#0c1420] placeholder:text-black/40";
 const selectCls = `h-10 w-full rounded-md border px-3 text-sm ${fieldCls}`;
 
 export default function InquiryForm() {
@@ -51,7 +51,7 @@ export default function InquiryForm() {
       <div className="py-16 text-center">
         <span className="w-14 h-14 rounded-full bg-primary text-primary-foreground grid place-items-center mx-auto"><Check className="w-6 h-6" /></span>
         <h3 className="mt-6 font-display font-extrabold text-3xl">Enquiry received.</h3>
-        <p className="mt-2 text-[#3b3d36]">An engineering team member will respond to you directly.</p>
+        <p className="mt-2 text-[#3a4757]">An engineering team member will respond to you directly.</p>
       </div>
     );
   }
@@ -77,8 +77,8 @@ export default function InquiryForm() {
         </div>
       </div>
       <div><label className={labelCls}>Project details / brief description</label><Textarea name="details" required rows={5} placeholder="Scope, constraints, sequence, key challenge..." className={fieldCls} /></div>
-      <div><label className={labelCls}>File upload attachment</label><input name="file" type="file" className="block w-full text-sm text-[#3b3d36] file:mr-4 file:rounded-full file:border-0 file:bg-black file:text-white file:px-4 file:py-2" /></div>
-      <label className="flex items-start gap-3 text-xs text-[#3b3d36]">
+      <div><label className={labelCls}>File upload attachment</label><input name="file" type="file" className="block w-full text-sm text-[#3a4757] file:mr-4 file:rounded-full file:border-0 file:bg-black file:text-white file:px-4 file:py-2" /></div>
+      <label className="flex items-start gap-3 text-xs text-[#3a4757]">
         <input type="checkbox" checked={agree} onChange={(e) => setAgree(e.target.checked)} className="mt-0.5" required />
         I agree to the privacy policy and consent to being contacted about this enquiry.
       </label>

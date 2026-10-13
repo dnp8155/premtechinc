@@ -34,10 +34,10 @@ export default function ExpertisePage() {
         </div>
       </section>
 
-      <section className="bg-[#f1eee6] text-[#0b0c0a] py-24">
+      <section className="bg-[#eef2f7] text-[#0c1420] py-24">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-10 grid lg:grid-cols-2 gap-14">
           <Reveal>
-            <span className="label-mono text-[#5b6b00]">Core engineering deliverables</span>
+            <span className="label-mono text-[#0a63d1]">Core engineering deliverables</span>
             <h2 className="mt-4 font-display font-extrabold tracking-[-0.04em] leading-[0.98] text-5xl sm:text-6xl">What we put in your hands.</h2>
           </Reveal>
           <Reveal delay={0.1}>
