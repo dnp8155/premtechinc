@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import Reveal from "@/components/arcvolt/Reveal";
 
-export default function CtaBand({ title = "Have a project that needs more control?", text = "Bring us the ambition, constraints and questions. We will help shape the route forward.", button = "Start a conversation" }) {
+export default function CtaBand({ title = "Have a complex structure to engineer?", text = "Send us your drawings, specifications or brief. An engineering team member will respond directly.", button = "Discuss Your Project" }) {
   return (
     <section className="max-w-[1440px] mx-auto px-6 sm:px-10 pb-24">
       <Reveal>
@@ -12,7 +12,7 @@ export default function CtaBand({ title = "Have a project that needs more contro
           <div className="relative">
             <div className="flex items-center gap-3 mb-6">
               <span className="w-8 h-px bg-primary" />
-              <span className="label-mono text-primary">Start with the ambition</span>
+              <span className="label-mono text-primary">Start with the brief</span>
             </div>
             <h2 className="font-display font-extrabold tracking-[-0.03em] leading-[1] text-4xl sm:text-6xl max-w-3xl">{title}</h2>
             <p className="mt-5 max-w-lg text-muted-foreground text-lg">{text}</p>

@@ -12,10 +12,10 @@ export default function Services() {
           <Reveal>
             <span className="label-mono text-primary">What we do</span>
             <h2 className="display-title text-6xl sm:text-8xl mt-4">
-              One partner. <span className="text-primary">Every layer.</span>
+              Four focus <span className="text-primary">areas.</span>
             </h2>
             <p className="mt-8 max-w-md text-muted-foreground text-lg leading-relaxed">
-              From the first feasibility study to final commissioning, we coordinate the disciplines that make complex projects move faster and perform better.
+              Technical capabilities grouped into four client delivery models — each with clear scope, deliverables and interfaces.
             </p>
           </Reveal>
         </div>

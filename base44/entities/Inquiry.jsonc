@@ -1,0 +1,68 @@
+{
+  "name": "Inquiry",
+  "type": "object",
+  "properties": {
+    "full_name": {
+      "type": "string",
+      "description": "Full name"
+    },
+    "email": {
+      "type": "string",
+      "description": "Email address"
+    },
+    "company": {
+      "type": "string",
+      "description": "Company / Organization"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Phone number"
+    },
+    "location": {
+      "type": "string",
+      "enum": [
+        "Canada",
+        "USA"
+      ],
+      "description": "Project location"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "Transmission",
+        "Temporary Works",
+        "Shoring",
+        "Heavy Civil",
+        "LRT",
+        "Bridge",
+        "Tunnel",
+        "Water",
+        "Other"
+      ],
+      "description": "Project category"
+    },
+    "stage": {
+      "type": "string",
+      "enum": [
+        "Planning",
+        "Design",
+        "Pre-construction",
+        "Active Construction"
+      ],
+      "description": "Project stage"
+    },
+    "details": {
+      "type": "string",
+      "description": "Project details / brief description"
+    },
+    "attachment_uri": {
+      "type": "string",
+      "description": "Private file URI of the uploaded attachment"
+    }
+  },
+  "required": [
+    "full_name",
+    "email",
+    "details"
+  ]
+}

@@ -4,15 +4,16 @@ import { Link } from "react-router-dom";
 import Reveal from "./Reveal";
 import { Image } from "@/components/ui/image";
 import { IMG } from "@/lib/siteData";
+import { CORE_AREAS } from "@/lib/siteData";
 
 export default function Manifesto() {
   return (
     <section id="manifesto" className="max-w-[1440px] mx-auto px-6 sm:px-10 py-32 grid lg:grid-cols-12 gap-12">
       <Reveal className="lg:col-span-5 relative">
         <div className="relative aspect-[4/5] rounded-3xl overflow-hidden">
-          <Image src={IMG.team} alt="Construction engineers reviewing plans on site" className="w-full h-full" />
+          <Image src={IMG.team} alt="Engineers reviewing plans on site" className="w-full h-full" />
           <div className="absolute bottom-5 right-5 w-28 h-28 rounded-full bg-primary text-primary-foreground grid place-items-center text-center font-display font-extrabold text-sm leading-tight">
-            BUILT<br />WITH<br />INTENT ↗
+            CANADA<br />& USA ↗
           </div>
         </div>
       </Reveal>
@@ -20,20 +21,23 @@ export default function Manifesto() {
         <Reveal>
           <div className="flex items-baseline gap-4 mb-6">
             <span className="font-display font-extrabold text-8xl text-foreground/15">01</span>
-            <span className="label-mono text-primary">Our manifesto</span>
+            <span className="label-mono text-primary">Complexity & constructability</span>
           </div>
         </Reveal>
         <Reveal delay={0.1}>
           <h2 className="font-display font-extrabold text-4xl sm:text-6xl leading-[1.02] tracking-tight">
-            Construction is not about filling space. It's about <span className="text-primary italic font-semibold">shaping what comes next.</span>
+            Where technical precision, constructability and <span className="text-primary italic font-semibold">reliability matter.</span>
           </h2>
         </Reveal>
         <Reveal delay={0.2}>
           <p className="mt-8 max-w-xl text-lg text-muted-foreground leading-relaxed">
-            We work where precision, performance and architectural ambition meet. Every project is organized around a clear idea: fewer compromises, smarter systems and spaces with lasting value.
+            Specialized structural engineering where technical precision, constructability and reliability matter. We support contractors, utilities, engineering teams and project owners through the demanding stages of a project.
           </p>
-          <Link to="/technology" className="mt-10 inline-flex items-center gap-3 rounded-full border hairline px-7 h-14 font-semibold hover:border-primary hover:text-primary transition">
-            Discover our approach <ArrowUpRight className="w-4 h-4" />
+          <div className="mt-6 flex flex-wrap gap-2">
+            {CORE_AREAS.map((a) => <span key={a} className="label-mono border hairline rounded-full px-3 py-2">{a}</span>)}
+          </div>
+          <Link to="/about" className="mt-10 inline-flex items-center gap-3 rounded-full border hairline px-7 h-14 font-semibold hover:border-primary hover:text-primary transition">
+            About Prem <ArrowUpRight className="w-4 h-4" />
           </Link>
         </Reveal>
       </div>

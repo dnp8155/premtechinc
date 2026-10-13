@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { ArrowRight, ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
+import { ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
 import { Image } from "@/components/ui/image";
 import { NAV_MENU } from "@/lib/navData";
 import { IMG } from "@/lib/siteData";
@@ -23,13 +23,13 @@ function DesktopItem({ item }) {
               <Image src={IMG.glass} alt="" className="absolute inset-0 w-full h-full" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent" />
               <div className="absolute bottom-0 p-5">
-                <span className="label-mono text-primary">Inside ARCVOLT</span>
+                <span className="label-mono text-primary">Inside PREM</span>
                 <p className="font-display font-bold text-2xl leading-tight mt-2">{item.blurb}</p>
               </div>
             </div>
             <ul className="py-1">
               {item.children.map((c) => (
-                <li key={c.to}>
+                <li key={c.label}>
                   <Link to={c.to} onClick={() => setOpen(false)} className="flex items-center justify-between py-3.5 px-3 border-b hairline last:border-0 text-sm font-medium hover:text-primary transition-colors">
                     {c.label} <ArrowUpRight className="w-4 h-4" />
                   </Link>
@@ -49,15 +49,18 @@ export default function SiteHeader() {
     <header className="fixed top-4 left-0 right-0 z-50 px-4">
       <div className="mx-auto max-w-[1440px] rounded-full border hairline bg-black/50 backdrop-blur-xl px-4 sm:px-6 h-[72px] flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3">
-          <span className="w-9 h-9 rounded-xl bg-primary text-primary-foreground grid place-items-center font-display font-extrabold">X</span>
-          <span className="font-display font-extrabold tracking-tight text-lg">ARCVOLT</span>
+          <span className="w-9 h-9 rounded-xl bg-primary text-primary-foreground grid place-items-center font-display font-extrabold">P</span>
+          <span className="leading-none">
+            <span className="block font-display font-extrabold tracking-tight text-lg">PREM</span>
+            <span className="block label-mono text-[9px] text-muted-foreground mt-0.5">Technology Inc.</span>
+          </span>
         </Link>
         <nav className="hidden lg:flex items-center gap-8">
           {NAV_MENU.map((n) => <DesktopItem key={n.label} item={n} />)}
         </nav>
         <div className="flex items-center gap-2">
           <Link to="/contact" className="hidden sm:inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-5 h-11 text-sm font-semibold hover:brightness-110 transition">
-            Start a project <ArrowRight className="w-4 h-4" />
+            Discuss Your Project <ArrowUpRight className="w-4 h-4" />
           </Link>
           <button onClick={() => setOpen(!open)} className="lg:hidden w-11 h-11 rounded-full border hairline grid place-items-center" aria-label="Menu">
             {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -77,7 +80,7 @@ export default function SiteHeader() {
             </div>
           ))}
           <Link to="/contact" onClick={() => setOpen(false)} className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary text-primary-foreground h-12 font-semibold">
-            Start a project <ArrowRight className="w-4 h-4" />
+            Discuss Your Project <ArrowUpRight className="w-4 h-4" />
           </Link>
         </div>
       )}
