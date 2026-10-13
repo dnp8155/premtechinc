@@ -1,5 +1,6 @@
 import React from "react";
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import Reveal from "./Reveal";
 import ProjectCard from "./ProjectCard";
 import { PROJECTS } from "@/lib/siteData";
@@ -29,9 +30,9 @@ export default function Projects() {
       </div>
       <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t hairline pt-8">
         <span className="label-mono text-muted-foreground">12 active sites · 7 major handovers scheduled this year</span>
-        <a href="#contact" className="inline-flex items-center gap-3 rounded-full border hairline px-7 h-14 font-semibold hover:border-primary hover:text-primary transition">
+        <Link to="/projects" className="inline-flex items-center gap-3 rounded-full border hairline px-7 h-14 font-semibold hover:border-primary hover:text-primary transition">
           View all projects <ArrowUpRight className="w-4 h-4" />
-        </a>
+        </Link>
       </div>
     </section>
   );

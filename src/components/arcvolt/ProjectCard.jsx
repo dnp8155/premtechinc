@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Image } from "@/components/ui/image";
 
 export default function ProjectCard({ p, className = "" }) {
   return (
-    <a href="#contact" className={`group relative block rounded-3xl overflow-hidden ${className}`}>
+    <Link to="/projects" className={`group relative block rounded-3xl overflow-hidden ${className}`}>
       <Image src={p.img} alt={p.title} className="absolute inset-0 w-full h-full transition-transform duration-[1200ms] group-hover:scale-110" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
       <div className="absolute top-5 left-5 right-5 flex justify-between opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -16,6 +17,6 @@ export default function ProjectCard({ p, className = "" }) {
           <span className="label-mono bg-primary text-primary-foreground px-3 py-1.5 rounded-full shrink-0">{p.tag}</span>
         </div>
       </div>
-    </a>
+    </Link>
   );
 }

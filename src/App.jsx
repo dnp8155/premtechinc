@@ -6,7 +6,20 @@ import PageNotFound from './lib/PageNotFound';
 import { AuthProvider, useAuth } from '@/lib/AuthContext';
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 import ScrollToTop from './components/ScrollToTop';
+import SiteLayout from '@/components/site/SiteLayout';
 import Home from './pages/Home';
+import About from './pages/About';
+import ProcessPage from './pages/ProcessPage';
+import SustainabilityPage from './pages/SustainabilityPage';
+import CareersPage from './pages/CareersPage';
+import InsightsPage from './pages/InsightsPage';
+import ServicesPage from './pages/ServicesPage';
+import ServiceDetail from './pages/ServiceDetail';
+import ProjectsPage from './pages/ProjectsPage';
+import ProjectDetail from './pages/ProjectDetail';
+import TechnologyPage from './pages/TechnologyPage';
+import CalculatorPage from './pages/CalculatorPage';
+import ContactPage from './pages/ContactPage';
 // Add page imports here
 
 const AuthenticatedApp = () => {
@@ -35,7 +48,21 @@ const AuthenticatedApp = () => {
   // Render the main app
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route element={<SiteLayout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/process" element={<ProcessPage />} />
+        <Route path="/sustainability" element={<SustainabilityPage />} />
+        <Route path="/careers" element={<CareersPage />} />
+        <Route path="/insights" element={<InsightsPage />} />
+        <Route path="/services" element={<ServicesPage />} />
+        <Route path="/services/:slug" element={<ServiceDetail />} />
+        <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/projects/:slug" element={<ProjectDetail />} />
+        <Route path="/technology" element={<TechnologyPage />} />
+        <Route path="/calculator" element={<CalculatorPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+      </Route>
       {/* Add your page Route elements here */}
       <Route path="*" element={<PageNotFound />} />
     </Routes>

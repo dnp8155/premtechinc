@@ -1,5 +1,6 @@
 import React from "react";
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import Reveal from "./Reveal";
 import { Image } from "@/components/ui/image";
 import { IMG } from "@/lib/siteData";
@@ -31,9 +32,9 @@ export default function Manifesto() {
           <p className="mt-8 max-w-xl text-lg text-muted-foreground leading-relaxed">
             We work where precision, performance and architectural ambition meet. Every project is organized around a clear idea: fewer compromises, smarter systems and spaces with lasting value.
           </p>
-          <a href="#technology" className="mt-10 inline-flex items-center gap-3 rounded-full border hairline px-7 h-14 font-semibold hover:border-primary hover:text-primary transition">
+          <Link to="/technology" className="mt-10 inline-flex items-center gap-3 rounded-full border hairline px-7 h-14 font-semibold hover:border-primary hover:text-primary transition">
             Discover our approach <ArrowUpRight className="w-4 h-4" />
-          </a>
+          </Link>
         </Reveal>
       </div>
     </section>

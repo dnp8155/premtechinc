@@ -1,5 +1,6 @@
 import React from "react";
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import Reveal from "./Reveal";
 import { INSIGHTS } from "@/lib/siteData";
 
@@ -14,14 +15,14 @@ export default function Insights() {
               Ideas that <span className="text-primary">move projects.</span>
             </h2>
           </Reveal>
-          <a href="#contact" className="hidden sm:inline-flex items-center gap-3 rounded-full border hairline px-7 h-14 font-semibold hover:border-primary hover:text-primary transition shrink-0">
+          <Link to="/insights" className="hidden sm:inline-flex items-center gap-3 rounded-full border hairline px-7 h-14 font-semibold hover:border-primary hover:text-primary transition shrink-0">
             All insights <ArrowUpRight className="w-4 h-4" />
-          </a>
+          </Link>
         </div>
         <div className="border-t hairline">
           {INSIGHTS.map((a, i) => (
             <Reveal key={a.title} delay={i * 0.08} y={20}>
-              <a href="#contact" className="group grid sm:grid-cols-[160px_1fr_auto] gap-4 sm:gap-8 items-center py-8 border-b hairline hover:px-4 hover:bg-white/[0.03] transition-all duration-500">
+              <Link to="/insights" className="group grid sm:grid-cols-[160px_1fr_auto] gap-4 sm:gap-8 items-center py-8 border-b hairline hover:px-4 hover:bg-white/[0.03] transition-all duration-500">
                 <span className="label-mono text-muted-foreground">{a.date}</span>
                 <div>
                   <h3 className="font-display font-bold text-2xl sm:text-3xl group-hover:text-primary transition-colors">{a.title}</h3>
@@ -30,7 +31,7 @@ export default function Insights() {
                 <span className="w-12 h-12 rounded-full border hairline grid place-items-center group-hover:bg-primary group-hover:text-primary-foreground transition">
                   <ArrowUpRight className="w-5 h-5" />
                 </span>
-              </a>
+              </Link>
             </Reveal>
           ))}
         </div>

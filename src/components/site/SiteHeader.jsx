@@ -1,0 +1,86 @@
+import React, { useState } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import { ArrowRight, ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
+import { Image } from "@/components/ui/image";
+import { NAV_MENU } from "@/lib/navData";
+import { IMG } from "@/lib/siteData";
+
+function DesktopItem({ item }) {
+  const [open, setOpen] = useState(false);
+  const { pathname } = useLocation();
+  const active = item.to === "/" ? pathname === "/" : pathname.startsWith(item.to) || item.children?.some((c) => pathname.startsWith(c.to));
+
+  return (
+    <div className="relative" onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
+      <Link to={item.to} className={`flex items-center gap-1.5 py-2 text-sm font-semibold border-b-2 transition-colors ${active || open ? "text-primary border-primary" : "text-foreground border-transparent"}`}>
+        {item.label}
+        {item.children && <ChevronDown className={`w-3.5 h-3.5 transition-transform ${open ? "rotate-180" : ""}`} />}
+      </Link>
+      {item.children && open && (
+        <div className="absolute left-1/2 -translate-x-1/2 top-full pt-6 z-50">
+          <div className="w-[640px] rounded-3xl border hairline bg-[#0c0d0b]/95 backdrop-blur-xl p-3 grid grid-cols-2 gap-3 shadow-2xl">
+            <div className="relative rounded-2xl overflow-hidden min-h-[240px]">
+              <Image src={IMG.glass} alt="" className="absolute inset-0 w-full h-full" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent" />
+              <div className="absolute bottom-0 p-5">
+                <span className="label-mono text-primary">Inside ARCVOLT</span>
+                <p className="font-display font-bold text-2xl leading-tight mt-2">{item.blurb}</p>
+              </div>
+            </div>
+            <ul className="py-1">
+              {item.children.map((c) => (
+                <li key={c.to}>
+                  <Link to={c.to} onClick={() => setOpen(false)} className="flex items-center justify-between py-3.5 px-3 border-b hairline last:border-0 text-sm font-medium hover:text-primary transition-colors">
+                    {c.label} <ArrowUpRight className="w-4 h-4" />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default function SiteHeader() {
+  const [open, setOpen] = useState(false);
+  return (
+    <header className="fixed top-4 left-0 right-0 z-50 px-4">
+      <div className="mx-auto max-w-[1440px] rounded-full border hairline bg-black/50 backdrop-blur-xl px-4 sm:px-6 h-[72px] flex items-center justify-between">
+        <Link to="/" className="flex items-center gap-3">
+          <span className="w-9 h-9 rounded-xl bg-primary text-primary-foreground grid place-items-center font-display font-extrabold">X</span>
+          <span className="font-display font-extrabold tracking-tight text-lg">ARCVOLT</span>
+        </Link>
+        <nav className="hidden lg:flex items-center gap-8">
+          {NAV_MENU.map((n) => <DesktopItem key={n.label} item={n} />)}
+        </nav>
+        <div className="flex items-center gap-2">
+          <Link to="/contact" className="hidden sm:inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-5 h-11 text-sm font-semibold hover:brightness-110 transition">
+            Start a project <ArrowRight className="w-4 h-4" />
+          </Link>
+          <button onClick={() => setOpen(!open)} className="lg:hidden w-11 h-11 rounded-full border hairline grid place-items-center" aria-label="Menu">
+            {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
+        </div>
+      </div>
+      {open && (
+        <div className="lg:hidden mt-2 mx-auto max-w-[1440px] rounded-3xl border hairline bg-black/95 backdrop-blur-xl p-6 max-h-[75vh] overflow-y-auto space-y-5">
+          {NAV_MENU.map((n) => (
+            <div key={n.label}>
+              <NavLink to={n.to} onClick={() => setOpen(false)} className="font-display font-bold text-xl">{n.label}</NavLink>
+              {n.children && (
+                <div className="mt-2 ml-3 flex flex-col gap-2">
+                  {n.children.map((c) => <Link key={c.to} to={c.to} onClick={() => setOpen(false)} className="text-sm text-muted-foreground">{c.label}</Link>)}
+                </div>
+              )}
+            </div>
+          ))}
+          <Link to="/contact" onClick={() => setOpen(false)} className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary text-primary-foreground h-12 font-semibold">
+            Start a project <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+      )}
+    </header>
+  );
+}

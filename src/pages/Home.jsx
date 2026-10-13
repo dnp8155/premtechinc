@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "@/components/arcvolt/Header";
 import Hero from "@/components/arcvolt/Hero";
 import Marquee from "@/components/arcvolt/Marquee";
 import Manifesto from "@/components/arcvolt/Manifesto";
@@ -10,25 +9,24 @@ import Process from "@/components/arcvolt/Process";
 import Sustainability from "@/components/arcvolt/Sustainability";
 import Testimonials from "@/components/arcvolt/Testimonials";
 import Insights from "@/components/arcvolt/Insights";
-import Footer from "@/components/arcvolt/Footer";
+import CtaBand from "@/components/site/CtaBand";
 
 export default function Home() {
   return (
-    <div className="bg-background text-foreground">
-      <Header />
-      <main>
-        <Hero />
-        <Marquee />
-        <Manifesto />
-        <Services />
-        <Projects />
-        <Technology />
-        <Process />
-        <Sustainability />
-        <Testimonials />
-        <Insights />
-      </main>
-      <Footer />
-    </div>
+    <>
+      <Hero />
+      <Marquee />
+      <Manifesto />
+      <Services />
+      <Projects />
+      <Technology />
+      <Process />
+      <Sustainability />
+      <Testimonials />
+      <Insights />
+      <div className="pt-24">
+        <CtaBand title="Let's build what's next." />
+      </div>
+    </>
   );
 }

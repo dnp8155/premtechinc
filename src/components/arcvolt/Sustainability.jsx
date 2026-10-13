@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import Reveal from "./Reveal";
 import { Image } from "@/components/ui/image";
 import { IMG, ESG } from "@/lib/siteData";
@@ -47,9 +48,9 @@ export default function Sustainability() {
               </div>
             ))}
           </div>
-          <a href="#contact" className="mt-10 inline-flex items-center gap-3 rounded-full border hairline px-7 h-14 font-semibold hover:border-primary hover:text-primary transition">
+          <Link to="/sustainability" className="mt-10 inline-flex items-center gap-3 rounded-full border hairline px-7 h-14 font-semibold hover:border-primary hover:text-primary transition">
             Read ESG framework <ArrowUpRight className="w-4 h-4" />
-          </a>
+          </Link>
         </div>
       </div>
     </section>

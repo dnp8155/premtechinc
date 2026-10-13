@@ -1,5 +1,6 @@
 import React from "react";
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import Reveal from "./Reveal";
 import { SERVICES } from "@/lib/siteData";
 
@@ -21,7 +22,7 @@ export default function Services() {
         <div className="lg:col-span-7 border-t hairline">
           {SERVICES.map((s, i) => (
             <Reveal key={s.n} delay={i * 0.05} y={20}>
-              <a href="#contact" className="group grid grid-cols-[auto_1fr_auto] gap-6 items-center py-8 border-b hairline hover:bg-white/[0.03] hover:px-4 transition-all duration-500">
+              <Link to="/services" className="group grid grid-cols-[auto_1fr_auto] gap-6 items-center py-8 border-b hairline hover:bg-white/[0.03] hover:px-4 transition-all duration-500">
                 <span className="label-mono text-muted-foreground group-hover:text-primary">{s.n}</span>
                 <div>
                   <h3 className="font-display font-bold text-2xl sm:text-3xl group-hover:text-primary transition-colors">{s.title}</h3>
@@ -30,7 +31,7 @@ export default function Services() {
                 <span className="w-12 h-12 rounded-full border hairline grid place-items-center group-hover:bg-primary group-hover:text-primary-foreground group-hover:rotate-45 transition-all duration-500">
                   <ArrowUpRight className="w-5 h-5" />
                 </span>
-              </a>
+              </Link>
             </Reveal>
           ))}
         </div>

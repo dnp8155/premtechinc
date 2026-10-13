@@ -1,5 +1,6 @@
 import React from "react";
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import Reveal from "./Reveal";
 import { STEPS } from "@/lib/siteData";
 
@@ -24,9 +25,9 @@ export default function Process() {
               <span className="label-mono text-primary">{s.n}</span>
               <h3 className="mt-4 font-display font-extrabold text-3xl sm:text-5xl tracking-tight">{s.title}</h3>
               <p className="mt-4 text-muted-foreground text-lg max-w-xl leading-relaxed">{s.text}</p>
-              <a href="#contact" className="mt-6 inline-flex items-center gap-2 font-semibold group-hover:text-primary transition-colors">
+              <Link to="/services" className="mt-6 inline-flex items-center gap-2 font-semibold group-hover:text-primary transition-colors">
                 {s.link} <ArrowUpRight className="w-4 h-4" />
-              </a>
+              </Link>
             </div>
           </Reveal>
         ))}

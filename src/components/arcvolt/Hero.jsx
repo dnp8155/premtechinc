@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { IMG, STATS } from "@/lib/siteData";
 
@@ -38,12 +39,12 @@ export default function Hero() {
             ARCVOLT combines construction expertise, architecture and digital engineering to deliver high-performance spaces built for people, business and the next generation.
           </p>
           <div className="flex flex-wrap gap-3">
-            <a href="#projects" className="inline-flex items-center gap-3 rounded-full bg-primary text-primary-foreground px-7 h-14 font-semibold hover:brightness-110 transition">
+            <Link to="/projects" className="inline-flex items-center gap-3 rounded-full bg-primary text-primary-foreground px-7 h-14 font-semibold hover:brightness-110 transition">
               Explore projects <ArrowUpRight className="w-4 h-4" />
-            </a>
-            <a href="#services" className="inline-flex items-center gap-3 rounded-full border hairline bg-black/30 backdrop-blur px-7 h-14 font-semibold hover:border-primary transition">
+            </Link>
+            <Link to="/services" className="inline-flex items-center gap-3 rounded-full border hairline bg-black/30 backdrop-blur px-7 h-14 font-semibold hover:border-primary transition">
               What we build <ArrowDown className="w-4 h-4" />
-            </a>
+            </Link>
           </div>
         </div>
 
