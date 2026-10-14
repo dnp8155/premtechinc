@@ -5,13 +5,13 @@ import { GURU_EYES_URL } from "@/lib/siteData";
 
 export default function Blessings() {
   return (
-    <section className="relative overflow-hidden border-y hairline">
-      <Image src={GURU_EYES_URL} alt="Guruji's blessing eyes" className="absolute inset-0 w-full h-full object-cover opacity-70" />
-      <div className="absolute inset-0 bg-background/55" />
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
-      <div className="relative max-w-[1440px] mx-auto px-5 sm:px-10 py-16 sm:py-24 text-center">
+    <section className="border-y hairline bg-background">
+      <div className="max-w-[1440px] mx-auto px-5 sm:px-10 py-16 sm:py-24 text-center">
         <Reveal>
-          <span className="label-mono text-primary">Our guiding light</span>
+          <div className="mx-auto w-full max-w-[640px] rounded-3xl overflow-hidden border hairline shadow-2xl [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+            <Image src={GURU_EYES_URL} alt="Guruji's blessing eyes" fittingType="fit" originWidth={1024} originHeight={287} className="w-full h-auto" />
+          </div>
+          <span className="label-mono text-primary mt-10 inline-block">Our guiding light</span>
           <h2 className="display-title text-[clamp(1.8rem,5vw,4rem)] mt-4">
             Built with the <span className="text-primary">blessings</span> of our Guruji.
           </h2>

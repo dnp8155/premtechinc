@@ -3,7 +3,7 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
 import { Image } from "@/components/ui/image";
 import { NAV_MENU } from "@/lib/navData";
-import { IMG, LOGO_ICON_URL, GURU_EYES_URL } from "@/lib/siteData";
+import { IMG, LOGO_ICON_URL } from "@/lib/siteData";
 import useHideOnScroll from "@/hooks/use-scroll-direction";
 
 function DesktopItem({ item }) {
@@ -50,9 +50,6 @@ export default function SiteHeader() {
   return (
     <header className={`fixed top-2 sm:top-4 left-0 right-0 z-50 px-2 sm:px-4 transition-transform duration-300 ${hidden && !open ? "-translate-y-[150%]" : "translate-y-0"}`}>
       <div className="relative overflow-hidden mx-auto max-w-[1440px] rounded-full border border-black/10 bg-white shadow-lg text-slate-900 pl-3 pr-2 sm:px-6 h-16 sm:h-[72px] flex items-center justify-between gap-2">
-        <div className="pointer-events-none absolute inset-y-0 left-1/2 -translate-x-1/2 hidden lg:flex items-center [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]">
-          <Image src={GURU_EYES_URL} alt="" fittingType="fit" className="h-16 sm:h-[72px] w-[260px] max-w-none opacity-45" />
-        </div>
         <Link to="/" className="relative flex items-center" aria-label="PREM Technology Inc. home">
           <Image src={LOGO_ICON_URL} alt="PREM Technology Inc." fittingType="fit" className="h-12 w-11 sm:h-14 sm:w-[52px] p-1" />
         </Link>
