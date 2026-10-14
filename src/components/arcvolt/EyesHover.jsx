@@ -3,19 +3,25 @@ import { GURU_EYES_VIDEO_URL } from "@/lib/siteData";
 
 export default function EyesHover() {
   const videoRef = useRef(null);
+  const playRef = useRef(null);
 
   const start = () => {
     const v = videoRef.current;
     if (!v) return;
     v.currentTime = 0;
-    v.play();
+    playRef.current = v.play();
+    playRef.current?.catch(() => {});
   };
 
   const stop = () => {
     const v = videoRef.current;
     if (!v) return;
-    v.pause();
-    v.currentTime = 0;
+    const reset = () => {
+      v.pause();
+      v.currentTime = 0;
+    };
+    if (playRef.current) playRef.current.then(reset, reset);
+    else reset();
   };
 
   return (
