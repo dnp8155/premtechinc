@@ -8,7 +8,7 @@ export const GURU_EYES_URL = "https://media.base44.com/images/public/6ace762a9e4
 export const GURU_EYES_POSTER_URL = "";
 
 // Hover video for the Blessings section.
-export const GURU_EYES_VIDEO_URL = "https://media.base44.com/videos/public/6ace762a9e43500297e7e4f9/56acd6de9_VideoProject4.mp4";
+export const GURU_EYES_VIDEO_URL = "https://media.base44.com/videos/public/6ace762a9e43500297e7e4f9/884b53e53_VideoProject41.mp4";
 
 export const IMG = {
   hero: "https://media.base44.com/images/public/6ace762a9e43500297e7e4f9/75c67953e_generated_image.png",
