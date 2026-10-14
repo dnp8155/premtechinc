@@ -2,7 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { FOOTER_NAV, FOOTER_SERVICES, SECTORS } from "@/lib/navData";
-import { CONTACT } from "@/lib/siteData";
+import { CONTACT, LOGO_URL } from "@/lib/siteData";
+import { Image } from "@/components/ui/image";
 
 const linkCls = "text-sm text-muted-foreground hover:text-foreground transition";
 
@@ -11,11 +12,9 @@ export default function SiteFooter() {
     <footer className="border-t hairline bg-background pt-16 pb-8">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 grid grid-cols-2 lg:grid-cols-[1.4fr_0.8fr_1fr_1fr_1fr] gap-x-6 gap-y-10 sm:gap-10">
         <div className="col-span-2 lg:col-span-1">
-          <Link to="/" className="flex items-center gap-3">
-            <span className="w-9 h-9 rounded-xl bg-primary text-primary-foreground grid place-items-center font-display font-extrabold">P</span>
-            <span className="leading-none">
-              <span className="block font-display font-extrabold text-lg">PREM</span>
-              <span className="block label-mono text-muted-foreground mt-1">Technology Inc.</span>
+          <Link to="/" className="inline-flex" aria-label="PREM Technology Inc. home">
+            <span className="bg-white rounded-2xl px-5 py-3 flex items-center">
+              <Image src={LOGO_URL} alt="PREM Technology Inc. — Structural Engineers" fittingType="fit" className="h-12 w-[170px]" />
             </span>
           </Link>
           <p className="mt-4 text-muted-foreground max-w-xs">Structural engineering, temporary works, transmission structures and heavy civil infrastructure.</p>
