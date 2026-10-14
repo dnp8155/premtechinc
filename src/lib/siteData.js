@@ -4,7 +4,10 @@ export const LOGO_ICON_URL = "https://media.base44.com/images/public/6ace762a9e4
 
 export const GURU_EYES_URL = "https://media.base44.com/images/public/6ace762a9e43500297e7e4f9/9cb683c39_WiseEyesofanElderlyMan.png";
 
-// Paste the eyes-closing video URL here; it plays on hover over the Blessings image.
+// Poster shown before hover; set this to the new image URL when ready (falls back to GURU_EYES_URL).
+export const GURU_EYES_POSTER_URL = "";
+
+// Hover video for the Blessings section.
 export const GURU_EYES_VIDEO_URL = "https://media.base44.com/videos/public/6ace762a9e43500297e7e4f9/c23117e96_VideoProject1.mp4";
 
 export const IMG = {
