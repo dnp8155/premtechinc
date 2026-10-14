@@ -3,7 +3,7 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
 import { Image } from "@/components/ui/image";
 import { NAV_MENU } from "@/lib/navData";
-import { IMG, LOGO_URL } from "@/lib/siteData";
+import { IMG, LOGO_ICON_URL } from "@/lib/siteData";
 
 function DesktopItem({ item }) {
   const [open, setOpen] = useState(false);
@@ -49,8 +49,8 @@ export default function SiteHeader() {
     <header className="fixed top-2 sm:top-4 left-0 right-0 z-50 px-2 sm:px-4">
       <div className="mx-auto max-w-[1440px] rounded-full border hairline bg-black/50 backdrop-blur-xl pl-3 pr-2 sm:px-6 h-16 sm:h-[72px] flex items-center justify-between gap-2">
         <Link to="/" className="flex items-center" aria-label="PREM Technology Inc. home">
-          <span className="bg-white rounded-full px-4 py-1.5 flex items-center">
-            <Image src={LOGO_URL} alt="PREM Technology Inc. — Structural Engineers" fittingType="fit" className="h-9 sm:h-10 w-[120px] sm:w-[140px]" />
+          <span className="bg-white rounded-full w-11 h-11 sm:w-12 sm:h-12 grid place-items-center">
+            <Image src={LOGO_ICON_URL} alt="PREM Technology Inc." fittingType="fit" className="h-7 w-7 sm:h-8 sm:w-8" />
           </span>
         </Link>
         <nav className="hidden lg:flex items-center gap-5 xl:gap-8">
