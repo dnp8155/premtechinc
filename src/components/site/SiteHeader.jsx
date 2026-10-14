@@ -49,9 +49,7 @@ export default function SiteHeader() {
     <header className="fixed top-2 sm:top-4 left-0 right-0 z-50 px-2 sm:px-4">
       <div className="mx-auto max-w-[1440px] rounded-full border hairline bg-black/50 backdrop-blur-xl pl-3 pr-2 sm:px-6 h-16 sm:h-[72px] flex items-center justify-between gap-2">
         <Link to="/" className="flex items-center" aria-label="PREM Technology Inc. home">
-          <span className="bg-white rounded-full w-11 h-11 sm:w-12 sm:h-12 grid place-items-center">
-            <Image src={LOGO_ICON_URL} alt="PREM Technology Inc." fittingType="fit" className="h-7 w-7 sm:h-8 sm:w-8" />
-          </span>
+          <Image src={LOGO_ICON_URL} alt="PREM Technology Inc." fittingType="fit" className="h-12 w-11 sm:h-14 sm:w-[52px] rounded-lg bg-white p-1 [mix-blend-mode:normal]" />
         </Link>
         <nav className="hidden lg:flex items-center gap-5 xl:gap-8">
           {NAV_MENU.map((n) => <DesktopItem key={n.label} item={n} />)}
