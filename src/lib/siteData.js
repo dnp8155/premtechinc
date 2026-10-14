@@ -2,6 +2,8 @@ export const LOGO_URL = "https://media.base44.com/images/public/6ace762a9e435002
 
 export const LOGO_ICON_URL = "https://media.base44.com/images/public/6ace762a9e43500297e7e4f9/63ef67fd2_p.png";
 
+export const GURU_EYES_URL = "https://media.base44.com/images/public/6ace762a9e43500297e7e4f9/c442e3a01_image.png";
+
 export const IMG = {
   hero: "https://media.base44.com/images/public/6ace762a9e43500297e7e4f9/75c67953e_generated_image.png",
   glass: "https://media.base44.com/images/public/6ace762a9e43500297e7e4f9/02bf4b69c_generated_image.png",

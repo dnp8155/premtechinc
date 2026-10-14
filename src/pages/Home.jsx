@@ -8,6 +8,7 @@ import Technology from "@/components/arcvolt/Technology";
 import Process from "@/components/arcvolt/Process";
 import Insights from "@/components/arcvolt/Insights";
 import CtaBand from "@/components/site/CtaBand";
+import Blessings from "@/components/arcvolt/Blessings";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <Technology />
       <Process />
       <Insights />
+      <Blessings />
       <div className="pt-24">
         <CtaBand title="Discuss your project." text="Send us your drawings, specifications or brief. An engineering team member will respond directly." button="Discuss Your Project" />
       </div>
