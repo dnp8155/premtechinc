@@ -1,15 +1,14 @@
 import React from "react";
-import { Image } from "@/components/ui/image";
-import { GURU_EYES_URL } from "@/lib/siteData";
+import gurujiEyesImg from "@/assets/guruji-eyes.png";
 
 export default function EyesHover() {
   return (
-    <div className="relative mx-auto w-full max-w-[640px] aspect-[2/1] rounded-3xl overflow-hidden border hairline shadow-2xl [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-      <Image
-        src={GURU_EYES_URL}
-        alt="Wise eyes of an elderly man"
-        fittingType="fill"
-        className="absolute inset-0 w-full h-full object-cover"
+    <div className="relative mx-auto w-full max-w-[760px] aspect-[1153/331] rounded-2xl sm:rounded-3xl overflow-hidden border hairline shadow-2xl [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)] bg-card/40">
+      <img
+        src={gurujiEyesImg}
+        alt="Built with the blessings of our Guruji"
+        className="w-full h-full object-cover object-center block"
+        loading="lazy"
       />
     </div>
   );
