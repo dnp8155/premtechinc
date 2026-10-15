@@ -24,10 +24,10 @@ export default function About() {
         aside={{ label: "Operating in", value: "Canada & USA", sub: "North America" }}
       />
 
-      <section className="bg-[#eef2f7] text-[#0c1420] py-14 sm:py-20 lg:py-24">
+      <section className="bg-[#e5effb] text-[#0c1420] py-14 sm:py-20 lg:py-24">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-10 grid lg:grid-cols-2 gap-14">
           <Reveal>
-            <span className="label-mono text-[#0a63d1]">Practice overview</span>
+            <span className="label-mono text-[#1565d8]">Practice overview</span>
             <h2 className="mt-4 font-display font-extrabold tracking-[-0.04em] leading-[0.98] text-3xl sm:text-4xl lg:text-5xl">
               Complex work, <span className="text-transparent [-webkit-text-stroke:1px_#0c142080]">engineered clearly.</span>
             </h2>
