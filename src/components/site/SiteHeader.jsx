@@ -3,16 +3,22 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
 import { Image } from "@/components/ui/image";
 import { NAV_MENU } from "@/lib/navData";
-import { IMG, LOGO_ICON_URL } from "@/lib/siteData";
+import { LOGO_ICON_URL } from "@/lib/siteData";
 import useHideOnScroll from "@/hooks/use-scroll-direction";
 
 function DesktopItem({ item }) {
   const [open, setOpen] = useState(false);
+  const [hoveredIdx, setHoveredIdx] = useState(null);
   const { pathname } = useLocation();
   const active = item.to === "/" ? pathname === "/" : pathname.startsWith(item.to) || item.children?.some((c) => pathname.startsWith(c.to));
 
+  const hoveredChild = hoveredIdx !== null ? item.children[hoveredIdx] : null;
+  const displayImg = hoveredChild ? hoveredChild.img : item.defaultImg;
+  const displayLabel = hoveredChild ? hoveredChild.caption : item.defaultLabel;
+  const displayHeading = hoveredChild ? hoveredChild.label : item.blurb;
+
   return (
-    <div className="relative" onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
+    <div className="relative" onMouseEnter={() => setOpen(true)} onMouseLeave={() => { setOpen(false); setHoveredIdx(null); }}>
       <Link to={item.to} className={`flex items-center gap-1.5 py-2 text-sm font-semibold border-b-2 transition-colors ${active || open ? "text-primary border-primary" : "text-slate-900 border-transparent"}`}>
         {item.label}
         {item.children && <ChevronDown className={`w-3.5 h-3.5 transition-transform ${open ? "rotate-180" : ""}`} />}
@@ -21,17 +27,17 @@ function DesktopItem({ item }) {
         <div className="absolute left-1/2 -translate-x-1/2 top-full pt-6 z-50">
           <div className="w-[640px] rounded-3xl border border-black/10 bg-white text-slate-900 p-3 grid grid-cols-2 gap-3 shadow-2xl">
             <div className="relative rounded-2xl overflow-hidden min-h-[240px]">
-              <Image src={IMG.glass} alt="" className="absolute inset-0 w-full h-full" />
+              <Image src={displayImg} alt={displayHeading || ""} className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent" />
               <div className="absolute bottom-0 p-5">
-                <span className="label-mono text-primary">Inside PREM</span>
-                <p className="font-display font-bold text-2xl leading-tight mt-2 text-white">{item.blurb}</p>
+                <span className="label-mono text-primary">{displayLabel}</span>
+                <p className="font-display font-bold text-2xl leading-tight mt-2 text-white">{displayHeading}</p>
               </div>
             </div>
             <ul className="py-1">
-              {item.children.map((c) => (
+              {item.children.map((c, i) => (
                 <li key={c.label}>
-                  <Link to={c.to} onClick={() => setOpen(false)} className="flex items-center justify-between py-3.5 px-3 border-b border-black/10 last:border-0 text-sm font-medium hover:text-primary transition-colors">
+                  <Link to={c.to} onMouseEnter={() => setHoveredIdx(i)} onClick={() => setOpen(false)} className={`flex items-center justify-between py-3.5 px-3 border-b border-black/10 last:border-0 text-sm font-medium hover:text-primary transition-colors ${hoveredIdx === i ? "text-primary" : ""}`}>
                     {c.label} <ArrowUpRight className="w-4 h-4" />
                   </Link>
                 </li>
