@@ -2,7 +2,7 @@ export const LOGO_URL = "https://media.base44.com/images/public/6ace762a9e435002
 
 export const LOGO_ICON_URL = "https://media.base44.com/images/public/6ace762a9e43500297e7e4f9/63ef67fd2_p.png";
 
-export const GURU_EYES_URL = "https://media.base44.com/images/public/6ace762a9e43500297e7e4f9/2d8d6c54f_WiseEyesofanElderlyMan.png";
+export const GURU_EYES_URL = "https://media.base44.com/images/public/6ace762a9e43500297e7e4f9/8ab21355b_WiseEyesofanElderlyMan.png";
 
 // Poster shown before hover; set this to the new image URL when ready (falls back to GURU_EYES_URL).
 export const GURU_EYES_POSTER_URL = "";
