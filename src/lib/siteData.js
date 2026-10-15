@@ -52,22 +52,26 @@ export const CORE_EXPERTISE = [
 ];
 
 export const SPECIALIZATIONS = [
-  "Residential, Commercial & Parking Garages",
-  "Heavy Civil Infrastructure",
-  "Overpasses & Bridges",
-  "LRT / Metro Tunnels",
-  "Wastewater & Water Treatment Plants",
+  { label: "Residential, Commercial & Parking Garages", img: "https://images.unsplash.com/photo-1619335680796-54f13b88c6ba?auto=format&fit=crop&w=1600&q=80" },
+  { label: "Heavy Civil Infrastructure", img: "https://images.unsplash.com/photo-1603465410243-af3e840367dd?auto=format&fit=crop&w=1600&q=80" },
+  { label: "Overpasses & Bridges", img: "https://images.unsplash.com/photo-1759849556089-b5789046530b?auto=format&fit=crop&w=1600&q=80" },
+  { label: "LRT / Metro Tunnels", img: "https://images.unsplash.com/photo-1560306843-cb7d19202801?auto=format&fit=crop&w=1600&q=80" },
+  { label: "Wastewater & Water Treatment Plants", img: "https://images.unsplash.com/photo-1533163238111-4a7ced54f2e4?auto=format&fit=crop&w=1600&q=80" },
 ];
 
 export const TECH_SERVICES = [
-  "Restoration, Refurbishment & Reshoring",
-  "Mechanical & Structural Engineering Drawings",
-  "Site Inspection & Structural Diagnostics",
-  "Material Testing & Certified Reports",
-  "Project Planning & Management",
+  { label: "Restoration, Refurbishment & Reshoring", img: "https://images.unsplash.com/photo-1768677903496-becc4be07258?auto=format&fit=crop&w=1600&q=80" },
+  { label: "Mechanical & Structural Engineering Drawings", img: "https://images.unsplash.com/photo-1721244654394-36a7bc2da288?auto=format&fit=crop&w=1600&q=80" },
+  { label: "Site Inspection & Structural Diagnostics", img: "https://images.unsplash.com/photo-1772442198624-4fc4d7281e89?auto=format&fit=crop&w=1600&q=80" },
+  { label: "Material Testing & Certified Reports", img: "https://images.unsplash.com/photo-1508450859948-4e04fabaa4ea?auto=format&fit=crop&w=1600&q=80" },
+  { label: "Project Planning & Management", img: "https://images.unsplash.com/photo-1626885930974-4b69aa21bbf9?auto=format&fit=crop&w=1600&q=80" },
 ];
 
-export const CORE_AREAS = ["Transmission & Power Structures", "Temporary & Construction Works", "Heavy Civil Infrastructure"];
+export const CORE_AREAS = [
+  { label: "Transmission & Power Structures", img: "https://images.unsplash.com/photo-1606901900840-f3dba75bcd47?auto=format&fit=crop&w=1600&q=80" },
+  { label: "Temporary & Construction Works", img: "https://images.unsplash.com/photo-1587582423116-ec07293f0395?auto=format&fit=crop&w=1600&q=80" },
+  { label: "Heavy Civil Infrastructure", img: "https://images.unsplash.com/photo-1603465410243-af3e840367dd?auto=format&fit=crop&w=1600&q=80" },
+];
 
 export const WHY_TAGS = ["Transmission", "Temporary Works", "Heavy Civil", "Bridges"];
 
