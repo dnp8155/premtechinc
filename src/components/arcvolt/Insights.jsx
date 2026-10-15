@@ -11,7 +11,7 @@ export default function Insights() {
         <div className="flex items-end justify-between gap-6 mb-14">
           <Reveal>
             <span className="label-mono text-primary">Technical insights</span>
-            <h2 className="display-title text-4xl min-[400px]:text-5xl sm:text-7xl lg:text-8xl break-words mt-4">
+            <h2 className="display-title text-3xl sm:text-4xl lg:text-5xl break-words mt-4">
               Ideas that <span className="text-primary">move projects.</span>
             </h2>
           </Reveal>
@@ -25,7 +25,7 @@ export default function Insights() {
               <Link to="/insights" className="group grid sm:grid-cols-[160px_1fr_auto] gap-4 sm:gap-8 items-center py-8 border-b hairline hover:px-4 hover:bg-white/[0.03] transition-all duration-500">
                 <span className="label-mono text-muted-foreground">Article {a.n}</span>
                 <div>
-                  <h3 className="font-display font-bold text-2xl sm:text-3xl group-hover:text-primary transition-colors">{a.title}</h3>
+                  <h3 className="font-display font-bold text-xl sm:text-2xl group-hover:text-primary transition-colors">{a.title}</h3>
                   <span className="label-mono text-muted-foreground mt-2 block">{a.cat} · {a.read}</span>
                 </div>
                 <span className="w-12 h-12 rounded-full border hairline grid place-items-center group-hover:bg-primary group-hover:text-primary-foreground transition">

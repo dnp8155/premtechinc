@@ -11,13 +11,13 @@ export const GURU_EYES_POSTER_URL = "";
 export const GURU_EYES_VIDEO_URL = "https://media.base44.com/videos/public/6ace762a9e43500297e7e4f9/884b53e53_VideoProject41.mp4";
 
 export const IMG = {
-  hero: "https://media.base44.com/images/public/6ace762a9e43500297e7e4f9/75c67953e_generated_image.png",
-  glass: "https://media.base44.com/images/public/6ace762a9e43500297e7e4f9/02bf4b69c_generated_image.png",
-  concrete: "https://media.base44.com/images/public/6ace762a9e43500297e7e4f9/ee4785b57_generated_image.png",
-  steel: "https://media.base44.com/images/public/6ace762a9e43500297e7e4f9/9ce400d89_generated_image.png",
-  facade: "https://media.base44.com/images/public/6ace762a9e43500297e7e4f9/05dd401f6_generated_image.png",
-  atrium: "https://media.base44.com/images/public/6ace762a9e43500297e7e4f9/d7320b660_generated_image.png",
-  team: "https://media.base44.com/images/public/6ace762a9e43500297e7e4f9/9f7536d44_generated_image.png",
+  hero: "https://images.unsplash.com/photo-1603465410243-af3e840367dd?auto=format&fit=crop&w=1920&q=80",
+  glass: "https://images.unsplash.com/photo-1523477593243-78bbf626fd3b?auto=format&fit=crop&w=1920&q=80",
+  concrete: "https://images.unsplash.com/photo-1508450859948-4e04fabaa4ea?auto=format&fit=crop&w=1920&q=80",
+  steel: "https://images.unsplash.com/photo-1587582423116-ec07293f0395?auto=format&fit=crop&w=1920&q=80",
+  facade: "https://images.unsplash.com/photo-1490351267196-b7a67e26e41b?auto=format&fit=crop&w=1920&q=80",
+  atrium: "https://images.unsplash.com/photo-1621831337128-35676ca30868?auto=format&fit=crop&w=1920&q=80",
+  team: "https://images.unsplash.com/photo-1768926968986-a88590ce5025?auto=format&fit=crop&w=1920&q=80",
 };
 
 export const CONTACT = {
@@ -30,10 +30,10 @@ export const CONTACT = {
 export const COORDS = "45.4215° N, 75.6972° W";
 
 export const HERO_SLIDES = [
-  { n: "01", label: "Transmission", img: IMG.steel },
+  { n: "01", label: "Transmission", img: "https://images.unsplash.com/photo-1606901900840-f3dba75bcd47?auto=format&fit=crop&w=1920&q=80" },
   { n: "02", label: "Temporary Works", img: IMG.concrete },
   { n: "03", label: "Heavy Civil", img: IMG.hero },
-  { n: "04", label: "Bridges", img: IMG.glass },
+  { n: "04", label: "Bridges", img: "https://images.unsplash.com/photo-1759849556089-b5789046530b?auto=format&fit=crop&w=1920&q=80" },
 ];
 
 export const MARQUEE = ["Structural Engineering", "Temporary Works", "Transmission Structures", "Heavy Civil", "Canada & USA"];
@@ -46,8 +46,8 @@ export const SERVICES = [
 ];
 
 export const CORE_EXPERTISE = [
-  { img: IMG.steel, meta: "Core expertise / 01", title: "Transmission", tag: "High-voltage", coord: "45.4215° N, 75.6972° W", to: "/expertise", text: "Tower and lattice structure engineering, loading review, conductor arms, foundation interfaces, and structural documentation for high-voltage power lines.", tall: true },
-  { img: IMG.concrete, meta: "Core expertise / 02", title: "Temporary Works", tag: "Live sequence", coord: "45.4215° N, 75.6972° W", to: "/expertise", text: "Shoring, formwork, falsework, scaffolding, and excavation support engineered around the live construction sequence." },
+  { img: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1920&q=80", meta: "Core expertise / 01", title: "Transmission", tag: "High-voltage", coord: "45.4215° N, 75.6972° W", to: "/expertise", text: "Tower and lattice structure engineering, loading review, conductor arms, foundation interfaces, and structural documentation for high-voltage power lines.", tall: true },
+  { img: "https://images.unsplash.com/photo-1587582423116-ec07293f0395?auto=format&fit=crop&w=1920&q=80", meta: "Core expertise / 02", title: "Temporary Works", tag: "Live sequence", coord: "45.4215° N, 75.6972° W", to: "/expertise", text: "Shoring, formwork, falsework, scaffolding, and excavation support engineered around the live construction sequence." },
   { img: IMG.hero, meta: "Core expertise / 03", title: "Heavy Civil", tag: "LRT · Water", coord: "45.4215° N, 75.6972° W", to: "/expertise", text: "LRT, transit viaducts, underground stations, shafts, highway overpasses, and water treatment structural systems." },
 ];
 

@@ -9,7 +9,7 @@ export default function EyesHover() {
         src={GURU_EYES_URL}
         alt="Wise eyes of an elderly man"
         fittingType="fill"
-        className="absolute inset-0 w-full h-full"
+        className="absolute inset-0 w-full h-full object-cover"
       />
     </div>
   );

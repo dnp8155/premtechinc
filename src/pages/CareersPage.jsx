@@ -28,7 +28,7 @@ export default function CareersPage() {
             <Reveal key={d} delay={i * 0.05} y={20}>
               <Link to="/contact" className="group grid grid-cols-[60px_1fr_auto] gap-3 sm:gap-6 items-center py-7 border-b hairline hover:px-4 hover:bg-white/[0.03] transition-all duration-500">
                 <span className="label-mono text-muted-foreground">0{i + 1}</span>
-                <h3 className="font-display font-bold text-2xl group-hover:text-primary transition-colors">{d}</h3>
+                <h3 className="font-display font-bold text-xl group-hover:text-primary transition-colors">{d}</h3>
                 <span className="w-11 h-11 rounded-full border hairline grid place-items-center group-hover:bg-primary group-hover:text-primary-foreground transition"><ArrowUpRight className="w-5 h-5" /></span>
               </Link>
             </Reveal>

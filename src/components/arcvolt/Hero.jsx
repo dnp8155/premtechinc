@@ -42,7 +42,7 @@ export default function Hero() {
           <span className="text-foreground/40">/</span>
           {COORDS}
         </div>
-        <h1 className="display-title text-[clamp(2.8rem,8.5vw,8rem)]">
+        <h1 className="display-title text-[clamp(2rem,5vw,4rem)]">
           <span className="block overflow-hidden"><motion.span className="block" {...line(0.2)}>Engineering for</motion.span></span>
           <span className="block overflow-hidden"><motion.span className="block" {...line(0.35)}><span className="text-primary">Complex</span> infrastructure.</motion.span></span>
         </h1>
@@ -64,7 +64,7 @@ export default function Hero() {
         <div className="mt-10 sm:mt-14 grid grid-cols-2 lg:grid-cols-4 border-t hairline">
           {HERO_SLIDES.map((s, k) => (
             <button key={s.n} onClick={() => setI(k)} className={`flex items-center gap-2 sm:gap-4 py-4 sm:py-6 px-3 sm:px-6 border-r hairline last:border-r-0 [&:nth-child(2)]:border-r-0 lg:[&:nth-child(2)]:border-r [&:nth-child(-n+2)]:border-b lg:[&:nth-child(-n+2)]:border-b-0 text-left transition-colors ${k === i ? "text-primary" : "text-foreground/60 hover:text-foreground"}`}>
-              <span className="font-display font-extrabold text-2xl sm:text-4xl tracking-tight">{s.n}</span>
+              <span className="font-display font-extrabold text-xl sm:text-2xl tracking-tight">{s.n}</span>
               <span className="label-mono leading-snug">{s.label}</span>
             </button>
           ))}

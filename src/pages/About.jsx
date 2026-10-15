@@ -28,12 +28,12 @@ export default function About() {
         <div className="max-w-[1440px] mx-auto px-6 sm:px-10 grid lg:grid-cols-2 gap-14">
           <Reveal>
             <span className="label-mono text-[#0a63d1]">Practice overview</span>
-            <h2 className="mt-4 font-display font-extrabold tracking-[-0.04em] leading-[0.98] text-4xl sm:text-6xl lg:text-7xl">
+            <h2 className="mt-4 font-display font-extrabold tracking-[-0.04em] leading-[0.98] text-3xl sm:text-4xl lg:text-5xl">
               Complex work, <span className="text-transparent [-webkit-text-stroke:1px_#0c142080]">engineered clearly.</span>
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="font-display font-semibold text-2xl leading-snug">
+            <p className="font-display font-semibold text-lg leading-snug">
               Specialized structural engineering where technical precision, constructability and reliability matter.
             </p>
             <p className="mt-5 text-[#3a4757] leading-relaxed">

@@ -5,8 +5,8 @@ import { Image } from "@/components/ui/image";
 
 export default function PageHero({ kicker, crumb, title, accent, text, img, aside }) {
   return (
-    <section className="relative overflow-hidden pt-32 sm:pt-44 pb-10 sm:pb-16 min-h-[420px] sm:min-h-[520px] flex items-end">
-      {img && <Image src={img} alt="" className="absolute inset-0 w-full h-full" />}
+    <section className="relative overflow-hidden pt-32 sm:pt-40 pb-10 sm:pb-14 min-h-[360px] sm:min-h-[440px] flex items-end">
+      {img && <Image src={img} alt="" className="absolute inset-0 w-full h-full object-cover" />}
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/80" />
       <div className="relative max-w-[1440px] mx-auto w-full px-6 sm:px-10">
         <div className="label-mono text-muted-foreground mb-8">
@@ -22,7 +22,7 @@ export default function PageHero({ kicker, crumb, title, accent, text, img, asid
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-              className="font-display font-extrabold tracking-[-0.04em] leading-[0.95] text-4xl min-[400px]:text-5xl sm:text-7xl lg:text-8xl break-words"
+              className="font-display font-extrabold tracking-[-0.04em] leading-[0.95] text-3xl sm:text-4xl lg:text-5xl break-words"
             >
               {title} {accent && <span className="text-primary">{accent}</span>}
             </motion.h1>

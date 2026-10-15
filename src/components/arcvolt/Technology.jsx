@@ -22,7 +22,7 @@ export default function Technology() {
           <div>
             <Reveal>
               <span className="label-mono text-primary">Why Prem</span>
-              <h2 className="display-title text-4xl min-[400px]:text-5xl sm:text-7xl lg:text-8xl break-words mt-4">
+              <h2 className="display-title text-3xl sm:text-4xl lg:text-5xl break-words mt-4">
                 Precision where <span className="text-primary">it counts.</span>
               </h2>
               <p className="mt-8 max-w-lg text-muted-foreground text-lg leading-relaxed">
@@ -36,7 +36,7 @@ export default function Technology() {
           </div>
           <Reveal>
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden">
-              <Image src={IMG.facade} alt="Structural steel and concrete" className="w-full h-full" />
+              <Image src={IMG.facade} alt="Structural steel and concrete" className="w-full h-full object-cover" />
               <div className="absolute bottom-5 left-5 right-5 flex flex-wrap gap-2">
                 {WHY_TAGS.map((t) => (
                   <span key={t} className="label-mono bg-black/60 backdrop-blur px-3 py-2 rounded-full">{t}</span>

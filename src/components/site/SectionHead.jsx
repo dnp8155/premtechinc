@@ -9,7 +9,7 @@ export default function SectionHead({ kicker, title, outline, text }) {
           <span className="w-8 h-px bg-primary" />
           <span className="label-mono text-primary">{kicker}</span>
         </div>
-        <h2 className="font-display font-extrabold tracking-[-0.04em] leading-[0.98] text-4xl sm:text-6xl lg:text-7xl max-w-3xl">
+        <h2 className="font-display font-extrabold tracking-[-0.04em] leading-[0.98] text-3xl sm:text-4xl lg:text-5xl max-w-3xl">
           {title}{" "}
           {outline && <span className="text-transparent [-webkit-text-stroke:1px_hsl(var(--foreground)/0.5)]">{outline}</span>}
         </h2>

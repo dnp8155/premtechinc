@@ -26,7 +26,7 @@ export default function ServicesPage() {
             <Reveal key={s.n} delay={(i % 2) * 0.07} y={20}>
               <div className="h-full rounded-[2rem] bg-white/60 border border-black/10 p-7 sm:p-9">
                 <span className="label-mono text-[#0a63d1]">Service group {s.n}</span>
-                <h3 className="mt-4 font-display font-extrabold text-3xl tracking-tight">{s.title}</h3>
+                <h3 className="mt-4 font-display font-extrabold text-2xl tracking-tight">{s.title}</h3>
                 <dl className="mt-8 border-t border-black/10">
                   {ROWS.map(([label, key]) => (
                     <div key={key} className="grid sm:grid-cols-[130px_1fr] gap-1 sm:gap-4 py-4 border-b border-black/10">

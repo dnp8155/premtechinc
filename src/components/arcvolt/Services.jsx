@@ -11,7 +11,7 @@ export default function Services() {
         <div className="lg:col-span-5 lg:sticky lg:top-32 self-start">
           <Reveal>
             <span className="label-mono text-primary">What we do</span>
-            <h2 className="display-title text-4xl min-[400px]:text-5xl sm:text-7xl lg:text-8xl break-words mt-4">
+            <h2 className="display-title text-3xl sm:text-4xl lg:text-5xl break-words mt-4">
               Four focus <span className="text-primary">areas.</span>
             </h2>
             <p className="mt-8 max-w-md text-muted-foreground text-lg leading-relaxed">

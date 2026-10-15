@@ -8,7 +8,7 @@ export default function Process() {
       <div className="lg:col-span-5 lg:sticky lg:top-32 self-start">
         <Reveal>
           <span className="label-mono text-primary">Our approach</span>
-          <h2 className="display-title text-4xl min-[400px]:text-5xl sm:text-7xl lg:text-8xl break-words mt-4">
+          <h2 className="display-title text-3xl sm:text-4xl lg:text-5xl break-words mt-4">
             Five steps to <span className="text-primary">buildable.</span>
           </h2>
           <p className="mt-8 max-w-md text-muted-foreground text-lg leading-relaxed">
@@ -21,8 +21,8 @@ export default function Process() {
           <Reveal key={s.n} delay={0.05}>
             <div className="group rounded-3xl border hairline p-8 sm:p-10 hover:border-primary hover:bg-white/[0.02] transition-all duration-500">
               <span className="label-mono text-primary">{s.n}</span>
-              <h3 className="mt-4 font-display font-extrabold text-2xl sm:text-4xl lg:text-5xl tracking-tight">{s.title}</h3>
-              <p className="mt-4 text-muted-foreground text-lg max-w-xl leading-relaxed">{s.text}</p>
+              <h3 className="mt-4 font-display font-extrabold text-xl sm:text-2xl lg:text-3xl tracking-tight">{s.title}</h3>
+              <p className="mt-4 text-muted-foreground text-base max-w-xl leading-relaxed">{s.text}</p>
             </div>
           </Reveal>
         ))}

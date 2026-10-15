@@ -27,7 +27,7 @@ export default function ContactPage() {
         <div className="max-w-[1440px] mx-auto px-6 sm:px-10 grid lg:grid-cols-2 gap-14">
           <Reveal>
             <span className="label-mono text-[#0a63d1]">Project enquiry</span>
-            <h2 className="mt-4 font-display font-extrabold tracking-[-0.04em] leading-[0.98] text-4xl sm:text-5xl lg:text-6xl">What are you building?</h2>
+            <h2 className="mt-4 font-display font-extrabold tracking-[-0.04em] leading-[0.98] text-2xl sm:text-3xl lg:text-4xl">What are you building?</h2>
             <p className="mt-6 text-[#3a4757] max-w-md">Use the form for new projects, technical reviews or early-stage engineering conversations.</p>
             <div className="mt-10 border-t border-black/15">
               <a href={CONTACT.phoneHref} className={rowCls}>
@@ -64,7 +64,7 @@ export default function ContactPage() {
             <Reveal key={s.n} delay={i * 0.08} y={20}>
               <div className="rounded-[2rem] border hairline bg-card p-8 h-full hover:border-primary transition-colors">
                 <span className="label-mono text-primary">{s.n}</span>
-                <h3 className="mt-10 font-display font-extrabold text-3xl">{s.title}</h3>
+                <h3 className="mt-10 font-display font-extrabold text-2xl">{s.title}</h3>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{s.text}</p>
               </div>
             </Reveal>

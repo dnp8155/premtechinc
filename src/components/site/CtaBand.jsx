@@ -14,7 +14,7 @@ export default function CtaBand({ title = "Have a complex structure to engineer?
               <span className="w-8 h-px bg-primary" />
               <span className="label-mono text-primary">Start with the brief</span>
             </div>
-            <h2 className="font-display font-extrabold tracking-[-0.03em] leading-[1] text-3xl sm:text-5xl lg:text-6xl max-w-3xl">{title}</h2>
+            <h2 className="font-display font-extrabold tracking-[-0.03em] leading-[1] text-2xl sm:text-3xl lg:text-4xl max-w-3xl">{title}</h2>
             <p className="mt-5 max-w-lg text-muted-foreground text-lg">{text}</p>
             <Link to="/contact" className="mt-8 inline-flex items-center gap-3 rounded-full bg-primary text-primary-foreground px-7 h-14 font-semibold hover:brightness-110 transition">
               {button} <ArrowRight className="w-4 h-4" />

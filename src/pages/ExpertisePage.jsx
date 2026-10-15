@@ -38,7 +38,7 @@ export default function ExpertisePage() {
         <div className="max-w-[1440px] mx-auto px-6 sm:px-10 grid lg:grid-cols-2 gap-14">
           <Reveal>
             <span className="label-mono text-[#0a63d1]">Core engineering deliverables</span>
-            <h2 className="mt-4 font-display font-extrabold tracking-[-0.04em] leading-[0.98] text-4xl sm:text-5xl lg:text-6xl">What we put in your hands.</h2>
+            <h2 className="mt-4 font-display font-extrabold tracking-[-0.04em] leading-[0.98] text-2xl sm:text-3xl lg:text-4xl">What we put in your hands.</h2>
           </Reveal>
           <Reveal delay={0.1}>
             <div className="flex flex-wrap gap-3">

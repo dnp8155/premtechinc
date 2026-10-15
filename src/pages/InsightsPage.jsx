@@ -26,7 +26,7 @@ export default function InsightsPage() {
                 <span className="text-primary">{a.n} / {a.cat}</span>
                 <span className="text-muted-foreground">{a.read}</span>
               </div>
-              <h3 className="mt-8 font-display font-extrabold text-2xl sm:text-3xl leading-tight tracking-tight">{a.title}</h3>
+              <h3 className="mt-8 font-display font-extrabold text-xl sm:text-2xl leading-tight tracking-tight">{a.title}</h3>
               <p className="mt-4 text-muted-foreground leading-relaxed">{a.summary}</p>
               <div className="mt-6 pt-5 border-t hairline mt-auto">
                 <span className="label-mono text-primary">Key takeaway</span>
