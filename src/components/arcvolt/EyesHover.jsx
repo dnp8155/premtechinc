@@ -1,5 +1,5 @@
 import React from "react";
-import gurujiEyesImg from "@/assets/guruji-eyes.png";
+import gurujiEyesImg from "@/assets/guruji-eyes.jpg";
 
 export default function EyesHover() {
   return (
@@ -8,7 +8,8 @@ export default function EyesHover() {
         src={gurujiEyesImg}
         alt="Built with the blessings of our Guruji"
         className="w-full h-full object-cover object-center block"
-        loading="lazy"
+        loading="eager"
+        decoding="async"
       />
     </div>
   );
