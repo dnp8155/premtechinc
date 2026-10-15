@@ -1,43 +1,14 @@
-import React, { useRef } from "react";
-import { GURU_EYES_VIDEO_URL } from "@/lib/siteData";
+import React from "react";
+import { Image } from "@/components/ui/image";
+import { GURU_EYES_URL } from "@/lib/siteData";
 
 export default function EyesHover() {
-  const videoRef = useRef(null);
-  const playRef = useRef(null);
-
-  const start = () => {
-    const v = videoRef.current;
-    if (!v) return;
-    v.currentTime = 0;
-    playRef.current = v.play();
-    playRef.current?.catch(() => {});
-  };
-
-  const stop = () => {
-    const v = videoRef.current;
-    if (!v) return;
-    const reset = () => {
-      v.pause();
-      v.currentTime = 0;
-    };
-    if (playRef.current) playRef.current.then(reset, reset);
-    else reset();
-  };
-
   return (
-    <div
-      onMouseEnter={start}
-      onMouseLeave={stop}
-      onTouchStart={start}
-      onTouchEnd={stop}
-      className="relative mx-auto w-full max-w-[640px] rounded-3xl overflow-hidden border hairline shadow-2xl [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]"
-    >
-      <video
-        ref={videoRef}
-        src={`${GURU_EYES_VIDEO_URL}#t=0.001`}
-        muted
-        playsInline
-        preload="auto"
+    <div className="relative mx-auto w-full max-w-[640px] rounded-3xl overflow-hidden border hairline shadow-2xl [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+      <Image
+        src={GURU_EYES_URL}
+        alt="Wise eyes of an elderly man"
+        fittingType="fill"
         className="w-full h-auto block"
       />
     </div>
