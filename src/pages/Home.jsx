@@ -5,6 +5,7 @@ import Manifesto from "@/components/arcvolt/Manifesto";
 import Services from "@/components/arcvolt/Services";
 import Projects from "@/components/arcvolt/Projects";
 import Technology from "@/components/arcvolt/Technology";
+import WaterTreatmentShowcase from "@/components/arcvolt/WaterTreatmentShowcase";
 import Process from "@/components/arcvolt/Process";
 import Insights from "@/components/arcvolt/Insights";
 import CtaBand from "@/components/site/CtaBand";
@@ -18,6 +19,7 @@ export default function Home() {
       <Manifesto />
       <Services />
       <Projects />
+      <WaterTreatmentShowcase />
       <Technology />
       <Process />
       <Insights />
