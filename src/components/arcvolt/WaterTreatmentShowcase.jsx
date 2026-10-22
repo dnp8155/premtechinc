@@ -112,12 +112,12 @@ export default function WaterTreatmentShowcase() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-card/20 to-transparent" />
                 
-                {/* Clean engineering badges */}
-                <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
-                  <span className="label-mono bg-background/90 backdrop-blur border hairline px-2.5 py-1 rounded-md text-[11px] text-foreground">
+                {/* Top badges - High Contrast & Clearly Visible */}
+                <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-10">
+                  <span className="label-mono bg-black/85 backdrop-blur-md border border-white/20 px-3 py-1 rounded-md text-[11px] font-semibold text-white tracking-wider shadow-md">
                     {p.n}
                   </span>
-                  <span className="label-mono bg-background/90 backdrop-blur border hairline px-2.5 py-1 rounded-md text-[11px] text-primary">
+                  <span className="label-mono bg-black/85 backdrop-blur-md border border-white/25 px-3 py-1 rounded-md text-[11px] font-semibold text-white tracking-wider shadow-md">
                     {p.standard}
                   </span>
                 </div>
