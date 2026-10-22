@@ -4,72 +4,72 @@ import { ArrowUpRight, ShieldCheck, Droplets, ArrowRight } from "lucide-react";
 import Reveal from "./Reveal";
 import { Image } from "@/components/ui/image";
 
-// Real, verified industrial water & wastewater facility images
+// 100% Real-world municipal & industrial water / wastewater treatment plant photos
 const WATER_PROJECTS = [
   {
     id: "wtp-01",
-    title: "Biological Aeration & Clarifier Basins",
-    category: "Secondary Treatment · WWTP",
-    code: "ACI 350-20 Liquid Retaining",
-    capacity: "45 MGD Design Flow",
-    specs: "Monolithic crack-controlled RC walls, waterstop seals, deep tieback excavation.",
-    img: "https://images.unsplash.com/photo-1533163238111-4a7ced54f2e4?auto=format&fit=crop&w=1200&q=80",
-    tags: ["Mass Concrete", "Crack Width z≤115", "Deep Shoring"],
+    title: "Secondary Aeration & Clarifier Basins",
+    category: "Wastewater Treatment Facility (WWTP)",
+    code: "ACI 350-20 Liquid-Retaining",
+    capacity: "45 MGD Processing Capacity",
+    specs: "Monolithic liquid-retaining concrete basins, waterstop construction joints, deep tieback shoring wall.",
+    img: "https://images.unsplash.com/photo-1533163238111-4a7ced54f2e4?auto=format&fit=crop&w=1400&q=80",
+    tags: ["Aeration Basins", "ACI 350 Liquid Retaining", "Mass Concrete"],
   },
   {
     id: "wtp-02",
-    title: "Raw Water Intake & Wet Well Vaults",
-    category: "Pumping Stations · WTP",
-    code: "AWWA D100 / USACE",
-    capacity: "Submersible High-Lift Pumps",
-    specs: "Secant pile cutoff wall, hydrostatic uplift anchors, heavy diaphragm pump vault.",
-    img: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1200&q=80",
-    tags: ["High Water Table", "Buoyancy Control", "Hydrostatic Head"],
+    title: "Municipal Wastewater Treatment Infrastructure",
+    category: "Full-Scale Municipal WWTP Facility",
+    code: "EPA Clean Water / Ten States",
+    capacity: "Klärwerk Regional System",
+    specs: "Complete multi-stage treatment infrastructure: clarifiers, digestion basins, pumping vaults, and biological units.",
+    img: "https://images.unsplash.com/photo-1622322977781-76f2247964b7?auto=format&fit=crop&w=1400&q=80",
+    tags: ["Sedimentation Tanks", "Biological Treatment", "Regional Scale"],
   },
   {
     id: "wtp-03",
-    title: "Circular Clarifiers & Flocculation Tanks",
-    category: "Sedimentation Systems · WTP/WWTP",
-    code: "ACI 350.1 / ASCE 7",
-    capacity: "140 ft Diameter Units",
-    specs: "Radial post-tensioned base slab, mechanical torque-cage support, perimeter effluent launder.",
-    img: "https://images.unsplash.com/photo-1541888946425-d0fbb186c5f7?auto=format&fit=crop&w=1200&q=80",
-    tags: ["Circular PT Slabs", "Launder Channels", "Torque Loads"],
+    title: "Regional Water Filtration & Treatment Works",
+    category: "Potable Water Facility (WTP)",
+    code: "AWWA D100 / State EPA",
+    capacity: "Multi-MGD Potable Output",
+    specs: "Flocculation chambers, rapid sand filtration beds, raw intake channels, and clearwell storage reservoir.",
+    img: "https://images.unsplash.com/photo-1669003152899-a11941e54f5d?auto=format&fit=crop&w=1400&q=80",
+    tags: ["Rapid Sand Filters", "Clearwell Vaults", "Intake Channels"],
   },
   {
     id: "wtp-04",
-    title: "UV Disinfection & Contact Channels",
-    category: "Tertiary Purification",
-    code: "Ten States Standards",
-    capacity: "Closed & Open-Channel UV",
-    specs: "Severe hydraulic chemical resistance, ozone contact chambers, baffle flow baffles.",
-    img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80",
-    tags: ["Chemical Resistance", "Baffle Walls", "Hydraulic Head"],
+    title: "Circular Clarifiers & Sedimentation Tanks",
+    category: "Liquid-Solid Separation · WTP/WWTP",
+    code: "ACI 350.1 / ASCE 7",
+    capacity: "140 ft Diameter Clarifiers",
+    specs: "Radial post-tensioned circular concrete slabs, central sludge hopper, perimeter effluent launder trough.",
+    img: "https://images.unsplash.com/photo-1579492450119-80542d516179?auto=format&fit=crop&w=1400&q=80",
+    tags: ["Circular Clarifiers", "Post-Tensioned Slabs", "Launder Troughs"],
   },
   {
     id: "wtp-05",
-    title: "Anaerobic Digesters & Biosolids Vaults",
-    category: "Sludge Management · WWTP",
-    code: "ACI 350.2 Gas-Tight",
-    capacity: "Fixed & Floating Covers",
-    specs: "Gas-tight prestressed concrete dome, biogas containment, thermal insulation jacket.",
-    img: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1200&q=80",
-    tags: ["Gas Tightness", "Prestressed Walls", "Corrosion Barrier"],
+    title: "Intake Pumping Station & Wet Well Vaults",
+    category: "Deep Hydraulic Pumping Infrastructure",
+    code: "USACE / OSHA Subpart P",
+    capacity: "High-Lift Submersible Station",
+    specs: "Secant cutoff walls, deep internal waler bracing, high-water-table buoyancy uplift anchor engineering.",
+    img: "https://images.unsplash.com/photo-1603465410243-af3e840367dd?auto=format&fit=crop&w=1400&q=80",
+    tags: ["Deep Wet Wells", "Intake Shoring", "Buoyancy Control"],
   },
   {
     id: "wtp-06",
-    title: "Chemical Feed & Rapid Mix Chambers",
-    category: "Chemical Conditioning",
-    code: "OSHA & EPA Compliant",
-    capacity: "Coagulant / Polymer Basins",
-    specs: "Secondary containment basins, epoxy-coated rebar, acid/alkali barrier lining design.",
-    img: "https://images.unsplash.com/photo-1603465410243-af3e840367dd?auto=format&fit=crop&w=1200&q=80",
-    tags: ["Secondary Containment", "Chemical Barriers", "Precision Grouting"],
+    title: "Heavy Civil Excavation & Basin Formwork",
+    category: "Constructability & Site Sequencing",
+    code: "ACI 347 / ACI 207",
+    capacity: "Monolithic Concrete Placements",
+    specs: "Heavy lateral fluid formwork pressures, thermal mass temperature monitoring, watertight pour sequences.",
+    img: "https://images.unsplash.com/photo-1508450859948-4e04fabaa4ea?auto=format&fit=crop&w=1400&q=80",
+    tags: ["Formwork Pressures", "Thermal Crack Control", "Heavy Civil"],
   },
 ];
 
 export default function WaterTreatmentShowcase() {
-  // Duplicate for smooth infinite looping
+  // Duplicate for smooth seamless looping
   const carouselItems = [...WATER_PROJECTS, ...WATER_PROJECTS];
 
   return (
@@ -84,7 +84,7 @@ export default function WaterTreatmentShowcase() {
           <Reveal>
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-mono uppercase tracking-wider mb-4">
               <Droplets className="w-3.5 h-3.5 text-primary animate-pulse" />
-              US Infrastructure Portfolio · WTP & WWTP
+              US Water & Wastewater Infrastructure · Real-World Facilities
             </div>
             <h2 className="display-title text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white max-w-2xl">
               Water & Wastewater <span className="text-primary">Treatment Plants.</span>
@@ -94,10 +94,10 @@ export default function WaterTreatmentShowcase() {
           <Reveal delay={0.1}>
             <div className="max-w-md">
               <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
-                Continuous engineering showcase of liquid-retaining tanks, deep wet wells, clarifiers, and environmental concrete structures engineered to US standards (ACI 350 / AWWA / Ten States).
+                Live portfolio of real municipal wastewater treatment facilities, clarifier basins, potable filtration plants, and liquid-retaining civil structures engineered to US codes (ACI 350 / AWWA / Ten States).
               </p>
               <div className="mt-3 flex items-center gap-2 text-xs font-mono text-primary">
-                <span>Hover over any card to pause scroll</span>
+                <span>Hover over any project card to pause auto-scroll</span>
                 <span className="w-1.5 h-1.5 rounded-full bg-primary animate-ping" />
               </div>
             </div>
@@ -115,14 +115,14 @@ export default function WaterTreatmentShowcase() {
           {carouselItems.map((p, idx) => (
             <div
               key={`${p.id}-${idx}`}
-              className="w-[340px] sm:w-[420px] shrink-0 rounded-2xl border border-slate-800 bg-slate-900/90 overflow-hidden hover:border-primary/80 transition-all duration-300 group flex flex-col shadow-2xl hover:shadow-primary/10"
+              className="w-[360px] sm:w-[440px] shrink-0 rounded-2xl border border-slate-800 bg-slate-900/90 overflow-hidden hover:border-primary/80 transition-all duration-300 group flex flex-col shadow-2xl hover:shadow-primary/10"
             >
               {/* Image banner with overlay */}
-              <div className="relative h-56 sm:h-64 overflow-hidden bg-slate-950">
+              <div className="relative h-60 sm:h-72 overflow-hidden bg-slate-950">
                 <Image
                   src={p.img}
                   alt={p.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter brightness-[0.8] contrast-[1.05]"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter brightness-[0.82] contrast-[1.05]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent" />
 
