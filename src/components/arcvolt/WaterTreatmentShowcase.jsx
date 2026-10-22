@@ -122,8 +122,8 @@ export default function WaterTreatmentShowcase() {
                   </span>
                 </div>
 
-                <div className="absolute bottom-3 left-4">
-                  <span className="label-mono text-[10px] text-primary">
+                <div className="absolute bottom-3 left-4 z-10">
+                  <span className="label-mono text-[11px] font-semibold text-white uppercase tracking-wider bg-black/85 backdrop-blur-md px-2.5 py-1 rounded border border-white/20 shadow-md">
                     {p.category}
                   </span>
                 </div>
@@ -132,16 +132,16 @@ export default function WaterTreatmentShowcase() {
               {/* Text content */}
               <div className="p-6 flex-1 flex flex-col justify-between">
                 <div>
-                  <h3 className="font-display font-bold text-xl sm:text-2xl text-foreground group-hover:text-primary transition-colors">
+                  <h3 className="font-display font-bold text-xl sm:text-2xl text-white group-hover:text-primary transition-colors">
                     {p.title}
                   </h3>
-                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+                  <p className="mt-3 text-sm text-slate-300 leading-relaxed">
                     {p.summary}
                   </p>
                 </div>
 
                 <div className="mt-6 pt-4 border-t hairline">
-                  <div className="label-mono text-[11px] text-muted-foreground">
+                  <div className="label-mono text-[11px] text-slate-400">
                     {p.scope}
                   </div>
                 </div>
