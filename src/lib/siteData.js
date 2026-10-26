@@ -101,17 +101,17 @@ export const CORE_EXPERTISE = [
 ];
 
 export const SPECIALIZATIONS = [
-  { label: "Deep Excavation Shoring & Retaining Walls", img: "/real-images/temporary-works-construction.jpg" },
-  { label: "Bridge Overhang Brackets & Deck Formwork", img: "/brackets/aluminum-bridge-overhang-bracket-bba96.jpg" },
+  { label: "Deep Excavation Shoring & Retaining Walls", img: "/real-images/substructure-deep-shoring.png" },
+  { label: "Bridge Overhang Brackets & Deck Formwork", img: "/real-images/bridge-overhang-bracket-deck-formwork.png" },
   { label: "Municipal Water & Wastewater Concrete (ACI 350)", img: "https://images.unsplash.com/photo-1533163238111-4a7ced54f2e4?auto=format&fit=crop&w=1600&q=80" },
-  { label: "LRT Corridors, Guideways & Tunnels", img: "https://images.unsplash.com/photo-1560306843-cb7d19202801?auto=format&fit=crop&w=1600&q=80" },
-  { label: "Commercial Basements & Multi-level Parking", img: "https://images.unsplash.com/photo-1619335680796-54f13b88c6ba?auto=format&fit=crop&w=1600&q=80" },
+  { label: "LRT Corridors, Guideways & Tunnels", img: "/real-images/lrt-corridors-guideways-tunnels.jpg" },
+  { label: "Commercial Basements & Multi-level Parking", img: "/real-images/commercial-basements-parking.png" },
 ];
 
 export const TECH_SERVICES = [
-  { label: "Structural PE Stamping & Peer Review", img: "https://images.unsplash.com/photo-1721244654394-36a7bc2da288?auto=format&fit=crop&w=1600&q=80" },
-  { label: "Field Inspection & Non-Destructive Testing", img: "https://images.unsplash.com/photo-1772442198624-4fc4d7281e89?auto=format&fit=crop&w=1600&q=80" },
-  { label: "Tower Load Calculations & Broken-Wire Analysis", img: "https://images.unsplash.com/photo-1606901900840-f3dba75bcd47?auto=format&fit=crop&w=1600&q=80" },
+  { label: "Structural PE Stamping & Peer Review", img: "/real-images/structural-pe-stamping-review.png" },
+  { label: "Field Inspection & Non-Destructive Testing", img: "/real-images/field-inspection-ndt-testing.png" },
+  { label: "Tower Load Calculations & Broken-Wire Analysis", img: "/real-images/high-voltage-power-lines.png" },
   { label: "Reshoring & Multi-pour Thermal Control", img: "/brackets/steel-bridge-overhang-bracket-deep-bbs54l.jpg" },
   { label: "Constructability & Crane Rigging Staging", img: "https://images.unsplash.com/photo-1626885930974-4b69aa21bbf9?auto=format&fit=crop&w=1600&q=80" },
 ];
