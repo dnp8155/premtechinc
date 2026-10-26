@@ -28,8 +28,6 @@ export const NAV_MENU = [
       { label: "Technical Review", to: "/expertise", img: "https://images.unsplash.com/photo-1772442198624-4fc4d7281e89?auto=format&fit=crop&w=1600&q=80", caption: "Independent design review" },
     ],
   },
-  { label: "Bridge Brackets", to: "/#bridge-brackets" },
-  { label: "Procurement", to: "/#material-procurement" },
   { label: "Projects", to: "/projects" },
   { label: "Insights", to: "/insights" },
   { label: "Careers", to: "/careers" },
