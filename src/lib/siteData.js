@@ -69,8 +69,8 @@ export const TECH_SERVICES = [
 
 export const CORE_AREAS = [
   { label: "Transmission & Power Structures", img: "https://images.unsplash.com/photo-1606901900840-f3dba75bcd47?auto=format&fit=crop&w=1600&q=80" },
-  { label: "Temporary & Construction Works", img: "/brackets/steel-bridge-overhang-bracket-bbs54.jpg" },
-  { label: "Bridge Overhang & Heavy Civil Infrastructure", img: "/brackets/burke-bridge-overhang-bracket-bbs47.jpg" },
+  { label: "Temporary & Construction Works", img: "/real-images/temporary-works-construction.jpg" },
+  { label: "Bridge Overhang & Heavy Civil Infrastructure", img: "/real-images/bridge-overhang-civil-infrastructure.jpg" },
 ];
 
 export const WHY_TAGS = ["Transmission", "Temporary Works", "Heavy Civil", "Bridges"];
