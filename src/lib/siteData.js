@@ -31,9 +31,9 @@ export const COORDS = "45.4215° N, 75.6972° W";
 
 export const HERO_SLIDES = [
   { n: "01", label: "Transmission", img: "https://images.unsplash.com/photo-1606901900840-f3dba75bcd47?auto=format&fit=crop&w=1920&q=80" },
-  { n: "02", label: "Temporary Works", img: "/brackets/steel-bridge-overhang-bracket-bbs54.jpg" },
+  { n: "02", label: "Temporary Works", img: "/real-images/temporary-works-hero.jpg" },
   { n: "03", label: "Heavy Civil", img: IMG.hero },
-  { n: "04", label: "Bridges", img: "/brackets/aluminum-bridge-overhang-bracket-bba96.jpg" },
+  { n: "04", label: "Bridges", img: "/real-images/bridge-deck-formwork-carriage.jpg" },
 ];
 
 export const MARQUEE = ["Structural Engineering", "Temporary Works", "Transmission Structures", "Heavy Civil", "Canada & USA"];
