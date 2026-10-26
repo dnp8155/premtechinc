@@ -31,9 +31,8 @@ export default function Hero() {
           transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
         />
       </AnimatePresence>
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-background/60" />
-      <div className="absolute inset-0 opacity-20 [background-image:linear-gradient(to_right,rgba(255,255,255,.15)_1px,transparent_1px)] [background-size:25%_100%]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(var(--primary)/0.18),transparent_55%)]" />
+      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-background/30" />
+      <div className="absolute inset-0 opacity-15 [background-image:linear-gradient(to_right,rgba(255,255,255,.08)_1px,transparent_1px)] [background-size:25%_100%]" />
 
       <div className="relative max-w-[1440px] mx-auto w-full px-5 sm:px-10 pt-32 sm:pt-40 pb-6 sm:pb-10">
         <div className="flex flex-wrap items-center gap-3 label-mono text-[10px] sm:text-[11px] text-foreground/90 mb-5 sm:mb-6">
