@@ -95,13 +95,13 @@ export const LEGAL = {
     { h: "Information we collect", p: "When you contact Prem Technology Inc., we collect the details you provide — your name, email, company, phone number, project location, project information and any files you attach." },
     { h: "How we use it", p: "Information is used only to review your enquiry, respond to you and, where there is mutual fit, scope the engineering work. We do not sell your information." },
     { h: "Storage of attachments", p: "Files attached to an enquiry are stored privately and are accessible only to the engineering team reviewing your project." },
-    { h: "Contact", p: "Questions about how your information is handled can be sent to premtechinc@yahoo.ca or 942-880-4032." },
+    { h: "Contact", p: "Questions about how your information is handled can be sent to info@pt.com (or transitional: premtechinc@yahoo.ca) or 942-880-4032." },
   ],
   terms: [
     { h: "Scope of engagement", p: "Engineering services are provided under a formal scope, deliverables, timeline and fee schedule agreed with the client for each project." },
     { h: "Technical disclaimers", p: "Information on this website is general in nature and is not engineering advice for any specific project. Engineering decisions rely on project-specific review by licensed engineering staff." },
     { h: "Intellectual property", p: "Calculations, drawings and technical documents prepared by Prem Technology Inc. remain protected intellectual property, and are issued for the project and purpose for which they were prepared." },
     { h: "Standard terms of service", p: "Standard engineering terms of service apply to all engagements and are confirmed in writing before work begins." },
-    { h: "Contact", p: "For questions about these terms, contact premtechinc@yahoo.ca or 942-880-4032." },
+    { h: "Contact", p: "For questions about these terms, contact info@pt.com (or transitional: premtechinc@yahoo.ca) or 942-880-4032." },
   ],
 };

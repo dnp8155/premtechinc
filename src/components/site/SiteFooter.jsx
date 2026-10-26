@@ -39,7 +39,10 @@ export default function SiteFooter() {
         <div>
           <h4 className="label-mono text-primary mb-4">Stay connected</h4>
           <ul className="space-y-2 break-words">
-            <li><a href={CONTACT.emailHref} className={`${linkCls} break-all`}>{CONTACT.email}</a></li>
+            <li><a href={CONTACT.emailHref} className={`${linkCls} break-all font-semibold text-foreground`}>{CONTACT.email}</a></li>
+            {CONTACT.legacyEmail && (
+              <li><span className="text-xs text-muted-foreground/80">Transitional: </span><a href={CONTACT.legacyEmailHref} className={`${linkCls} text-xs break-all`}>{CONTACT.legacyEmail}</a></li>
+            )}
             <li><a href={CONTACT.phoneHref} className={linkCls}>{CONTACT.phone}</a></li>
             <li><a href="https://www.linkedin.com" target="_blank" rel="noreferrer" className={linkCls}>LinkedIn</a></li>
             <li><a href="https://www.youtube.com" target="_blank" rel="noreferrer" className={linkCls}>YouTube</a></li>

@@ -23,8 +23,10 @@ export const IMG = {
 export const CONTACT = {
   phone: "942-880-4032",
   phoneHref: "tel:9428804032",
-  email: "premtechinc@yahoo.ca",
-  emailHref: "mailto:premtechinc@yahoo.ca",
+  email: "info@pt.com",
+  emailHref: "mailto:info@pt.com",
+  legacyEmail: "premtechinc@yahoo.ca",
+  legacyEmailHref: "mailto:premtechinc@yahoo.ca",
 };
 
 export const COORDS = "45.4215° N, 75.6972° W";
