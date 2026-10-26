@@ -39,8 +39,8 @@ export const FOOTER_NAV = [
   { label: "About", to: "/about" },
   { label: "Services", to: "/services" },
   { label: "Expertise", to: "/expertise" },
-  { label: "Bridge Brackets", to: "/#bridge-brackets" },
-  { label: "Material Procurement", to: "/#material-procurement" },
+  { label: "Bridge Brackets", to: "/bridge-brackets" },
+  { label: "Material Procurement", to: "/procurement" },
   { label: "Projects", to: "/projects" },
   { label: "Insights", to: "/insights" },
   { label: "Careers", to: "/careers" },
@@ -48,8 +48,8 @@ export const FOOTER_NAV = [
 ];
 
 export const FOOTER_SERVICES = [
-  { label: "Bridge Overhang Brackets", to: "/#bridge-brackets" },
-  { label: "Material Resourcing", to: "/#material-procurement" },
+  { label: "Bridge Overhang Brackets", to: "/bridge-brackets" },
+  { label: "Material Resourcing", to: "/procurement" },
   { label: "Transmission", to: "/expertise" },
   { label: "Temporary Works", to: "/expertise" },
   { label: "Heavy Civil", to: "/expertise" },

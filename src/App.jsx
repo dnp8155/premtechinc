@@ -17,6 +17,8 @@ import ProjectsPage from './pages/ProjectsPage';
 import ContactPage from './pages/ContactPage';
 import PrivacyPage from './pages/PrivacyPage';
 import TermsPage from './pages/TermsPage';
+import BridgeBracketsPage from './pages/BridgeBracketsPage';
+import ProcurementPage from './pages/ProcurementPage';
 // Add page imports here
 
 const AuthenticatedApp = () => {
@@ -53,6 +55,8 @@ const AuthenticatedApp = () => {
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/expertise" element={<ExpertisePage />} />
         <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/bridge-brackets" element={<BridgeBracketsPage />} />
+        <Route path="/procurement" element={<ProcurementPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/privacy" element={<PrivacyPage />} />
         <Route path="/terms" element={<TermsPage />} />
