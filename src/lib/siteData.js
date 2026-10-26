@@ -30,50 +30,99 @@ export const CONTACT = {
 export const COORDS = "45.4215° N, 75.6972° W";
 
 export const HERO_SLIDES = [
-  { n: "01", label: "Transmission", img: "https://images.unsplash.com/photo-1606901900840-f3dba75bcd47?auto=format&fit=crop&w=1920&q=80" },
-  { n: "02", label: "Temporary Works", img: "/real-images/temporary-works-hero.jpg" },
-  { n: "03", label: "Heavy Civil", img: IMG.hero },
-  { n: "04", label: "Bridges", img: "/real-images/bridge-deck-formwork-carriage.jpg" },
+  { n: "01", label: "Power & Grid Transmission", img: "https://images.unsplash.com/photo-1606901900840-f3dba75bcd47?auto=format&fit=crop&w=1920&q=80" },
+  { n: "02", label: "Temporary Works & Shoring", img: "/real-images/temporary-works-hero.jpg" },
+  { n: "03", label: "Heavy Civil & Metro Transit", img: IMG.hero },
+  { n: "04", label: "Bridge Deck Systems", img: "/real-images/bridge-deck-formwork-carriage.jpg" },
 ];
 
-export const MARQUEE = ["Structural Engineering", "Temporary Works", "Transmission Structures", "Heavy Civil", "Canada & USA"];
+export const MARQUEE = [
+  "Structural Engineering",
+  "Temporary Works & Shoring",
+  "Transmission & High-Voltage Grids",
+  "Bridge Deck & Overhang Systems",
+  "Water & Wastewater Infrastructure",
+  "LRT & Metro Underground",
+  "Licensed Across Canada & USA",
+];
 
 export const SERVICES = [
-  { n: "01", title: "Transmission & Power Structures", text: "Transmission towers, lattice structures, lattice girders, structural analysis, load calculations and certification support." },
-  { n: "02", title: "Temporary & Construction Structures", text: "Shoring, formwork, falsework, scaffolding, excavation support, temporary structures, construction engineering and site inspection." },
-  { n: "03", title: "Heavy Civil & Infrastructure", text: "LRT and metro structures, tunnels and underground works, bridges and overpasses, water and wastewater facilities." },
-  { n: "04", title: "Supporting Engineering Services", text: "Structural design support, engineering drawings, peer review and checking, site inspection and technical reporting." },
+  {
+    n: "01",
+    title: "Transmission & Substation Structures",
+    text: "Lattice towers, monopoles, substation gantries, conductor load calculations, wind/ice combination analysis and PE certification."
+  },
+  {
+    n: "02",
+    title: "Temporary Works & Shoring Engineering",
+    text: "Deep excavation support, secant pile walls, soldier pile & lagging, falsework, scaffolding, and live-sequence construction staging."
+  },
+  {
+    n: "03",
+    title: "Heavy Civil, LRT & Metro Transit",
+    text: "Viaduct structures, elevated guideways, transit station substructures, cut-and-cover shafts, and highway overpass rehabilitation."
+  },
+  {
+    n: "04",
+    title: "Water/Wastewater & Environmental Concrete",
+    text: "ACI 350-compliant sanitary structures, clarifiers, aeration basins, pump wet wells, waterstop joint layouts and flotation buoyancy design."
+  },
 ];
 
 export const CORE_EXPERTISE = [
-  { img: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1920&q=80", meta: "Core expertise / 01", title: "Transmission", tag: "High-voltage", coord: "45.4215° N, 75.6972° W", to: "/expertise", text: "Tower and lattice structure engineering, loading review, conductor arms, foundation interfaces, and structural documentation for high-voltage power lines.", tall: true },
-  { img: "/brackets/steel-bridge-overhang-bracket-bbs54.jpg", meta: "Core expertise / 02", title: "Temporary Works", tag: "Live sequence", coord: "45.4215° N, 75.6972° W", to: "/expertise", text: "Shoring, formwork, falsework, scaffolding, and excavation support engineered around the live construction sequence." },
-  { img: "/brackets/aluminum-bridge-overhang-bracket-bba96.jpg", meta: "Core expertise / 03", title: "Bridge & Civil Works", tag: "Overhang · Deck", coord: "45.4215° N, 75.6972° W", to: "/expertise", text: "Steel and aluminum bridge overhang bracket engineering, bridge deck erection staging, girder connections, and heavy transit structures." },
+  {
+    img: "https://images.unsplash.com/photo-1560306843-cb7d19202801?auto=format&fit=crop&w=1920&q=80",
+    meta: "Major Infrastructure / 01",
+    title: "Substructure & Deep Shoring",
+    tag: "Excavation · ERSS",
+    coord: "45.4215° N, 75.6972° W",
+    to: "/expertise",
+    text: "Engineered excavation support systems, multi-tiered tieback anchors, soldier piles, and live structural monitoring protecting adjacent utilities.",
+    tall: true
+  },
+  {
+    img: "/real-images/bridge-overhang-civil-infrastructure.jpg",
+    meta: "Transit & Highways / 02",
+    title: "Bridge Decks & Heavy Civil",
+    tag: "Girders · Overhang",
+    coord: "45.4215° N, 75.6972° W",
+    to: "/expertise",
+    text: "Steel and aluminum bridge overhang bracket engineering, composite deck carriage systems, and erection staging for highway spans."
+  },
+  {
+    img: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1920&q=80",
+    meta: "Energy Infrastructure / 03",
+    title: "High-Voltage Power Lines",
+    tag: "Towers · Lattice",
+    coord: "45.4215° N, 75.6972° W",
+    to: "/expertise",
+    text: "Complete structural analysis for 115kV to 500kV corridor lattice towers, conductor arm reinforcement, and foundation interface engineering."
+  },
 ];
 
 export const SPECIALIZATIONS = [
-  { label: "Residential, Commercial & Parking Garages", img: "https://images.unsplash.com/photo-1619335680796-54f13b88c6ba?auto=format&fit=crop&w=1600&q=80" },
-  { label: "Heavy Civil Infrastructure", img: "https://images.unsplash.com/photo-1603465410243-af3e840367dd?auto=format&fit=crop&w=1600&q=80" },
-  { label: "Overpasses & Bridge Overhang Brackets", img: "/brackets/aluminum-bridge-overhang-bracket-bba96.jpg" },
-  { label: "LRT / Metro Tunnels", img: "https://images.unsplash.com/photo-1560306843-cb7d19202801?auto=format&fit=crop&w=1600&q=80" },
-  { label: "Wastewater & Water Treatment Plants", img: "https://images.unsplash.com/photo-1533163238111-4a7ced54f2e4?auto=format&fit=crop&w=1600&q=80" },
+  { label: "Deep Excavation Shoring & Retaining Walls", img: "/real-images/temporary-works-construction.jpg" },
+  { label: "Bridge Overhang Brackets & Deck Formwork", img: "/brackets/aluminum-bridge-overhang-bracket-bba96.jpg" },
+  { label: "Municipal Water & Wastewater Concrete (ACI 350)", img: "https://images.unsplash.com/photo-1533163238111-4a7ced54f2e4?auto=format&fit=crop&w=1600&q=80" },
+  { label: "LRT Corridors, Guideways & Tunnels", img: "https://images.unsplash.com/photo-1560306843-cb7d19202801?auto=format&fit=crop&w=1600&q=80" },
+  { label: "Commercial Basements & Multi-level Parking", img: "https://images.unsplash.com/photo-1619335680796-54f13b88c6ba?auto=format&fit=crop&w=1600&q=80" },
 ];
 
 export const TECH_SERVICES = [
-  { label: "Restoration, Refurbishment & Reshoring", img: "/brackets/steel-bridge-overhang-bracket-deep-bbs54l.jpg" },
-  { label: "Mechanical & Structural Engineering Drawings", img: "https://images.unsplash.com/photo-1721244654394-36a7bc2da288?auto=format&fit=crop&w=1600&q=80" },
-  { label: "Site Inspection & Structural Diagnostics", img: "https://images.unsplash.com/photo-1772442198624-4fc4d7281e89?auto=format&fit=crop&w=1600&q=80" },
-  { label: "Bridge Overhang & Formwork Systems", img: "/brackets/steel-junior-bridge-overhang-bracket-bbs27.jpg" },
-  { label: "Project Planning & Management", img: "https://images.unsplash.com/photo-1626885930974-4b69aa21bbf9?auto=format&fit=crop&w=1600&q=80" },
+  { label: "Structural PE Stamping & Peer Review", img: "https://images.unsplash.com/photo-1721244654394-36a7bc2da288?auto=format&fit=crop&w=1600&q=80" },
+  { label: "Field Inspection & Non-Destructive Testing", img: "https://images.unsplash.com/photo-1772442198624-4fc4d7281e89?auto=format&fit=crop&w=1600&q=80" },
+  { label: "Tower Load Calculations & Broken-Wire Analysis", img: "https://images.unsplash.com/photo-1606901900840-f3dba75bcd47?auto=format&fit=crop&w=1600&q=80" },
+  { label: "Reshoring & Multi-pour Thermal Control", img: "/brackets/steel-bridge-overhang-bracket-deep-bbs54l.jpg" },
+  { label: "Constructability & Crane Rigging Staging", img: "https://images.unsplash.com/photo-1626885930974-4b69aa21bbf9?auto=format&fit=crop&w=1600&q=80" },
 ];
 
 export const CORE_AREAS = [
-  { label: "Transmission & Power Structures", img: "https://images.unsplash.com/photo-1606901900840-f3dba75bcd47?auto=format&fit=crop&w=1600&q=80" },
-  { label: "Temporary & Construction Works", img: "/real-images/temporary-works-construction.jpg" },
-  { label: "Bridge Overhang & Heavy Civil Infrastructure", img: "/real-images/bridge-overhang-civil-infrastructure.jpg" },
+  { label: "Deep Shoring & Foundation Systems", img: "/real-images/temporary-works-construction.jpg" },
+  { label: "Highways, Bridges & Viaducts", img: "/real-images/bridge-overhang-civil-infrastructure.jpg" },
+  { label: "Power Transmission Corridors", img: "https://images.unsplash.com/photo-1606901900840-f3dba75bcd47?auto=format&fit=crop&w=1600&q=80" },
 ];
 
-export const WHY_TAGS = ["Transmission", "Temporary Works", "Heavy Civil", "Bridges"];
+export const WHY_TAGS = ["Deep Shoring", "Bridge Decks", "Power Grid", "Water Facilities", "PE Certified"];
 
 export const STEPS = [
   { n: "01 / Understand", title: "Constraints & loads.", text: "We start with the project: the constraints, the loads, the geometry and the site conditions that define the engineering problem." },
