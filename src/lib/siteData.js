@@ -111,9 +111,9 @@ export const SPECIALIZATIONS = [
 export const TECH_SERVICES = [
   { label: "Structural PE Stamping & Peer Review", img: "/real-images/structural-pe-stamping-review.png" },
   { label: "Field Inspection & Non-Destructive Testing", img: "/real-images/field-inspection-ndt-testing.png" },
-  { label: "Tower Load Calculations & Broken-Wire Analysis", img: "/real-images/high-voltage-power-lines.png" },
-  { label: "Reshoring & Multi-pour Thermal Control", img: "/brackets/steel-bridge-overhang-bracket-deep-bbs54l.jpg" },
-  { label: "Constructability & Crane Rigging Staging", img: "https://images.unsplash.com/photo-1626885930974-4b69aa21bbf9?auto=format&fit=crop&w=1600&q=80" },
+  { label: "Tower Load Calculations & Broken-Wire Analysis", img: "/real-images/tower-load-broken-wire-analysis.png" },
+  { label: "Reshoring & Multi-pour Thermal Control", img: "/real-images/reshoring-thermal-concrete-pour.png" },
+  { label: "Constructability & Crane Rigging Staging", img: "/real-images/crane-rigging-staging-industrial.jpg" },
 ];
 
 export const CORE_AREAS = [
