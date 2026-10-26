@@ -71,7 +71,7 @@ export const SERVICES = [
 
 export const CORE_EXPERTISE = [
   {
-    img: "https://images.unsplash.com/photo-1560306843-cb7d19202801?auto=format&fit=crop&w=1920&q=80",
+    img: "/real-images/substructure-deep-shoring.png",
     meta: "Major Infrastructure / 01",
     title: "Substructure & Deep Shoring",
     tag: "Excavation · ERSS",
@@ -90,7 +90,7 @@ export const CORE_EXPERTISE = [
     text: "Steel and aluminum bridge overhang bracket engineering, composite deck carriage systems, and erection staging for highway spans."
   },
   {
-    img: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1920&q=80",
+    img: "/real-images/high-voltage-power-lines.png",
     meta: "Energy Infrastructure / 03",
     title: "High-Voltage Power Lines",
     tag: "Towers · Lattice",
