@@ -40,7 +40,7 @@ export default function Hero() {
         className="pointer-events-none absolute inset-0 z-[2] flex items-center justify-center overflow-hidden"
       >
         <div 
-          className="relative w-full max-w-[1100px] aspect-[1153/331] opacity-25 mix-blend-screen scale-110 sm:scale-125 filter blur-[0.4px] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]"
+          className="relative w-full max-w-[1100px] aspect-[1153/331] opacity-50 mix-blend-screen scale-110 sm:scale-125 filter blur-[0.4px] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]"
         >
           <img
             src={gurujiEyesImg}
