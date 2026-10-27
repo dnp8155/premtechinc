@@ -52,7 +52,7 @@ const EQUIPMENT_CATALOGUE = [
     category: "Bridge Deck Accessories",
     name: "Heavy-Duty Bridge Overhang Cantilever Brackets",
     classification: "Class A Heavy Civil",
-    img: "/brackets/steel-bridge-overhang-bracket-bbs54.jpg",
+    img: "/real-images/heavy-duty-bridge-overhang-cantilever-brackets.jfif",
     specs: "Capacity: 6,000 - 10,000 lbs SWL · 54\" to 96\" Chords · Sloped Web Knuckle",
     description: "Modular steel and lightweight aluminum triangular cantilever brackets engineered to support exterior bridge deck slab formwork, finishing screed rails, and exterior walkways.",
     applications: "Prestressed concrete I-girders, steel tub girders, deep plate girders, bridge widening projects.",
