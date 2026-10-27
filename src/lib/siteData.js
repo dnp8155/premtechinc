@@ -32,7 +32,7 @@ export const CONTACT = {
 export const COORDS = "45.4215° N, 75.6972° W";
 
 export const HERO_SLIDES = [
-  { n: "01", label: "Power & Grid Transmission", img: "https://images.unsplash.com/photo-1606901900840-f3dba75bcd47?auto=format&fit=crop&w=1920&q=80" },
+  { n: "01", label: "Power & Grid Transmission", img: "/real-images/power-transmission-grid.jfif" },
   { n: "02", label: "Temporary Works & Shoring", img: "/real-images/temporary-works-hero.jpg" },
   { n: "03", label: "Heavy Civil & Metro Transit", img: IMG.hero },
   { n: "04", label: "Bridge Deck Systems", img: "/real-images/bridge-deck-formwork-carriage.jpg" },
@@ -105,7 +105,7 @@ export const CORE_EXPERTISE = [
 export const SPECIALIZATIONS = [
   { label: "Deep Excavation Shoring & Retaining Walls", img: "/real-images/substructure-deep-shoring.png" },
   { label: "Bridge Overhang Brackets & Deck Formwork", img: "/real-images/bridge-overhang-bracket-deck-formwork.png" },
-  { label: "Municipal Water & Wastewater Concrete (ACI 350)", img: "https://images.unsplash.com/photo-1533163238111-4a7ced54f2e4?auto=format&fit=crop&w=1600&q=80" },
+  { label: "Municipal Water & Wastewater Concrete (ACI 350)", img: "/real-images/water-treatment-concrete-tanks.jfif" },
   { label: "LRT Corridors, Guideways & Tunnels", img: "/real-images/lrt-corridors-guideways-tunnels.jpg" },
   { label: "Commercial Basements & Multi-level Parking", img: "/real-images/commercial-basements-parking.png" },
 ];
@@ -121,7 +121,7 @@ export const TECH_SERVICES = [
 export const CORE_AREAS = [
   { label: "Deep Shoring & Foundation Systems", img: "/real-images/temporary-works-construction.jpg" },
   { label: "Highways, Bridges & Viaducts", img: "/real-images/bridge-overhang-civil-infrastructure.jpg" },
-  { label: "Power Transmission Corridors", img: "https://images.unsplash.com/photo-1606901900840-f3dba75bcd47?auto=format&fit=crop&w=1600&q=80" },
+  { label: "Power Transmission Corridors", img: "/real-images/power-transmission-grid.jfif" },
 ];
 
 export const WHY_TAGS = ["Deep Shoring", "Bridge Decks", "Power Grid", "Water Facilities", "PE Certified"];
