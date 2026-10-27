@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { HERO_SLIDES, COORDS } from "@/lib/siteData";
+import gurujiEyesImg from "@/assets/guruji-eyes.jpg";
 
 const line = (delay) => ({
   initial: { y: "110%" },
@@ -19,6 +20,7 @@ export default function Hero() {
 
   return (
     <section id="top" className="relative min-h-screen flex flex-col justify-end overflow-hidden">
+      {/* Background Hero Slides */}
       <AnimatePresence>
         <motion.img
           key={i}
@@ -31,10 +33,28 @@ export default function Hero() {
           transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
         />
       </AnimatePresence>
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-background/30" />
-      <div className="absolute inset-0 opacity-15 [background-image:linear-gradient(to_right,rgba(255,255,255,.08)_1px,transparent_1px)] [background-size:25%_100%]" />
 
-      <div className="relative max-w-[1440px] mx-auto w-full px-5 sm:px-10 pt-32 sm:pt-40 pb-6 sm:pb-10">
+      {/* Guruji's Watchful Eyes - Subtle Ambient Background Layer */}
+      <div 
+        aria-hidden="true" 
+        className="pointer-events-none absolute inset-0 z-[2] flex items-center justify-center overflow-hidden"
+      >
+        <div 
+          className="relative w-full max-w-[1100px] aspect-[1153/331] opacity-25 mix-blend-screen scale-110 sm:scale-125 filter blur-[0.4px] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]"
+        >
+          <img
+            src={gurujiEyesImg}
+            alt=""
+            className="w-full h-full object-cover object-center select-none"
+          />
+        </div>
+      </div>
+
+      {/* Dark vignette and subtle architectural grid overlays */}
+      <div className="absolute inset-0 z-[3] bg-gradient-to-t from-background via-background/70 to-background/40" />
+      <div className="absolute inset-0 z-[3] opacity-15 [background-image:linear-gradient(to_right,rgba(255,255,255,.08)_1px,transparent_1px)] [background-size:25%_100%]" />
+
+      <div className="relative z-[4] max-w-[1440px] mx-auto w-full px-5 sm:px-10 pt-32 sm:pt-40 pb-6 sm:pb-10">
         <div className="flex flex-wrap items-center gap-3 label-mono text-[10px] sm:text-[11px] text-foreground/90 mb-5 sm:mb-6">
           <span className="w-2.5 h-2.5 rounded-full bg-primary animate-pulse" />
           Structural Engineering
