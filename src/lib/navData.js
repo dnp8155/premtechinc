@@ -58,7 +58,7 @@ export const FOOTER_SERVICES = [
   { label: "Transmission", to: "/expertise" },
   { label: "Temporary Works", to: "/expertise" },
   { label: "Heavy Civil", to: "/expertise" },
-  { label: "Water / Wastewater", to: "/#water-treatment" },
+  { label: "Water / Wastewater", to: "/expertise" },
   { label: "Technical Review", to: "/expertise" },
   { label: "Construction Engineering", to: "/expertise" },
 ];
