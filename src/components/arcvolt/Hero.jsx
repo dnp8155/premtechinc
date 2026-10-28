@@ -30,7 +30,7 @@ export default function Hero() {
           fetchpriority={i === 0 ? "high" : "auto"}
           className="absolute inset-0 w-full h-full object-cover"
           initial={{ opacity: 0, scale: 1.12 }}
-          animate={{ opacity: 0.6, scale: 1 }}
+          animate={{ opacity: 0.85, scale: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
         />
@@ -52,8 +52,8 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Dark vignette and subtle architectural grid overlays */}
-      <div className="absolute inset-0 z-[3] bg-gradient-to-t from-background via-background/70 to-background/40" />
+      {/* Subtle vignette and architectural grid overlays allowing main images to shine through */}
+      <div className="absolute inset-0 z-[3] bg-gradient-to-t from-background via-background/50 to-background/25" />
       <div className="absolute inset-0 z-[3] opacity-15 [background-image:linear-gradient(to_right,rgba(255,255,255,.08)_1px,transparent_1px)] [background-size:25%_100%]" />
 
       <div className="relative z-[4] max-w-[1440px] mx-auto w-full px-5 sm:px-10 pt-32 sm:pt-40 pb-6 sm:pb-10">
