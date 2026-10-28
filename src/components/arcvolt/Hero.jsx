@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { HERO_SLIDES, COORDS } from "@/lib/siteData";
+import gurujiEyesImg from "@/assets/guruji-eyes.jpg";
 
 const line = (delay) => ({
   initial: { y: "110%" },
@@ -32,6 +33,22 @@ export default function Hero() {
           transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
         />
       </AnimatePresence>
+
+      {/* Guruji's Watchful Eyes - Balanced Ambient Background Layer (30% Opacity) */}
+      <div 
+        aria-hidden="true" 
+        className="pointer-events-none absolute inset-0 z-[2] flex items-center justify-center overflow-hidden"
+      >
+        <div 
+          className="relative w-full max-w-[1100px] aspect-[1153/331] opacity-30 mix-blend-screen scale-110 sm:scale-125 filter blur-[0.4px] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]"
+        >
+          <img
+            src={gurujiEyesImg}
+            alt=""
+            className="w-full h-full object-cover object-center select-none"
+          />
+        </div>
+      </div>
 
       {/* Dark vignette and subtle architectural grid overlays */}
       <div className="absolute inset-0 z-[3] bg-gradient-to-t from-background via-background/70 to-background/40" />
