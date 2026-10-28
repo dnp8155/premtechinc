@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowUpRight, Compass, Layers, Globe2, ShieldCheck } from "lucide-react";
+import SEO from "@/components/common/SEO";
 import PageHero from "@/components/site/PageHero";
 import SectionHead from "@/components/site/SectionHead";
 import CtaBand from "@/components/site/CtaBand";
@@ -14,6 +15,12 @@ const TAGS = ["Structural Engineering", "Temporary Works", "Transmission Structu
 export default function About() {
   return (
     <>
+      <SEO
+        title="About Prem Technology Inc. | Precision Structural Engineering Practice"
+        description="Learn about Prem Technology Inc. — a specialized structural engineering practice serving transmission, temporary works, and heavy civil construction across Canada and the USA."
+        keywords="about Prem Technology, structural engineering firm Canada, engineering practice USA, transmission structural engineers, temporary works specialists"
+        canonical="/about"
+      />
       <PageHero
         crumb="About"
         kicker="Company / Prem Technology Inc."

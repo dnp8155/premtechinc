@@ -1,5 +1,6 @@
 import React from "react";
 import { Mail, Phone, MapPin, ShieldCheck } from "lucide-react";
+import SEO from "@/components/common/SEO";
 import PageHero from "@/components/site/PageHero";
 import SectionHead from "@/components/site/SectionHead";
 import Reveal from "@/components/arcvolt/Reveal";
@@ -13,6 +14,12 @@ const iconCls = "w-10 h-10 rounded-full bg-black text-primary grid place-items-c
 export default function ContactPage() {
   return (
     <>
+      <SEO
+        title="Contact Engineering Team & Submit Inquiry | Prem Technology Inc."
+        description="Discuss your project with Prem Technology Inc. Send drawings, RFPs, or technical specifications for transmission structures, bridge overhang brackets, or temporary works."
+        keywords="contact structural engineer, project inquiry, engineering RFP Canada, bridge bracket quote, temporary works engineering consultation"
+        canonical="/contact"
+      />
       <PageHero
         crumb="Contact"
         kicker="Client intake / Contact"

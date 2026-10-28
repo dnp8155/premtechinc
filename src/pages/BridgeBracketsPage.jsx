@@ -1,14 +1,37 @@
 import React from "react";
+import SEO from "@/components/common/SEO";
 import PageHero from "@/components/site/PageHero";
 import CtaBand from "@/components/site/CtaBand";
 import BridgeBracketShowcase from "@/components/arcvolt/BridgeBracketShowcase";
 import Reveal from "@/components/arcvolt/Reveal";
-import { ShieldCheck, Ruler, CheckCircle2, FileText, ArrowUpRight } from "lucide-react";
-import { Link } from "react-router-dom";
 
 export default function BridgeBracketsPage() {
+  const bracketSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Bridge Deck Overhang Brackets & Cantilever Systems",
+    "description": "AASHTO-compliant steel and aluminum bridge deck overhang brackets engineered for composite steel plate girders, precast concrete bulb tees, and tub girders.",
+    "brand": {
+      "@type": "Brand",
+      "name": "Prem Technology Inc."
+    },
+    "category": "Heavy Civil & Bridge Temporary Works",
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    }
+  };
+
   return (
     <>
+      <SEO
+        title="Bridge Overhang Bracket Engineering & Cantilever Systems | Prem Technology Inc."
+        description="AASHTO-compliant steel & aluminum bridge deck overhang brackets engineered for composite steel plate girders, precast bulb tees, and tub girders. SWL up to 10,000 lbs."
+        keywords="bridge overhang brackets, bridge cantilever systems, temporary works engineering, bridge deck formwork, steel plate girder brackets, precast bulb tee brackets, AASHTO bridge brackets, heavy civil engineering"
+        canonical="/bridge-brackets"
+        schema={bracketSchema}
+      />
       <PageHero
         crumb="Bridge Brackets"
         kicker="Specialized Cantilever Systems"
@@ -35,23 +58,10 @@ export default function BridgeBracketsPage() {
             </p>
           </Reveal>
 
-          <div className="mt-12 grid md:grid-cols-3 gap-6">
+          <div className="mt-12 grid md:grid-cols-2 gap-6">
             <Reveal delay={0.05} y={20}>
               <div className="h-full rounded-[2rem] bg-white/70 border border-black/10 p-7 sm:p-9 shadow-sm">
                 <span className="label-mono text-[#1565d8]">Phase 01</span>
-                <h3 className="mt-3 font-display font-extrabold text-2xl">Girder Torsion & Web Stress</h3>
-                <p className="mt-4 text-sm text-[#3a4757] leading-relaxed">
-                  Deep concrete pours on exterior brackets exert eccentric horizontal forces on girder webs. We engineer transverse tie-struts, diagonal bottom flange blocks, and calculate web distortional stress to eliminate buckling risk.
-                </p>
-                <div className="mt-6 pt-4 border-t border-black/10 text-xs font-mono text-black/60">
-                  Ref: AASHTO LRFD / CSA S6 Bridge Code
-                </div>
-              </div>
-            </Reveal>
-
-            <Reveal delay={0.1} y={20}>
-              <div className="h-full rounded-[2rem] bg-white/70 border border-black/10 p-7 sm:p-9 shadow-sm">
-                <span className="label-mono text-[#1565d8]">Phase 02</span>
                 <h3 className="mt-3 font-display font-extrabold text-2xl">Dynamic Screed Wheel Loads</h3>
                 <p className="mt-4 text-sm text-[#3a4757] leading-relaxed">
                   Bridge deck finishing machines (screeds) ride on screed pipes mounted directly on the outer bracket ends. We calculate concentrated single-wheel and tandem bogie wheel load distributions across adjacent bracket spans.
@@ -62,9 +72,9 @@ export default function BridgeBracketsPage() {
               </div>
             </Reveal>
 
-            <Reveal delay={0.15} y={20}>
+            <Reveal delay={0.1} y={20}>
               <div className="h-full rounded-[2rem] bg-white/70 border border-black/10 p-7 sm:p-9 shadow-sm">
-                <span className="label-mono text-[#1565d8]">Phase 03</span>
+                <span className="label-mono text-[#1565d8]">Phase 02</span>
                 <h3 className="mt-3 font-display font-extrabold text-2xl">Certified PE Stamped Submittals</h3>
                 <p className="mt-4 text-sm text-[#3a4757] leading-relaxed">
                   We supply contractors with ready-to-submit DOT/MOT drawing packages including hanger tensile capacities, diagonal leg settings, guardrail OSHA compliance, and stripping sequencing procedures.

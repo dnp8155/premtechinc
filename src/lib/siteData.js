@@ -11,7 +11,7 @@ export const GURU_EYES_POSTER_URL = "";
 export const GURU_EYES_VIDEO_URL = "https://media.base44.com/videos/public/6ace762a9e43500297e7e4f9/884b53e53_VideoProject41.mp4";
 
 export const IMG = {
-  hero: "https://images.unsplash.com/photo-1603465410243-af3e840367dd?auto=format&fit=crop&w=1920&q=80",
+  hero: "/real-images/heavy-civil-metro-hero.jpg",
   glass: "https://images.unsplash.com/photo-1523477593243-78bbf626fd3b?auto=format&fit=crop&w=1920&q=80",
   concrete: "https://images.unsplash.com/photo-1508450859948-4e04fabaa4ea?auto=format&fit=crop&w=1920&q=80",
   steel: "https://images.unsplash.com/photo-1587582423116-ec07293f0395?auto=format&fit=crop&w=1920&q=80",

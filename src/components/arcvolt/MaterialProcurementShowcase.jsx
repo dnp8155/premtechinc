@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowUpRight, Shield, Check, Package, Wrench, Search, ChevronRight, HelpCircle } from "lucide-react";
+import { ArrowUpRight, Shield, Package, Wrench } from "lucide-react";
 import Reveal from "./Reveal";
 import { Image } from "@/components/ui/image";
 
@@ -39,11 +39,11 @@ const EQUIPMENT_CATALOGUE = [
   {
     id: "eq-03",
     category: "Shoring & Earth Retention",
-    name: "Aluminum, Steel & PERI Post Shores",
+    name: "Aluminum, Steel & Heavy Duty Post Shores",
     classification: "Heavy Telescopic Post Shores",
     img: "/real-images/aluminum-steel-post-shores.jfif",
     specs: "Working Load: 20 kN to 90 kN SWL · Extension: 1.5m to 6.25m · Quick-release drop heads",
-    description: "Heavy-duty telescopic steel and aluminum props (including PERI/Titan-compatible profiles) featuring self-cleaning threads, forged collar rings, and tripod stands.",
+    description: "Heavy-duty telescopic steel and aluminum props featuring self-cleaning threads, forged collar rings, and tripod stands.",
     applications: "Multi-story slab reshoring, drop-beam shoring, edge back-propping, industrial temporary structural support.",
     availability: "Available for sale and rental packages with certified load tables.",
   },

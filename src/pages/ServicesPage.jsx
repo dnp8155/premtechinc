@@ -1,4 +1,5 @@
 import React from "react";
+import SEO from "@/components/common/SEO";
 import PageHero from "@/components/site/PageHero";
 import CtaBand from "@/components/site/CtaBand";
 import Reveal from "@/components/arcvolt/Reveal";
@@ -10,6 +11,12 @@ const ROWS = [["Scope", "scope"], ["Applications", "applications"], ["Deliverabl
 export default function ServicesPage() {
   return (
     <>
+      <SEO
+        title="Structural Engineering Services | Transmission, Temporary Works & Heavy Civil"
+        description="Comprehensive structural engineering services including Transmission Structure Design, Temporary Works & Shoring, Heavy Civil Structures, and Material Procurement Engineering."
+        keywords="structural engineering services, transmission engineering, temporary works engineering, shoring design, falsework calculations, civil engineering Canada, heavy infrastructure engineering USA"
+        canonical="/services"
+      />
       <PageHero
         crumb="Services"
         kicker="Engineering services"

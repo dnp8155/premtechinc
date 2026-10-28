@@ -1,4 +1,5 @@
 import React from "react";
+import SEO from "@/components/common/SEO";
 import PageHero from "@/components/site/PageHero";
 import CtaBand from "@/components/site/CtaBand";
 import Reveal from "@/components/arcvolt/Reveal";
@@ -8,6 +9,12 @@ import { ARTICLES } from "@/lib/pagesData";
 export default function InsightsPage() {
   return (
     <>
+      <SEO
+        title="Technical Insights & Structural Engineering Whitepapers | Prem Technology Inc."
+        description="Technical articles, calculations, and case studies on temporary works, transmission line engineering, bridge deck overhang brackets, and heavy civil construction."
+        keywords="structural engineering insights, temporary works calculations, transmission line design articles, bridge overhang bracket whitepapers, heavy civil case studies"
+        canonical="/insights"
+      />
       <PageHero
         crumb="Insights"
         kicker="Technical insights"

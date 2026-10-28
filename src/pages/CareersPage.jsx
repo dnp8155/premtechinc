@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
+import SEO from "@/components/common/SEO";
 import PageHero from "@/components/site/PageHero";
 import SectionHead from "@/components/site/SectionHead";
 import CtaBand from "@/components/site/CtaBand";
@@ -11,6 +12,12 @@ import { DISCIPLINES, VALUES } from "@/lib/pagesData";
 export default function CareersPage() {
   return (
     <>
+      <SEO
+        title="Engineering Careers & Open Positions | Prem Technology Inc."
+        description="Explore structural engineering careers at Prem Technology Inc. Opportunities in transmission line engineering, temporary works design, and heavy civil construction."
+        keywords="structural engineering careers, civil engineer jobs Canada, transmission line engineer jobs, temporary works engineer careers, construction engineering hiring"
+        canonical="/careers"
+      />
       <PageHero
         crumb="Careers"
         kicker="Practice culture / Careers"

@@ -1,0 +1,23 @@
+{
+  "short_name": "Prem Tech",
+  "name": "Prem Technology Inc. - Structural Engineering",
+  "icons": [
+    {
+      "src": "https://media.base44.com/images/public/6ace762a9e43500297e7e4f9/00e06a3b0_PREMTechnologyStructuralBrandingGuide-Edited.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://media.base44.com/images/public/6ace762a9e43500297e7e4f9/00e06a3b0_PREMTechnologyStructuralBrandingGuide-Edited.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#0a0e14",
+  "theme_color": "#0a0e14",
+  "display": "standalone",
+  "orientation": "portrait"
+}

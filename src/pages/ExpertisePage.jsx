@@ -1,4 +1,5 @@
 import React from "react";
+import SEO from "@/components/common/SEO";
 import PageHero from "@/components/site/PageHero";
 import SectionHead from "@/components/site/SectionHead";
 import CtaBand from "@/components/site/CtaBand";
@@ -9,6 +10,12 @@ import { EXPERTISE, DELIVERABLES } from "@/lib/pagesData";
 export default function ExpertisePage() {
   return (
     <>
+      <SEO
+        title="Areas of Technical Expertise | Prem Technology Inc."
+        description="Explore Prem Technology's nine specialized practice areas: Transmission Towers, Bridge Brackets, Deep Shoring, Cofferdams, Heavy Rigging, LRT Structures, and Water Treatment Plants."
+        keywords="structural engineering practice areas, transmission line engineering, deep shoring design, cofferdam engineering, falsework and formwork, crane rigging plans, LRT transit structures"
+        canonical="/expertise"
+      />
       <PageHero
         crumb="Expertise"
         kicker="Technical expertise"

@@ -1,14 +1,19 @@
 import React from "react";
+import SEO from "@/components/common/SEO";
 import PageHero from "@/components/site/PageHero";
 import CtaBand from "@/components/site/CtaBand";
 import MaterialProcurementShowcase from "@/components/arcvolt/MaterialProcurementShowcase";
 import Reveal from "@/components/arcvolt/Reveal";
-import { ShieldCheck, Truck, Wrench, CheckCircle2, ArrowUpRight } from "lucide-react";
-import { Link } from "react-router-dom";
 
 export default function ProcurementPage() {
   return (
     <>
+      <SEO
+        title="Material Resourcing & Equipment Procurement | Prem Technology Inc."
+        description="Vendor-neutral procurement and logistics for heavy civil construction: shoring towers, modular formwork, bridge overhang brackets, and engineered rigging equipment."
+        keywords="heavy civil procurement, construction equipment sourcing, temporary works rental, shoring towers procurement, formwork sourcing, Canada US construction logistics"
+        canonical="/procurement"
+      />
       <PageHero
         crumb="Procurement"
         kicker="Material Resourcing & Equipment"

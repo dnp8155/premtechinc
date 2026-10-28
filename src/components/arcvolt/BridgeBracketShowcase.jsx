@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowUpRight, ShieldCheck, CheckCircle2, ChevronRight, Layers, Ruler, Gauge, FileText } from "lucide-react";
+import { ArrowUpRight, ShieldCheck, CheckCircle2, Gauge } from "lucide-react";
 import Reveal from "./Reveal";
 import { Image } from "@/components/ui/image";
 
@@ -233,24 +233,14 @@ export default function BridgeBracketShowcase() {
         </div>
 
         {/* Engineering Standards Strip */}
-        <div className="mt-10 grid sm:grid-cols-4 gap-4">
+        <div className="mt-10 grid sm:grid-cols-2 gap-4">
           <div className="rounded-2xl border hairline bg-card/40 p-5">
-            <span className="label-mono text-primary text-[10px] block">Standard 01</span>
-            <h4 className="font-display font-bold text-base mt-1">AASHTO / DOT Compliant</h4>
-            <p className="text-xs text-muted-foreground mt-2">Calculated in accordance with AASHTO bridge design specs and individual state/provincial DOT falsework manuals.</p>
-          </div>
-          <div className="rounded-2xl border hairline bg-card/40 p-5">
-            <span className="label-mono text-primary text-[10px] block">Standard 02</span>
-            <h4 className="font-display font-bold text-base mt-1">Girder Torsion Stability</h4>
-            <p className="text-xs text-muted-foreground mt-2">Torsional bracing review preventing lateral beam rotation under unbalanced wet concrete placement.</p>
-          </div>
-          <div className="rounded-2xl border hairline bg-card/40 p-5">
-            <span className="label-mono text-primary text-[10px] block">Standard 03</span>
+            <span className="label-mono text-primary text-[10px] block">Engineering Standard</span>
             <h4 className="font-display font-bold text-base mt-1">Screed Machine Loading</h4>
             <p className="text-xs text-muted-foreground mt-2">Dynamic wheel load distribution analysis for heavy bridge finishing machines and vibratory trusses.</p>
           </div>
           <div className="rounded-2xl border hairline bg-card/40 p-5">
-            <span className="label-mono text-primary text-[10px] block">Standard 04</span>
+            <span className="label-mono text-primary text-[10px] block">Engineering Standard</span>
             <h4 className="font-display font-bold text-base mt-1">PE Certification & Drawings</h4>
             <p className="text-xs text-muted-foreground mt-2">Stamped erection drawings and safe spacing charts issued across Canada and all 50 US States.</p>
           </div>

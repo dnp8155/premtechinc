@@ -6,7 +6,7 @@ import { Image } from "@/components/ui/image";
 export default function PageHero({ kicker, crumb, title, accent, text, img, aside }) {
   return (
     <section className="relative overflow-hidden pt-32 sm:pt-40 pb-10 sm:pb-14 min-h-[360px] sm:min-h-[440px] flex items-end">
-      {img && <Image src={img} alt="" className="absolute inset-0 w-full h-full object-cover" />}
+      {img && <Image src={img} alt={accent ? `${title} ${accent}` : (title || "Prem Technology Inc. Infrastructure")} className="absolute inset-0 w-full h-full object-cover" />}
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/80" />
       <div className="relative max-w-[1440px] mx-auto w-full px-6 sm:px-10">
         <div className="label-mono text-muted-foreground mb-8">

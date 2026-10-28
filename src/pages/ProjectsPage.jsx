@@ -1,4 +1,5 @@
 import React from "react";
+import SEO from "@/components/common/SEO";
 import PageHero from "@/components/site/PageHero";
 import CtaBand from "@/components/site/CtaBand";
 import Reveal from "@/components/arcvolt/Reveal";
@@ -10,6 +11,12 @@ const ROWS = [["Challenge", "challenge"], ["Scope", "scope"], ["Where it applies
 export default function ProjectsPage() {
   return (
     <>
+      <SEO
+        title="Engineering Projects & Applications Portfolio | Prem Technology Inc."
+        description="Review Prem Technology's structural engineering project portfolio spanning 500kV Transmission Crossings, LRT Elevated Guideways, Deep Urban Shoring, and Water Treatment Facilities."
+        keywords="structural engineering projects, transmission line crossings, LRT guideway engineering, deep excavation shoring, civil engineering portfolio, heavy infrastructure case studies"
+        canonical="/projects"
+      />
       <PageHero
         crumb="Projects"
         kicker="Projects & applications"

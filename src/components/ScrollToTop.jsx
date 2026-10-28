@@ -20,10 +20,24 @@ export default function ScrollToTop() {
 
     if (hash) {
       const id = getHashId(hash);
-      const timer = window.setTimeout(() => {
-        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-      }, 50);
-      return () => window.clearTimeout(timer);
+      const scrollToElement = () => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+          return true;
+        }
+        return false;
+      };
+
+      if (!scrollToElement()) {
+        const t1 = window.setTimeout(scrollToElement, 100);
+        const t2 = window.setTimeout(scrollToElement, 350);
+        return () => {
+          window.clearTimeout(t1);
+          window.clearTimeout(t2);
+        };
+      }
+      return;
     }
 
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
