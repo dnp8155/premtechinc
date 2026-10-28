@@ -26,6 +26,8 @@ export default function Hero() {
           key={i}
           src={HERO_SLIDES[i].img}
           alt={HERO_SLIDES[i].label}
+          loading={i === 0 ? "eager" : "lazy"}
+          fetchpriority={i === 0 ? "high" : "auto"}
           className="absolute inset-0 w-full h-full object-cover"
           initial={{ opacity: 0, scale: 1.12 }}
           animate={{ opacity: 0.6, scale: 1 }}

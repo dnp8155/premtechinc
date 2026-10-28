@@ -1,3 +1,4 @@
+import React, { Suspense, lazy } from 'react';
 import { Toaster } from "@/components/ui/toaster"
 import { QueryClientProvider } from '@tanstack/react-query'
 import { queryClientInstance } from '@/lib/query-client'
@@ -8,17 +9,19 @@ import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 import ScrollToTop from './components/ScrollToTop';
 import SiteLayout from '@/components/site/SiteLayout';
 import Home from './pages/Home';
-import About from './pages/About';
-import CareersPage from './pages/CareersPage';
-import InsightsPage from './pages/InsightsPage';
-import ServicesPage from './pages/ServicesPage';
-import ExpertisePage from './pages/ExpertisePage';
-import ProjectsPage from './pages/ProjectsPage';
-import ContactPage from './pages/ContactPage';
-import PrivacyPage from './pages/PrivacyPage';
-import TermsPage from './pages/TermsPage';
-import BridgeBracketsPage from './pages/BridgeBracketsPage';
-import ProcurementPage from './pages/ProcurementPage';
+
+// Code-split non-critical routes for lightning-fast initial load (PageSpeed 95+)
+const About = lazy(() => import('./pages/About'));
+const CareersPage = lazy(() => import('./pages/CareersPage'));
+const InsightsPage = lazy(() => import('./pages/InsightsPage'));
+const ServicesPage = lazy(() => import('./pages/ServicesPage'));
+const ExpertisePage = lazy(() => import('./pages/ExpertisePage'));
+const ProjectsPage = lazy(() => import('./pages/ProjectsPage'));
+const ContactPage = lazy(() => import('./pages/ContactPage'));
+const PrivacyPage = lazy(() => import('./pages/PrivacyPage'));
+const TermsPage = lazy(() => import('./pages/TermsPage'));
+const BridgeBracketsPage = lazy(() => import('./pages/BridgeBracketsPage'));
+const ProcurementPage = lazy(() => import('./pages/ProcurementPage'));
 // Add page imports here
 
 const AuthenticatedApp = () => {
@@ -46,24 +49,26 @@ const AuthenticatedApp = () => {
 
   // Render the main app
   return (
-    <Routes>
-      <Route element={<SiteLayout />}>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/careers" element={<CareersPage />} />
-        <Route path="/insights" element={<InsightsPage />} />
-        <Route path="/services" element={<ServicesPage />} />
-        <Route path="/expertise" element={<ExpertisePage />} />
-        <Route path="/projects" element={<ProjectsPage />} />
-        <Route path="/bridge-brackets" element={<BridgeBracketsPage />} />
-        <Route path="/procurement" element={<ProcurementPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="/privacy" element={<PrivacyPage />} />
-        <Route path="/terms" element={<TermsPage />} />
-      </Route>
-      {/* Add your page Route elements here */}
-      <Route path="*" element={<PageNotFound />} />
-    </Routes>
+    <Suspense fallback={<div className="min-h-screen bg-background" />}>
+      <Routes>
+        <Route element={<SiteLayout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/careers" element={<CareersPage />} />
+          <Route path="/insights" element={<InsightsPage />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/expertise" element={<ExpertisePage />} />
+          <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/bridge-brackets" element={<BridgeBracketsPage />} />
+          <Route path="/procurement" element={<ProcurementPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/privacy" element={<PrivacyPage />} />
+          <Route path="/terms" element={<TermsPage />} />
+        </Route>
+        {/* Add your page Route elements here */}
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
+    </Suspense>
   );
 };
 
