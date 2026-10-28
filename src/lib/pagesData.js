@@ -37,15 +37,69 @@ export const SERVICE_GROUPS = [
 ];
 
 export const EXPERTISE = [
-  { n: "01", title: "Structural Engineering", text: "Structural analysis, member and connection review, and documentation for demanding structures." },
-  { n: "02", title: "Temporary Works", text: "Shoring, formwork, falsework, scaffolding and excavation support engineered for construction conditions." },
-  { n: "03", title: "Transmission Structures", text: "Towers, lattice structures and lattice girders, with loading review and certification support." },
-  { n: "04", title: "Construction Engineering", text: "Engineering aligned with the construction sequence, access, staging and site constraints." },
-  { n: "05", title: "Heavy Civil", text: "Structural engineering support for large civil works and their temporary and permanent structures." },
-  { n: "06", title: "Infrastructure", text: "LRT, metro, bridge, overpass and transit structures engineered for public infrastructure delivery." },
-  { n: "07", title: "Water & Wastewater", text: "Treatment, storage and process structures where durability and serviceability govern the design." },
-  { n: "08", title: "Technical Review", text: "Independent review of structural design, drawings and technical documentation." },
-  { n: "09", title: "Site Engineering Support", text: "Site inspection, technical evaluation and engineering coordination during construction." },
+  { 
+    n: "01", 
+    title: "Substructure & Deep Shoring", 
+    text: "Engineered excavation support systems, secant piles, soldier pile & lagging, multi-tier tieback anchors, and structural monitoring protecting adjacent utilities.",
+    img: "/real-images/substructure-deep-shoring.png",
+    tag: "Excavation · ERSS"
+  },
+  { 
+    n: "02", 
+    title: "Bridge Decks & Heavy Civil", 
+    text: "Steel and aluminum bridge overhang cantilever bracket systems, composite deck carriage formwork, and erection staging for highway spans.",
+    img: "/real-images/bridge-overhang-civil-infrastructure.jpg",
+    tag: "Bridges · Overhang"
+  },
+  { 
+    n: "03", 
+    title: "Power Transmission Corridors", 
+    text: "High-voltage lattice towers, monopoles, conductor load analysis, broken-wire simulations, and foundation interface engineering across Canada & USA.",
+    img: "/real-images/power-transmission-grid.jfif",
+    tag: "Energy · 500kV Grid"
+  },
+  { 
+    n: "04", 
+    title: "Temporary Works & Shoring", 
+    text: "Heavy-duty falsework, scaffolding towers, hydraulic trench shoring, and multi-tier reshoring engineered around the live construction sequence.",
+    img: "/real-images/temporary-works-construction.jpg",
+    tag: "Falsework · Shoring"
+  },
+  { 
+    n: "05", 
+    title: "Water & Wastewater Concrete", 
+    text: "Liquid-retaining sanitary tanks, clarifiers, aeration basins, pump wet wells, waterstop joint detailing, and ACI 350 crack-width control.",
+    img: "/real-images/water-treatment-concrete-tanks.jfif",
+    tag: "ACI 350 · WTP/WWTP"
+  },
+  { 
+    n: "06", 
+    title: "LRT Corridors & Guideways", 
+    text: "Elevated guideways, transit viaducts, cut-and-cover underground stations, shafts, and precast segmental erection staging.",
+    img: "/real-images/lrt-corridors-guideways-tunnels.jpg",
+    tag: "Transit · Metro LRT"
+  },
+  { 
+    n: "07", 
+    title: "Structural PE Stamping & Review", 
+    text: "Comprehensive engineering calculations, independent design checking, peer reviews, and certified PE stamped drawings across Canada and all 50 US States.",
+    img: "/real-images/structural-pe-stamping-review.png",
+    tag: "PE Certified · Review"
+  },
+  { 
+    n: "08", 
+    title: "Formwork & Concrete Structures", 
+    text: "Modular gang wall formwork, steel-faced column forms, self-cleaning aluminum props, and multi-pour thermal mass-concrete control plans.",
+    img: "/real-images/aluminum-gang-wall-forms.jfif",
+    tag: "Formwork · Wall Panels"
+  },
+  { 
+    n: "09", 
+    title: "Crane Rigging & Staging", 
+    text: "Heavy tandem pick lifting plans, outrigger mat pressure calculations, crane positioning, and site constructability coordination.",
+    img: "/real-images/crane-rigging-staging-industrial.jpg",
+    tag: "Heavy Lift · Rigging"
+  },
 ];
 
 export const DELIVERABLES = [
