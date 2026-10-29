@@ -20,11 +20,11 @@ export default function ServicesPage() {
       <PageHero
         crumb="Services"
         kicker="Engineering services"
-        title="Four service groups."
+        title="Comprehensive service groups."
         accent="One technical scope."
-        text="Technical capabilities grouped into four client delivery models."
+        text="Specialized technical capabilities grouped into client-ready delivery models."
         img={IMG.steel}
-        aside={{ label: "Service groups", value: "04", sub: "Core offerings" }}
+        aside={{ label: "Service groups", value: "06", sub: "Core offerings" }}
       />
 
       <section className="bg-[#e5effb] text-[#0c1420] py-14 sm:py-20 lg:py-24">
