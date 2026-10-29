@@ -19,7 +19,7 @@ function DesktopItem({ item }) {
 
   return (
     <div className="relative" onMouseEnter={() => setOpen(true)} onMouseLeave={() => { setOpen(false); setHoveredIdx(null); }}>
-      <Link to={item.to} className={`flex items-center gap-1.5 py-2 text-sm font-semibold border-b-2 transition-colors ${active || open ? "text-primary border-primary" : "text-slate-900 border-transparent"}`}>
+      <Link to={item.to} className={`flex items-center gap-1.5 py-2 text-sm font-semibold transition-colors ${active || open ? "text-primary" : "text-slate-900 hover:text-primary"}`}>
         {item.label}
         {item.children && <ChevronDown className={`w-3.5 h-3.5 transition-transform ${open ? "rotate-180" : ""}`} />}
       </Link>

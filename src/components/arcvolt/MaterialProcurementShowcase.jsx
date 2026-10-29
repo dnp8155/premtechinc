@@ -149,8 +149,8 @@ export default function MaterialProcurementShowcase() {
           ))}
         </div>
 
-        {/* Equipment Cards Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Equipment Cards Grid - 4 columns on large screens for 2 rows of 4 (8 items) */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
           {filtered.map((eq) => (
             <div
               key={eq.id}
