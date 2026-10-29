@@ -232,15 +232,15 @@ export default function BridgeBracketShowcase() {
           </div>
         </div>
 
-        {/* Engineering Standards Strip */}
+        {/* Engineering Standards Strip - Client requested to remove redundant #1 and #2 standards */}
         <div className="mt-10 grid sm:grid-cols-2 gap-4">
           <div className="rounded-2xl border hairline bg-card/40 p-5">
-            <span className="label-mono text-primary text-[10px] block">Engineering Standard</span>
+            <span className="label-mono text-primary text-[10px] block">STANDARD 01</span>
             <h4 className="font-display font-bold text-base mt-1">Screed Machine Loading</h4>
             <p className="text-xs text-muted-foreground mt-2">Dynamic wheel load distribution analysis for heavy bridge finishing machines and vibratory trusses.</p>
           </div>
           <div className="rounded-2xl border hairline bg-card/40 p-5">
-            <span className="label-mono text-primary text-[10px] block">Engineering Standard</span>
+            <span className="label-mono text-primary text-[10px] block">STANDARD 02</span>
             <h4 className="font-display font-bold text-base mt-1">PE Certification & Drawings</h4>
             <p className="text-xs text-muted-foreground mt-2">Stamped erection drawings and safe spacing charts issued across Canada and all 50 US States.</p>
           </div>
