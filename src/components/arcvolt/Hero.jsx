@@ -30,19 +30,19 @@ export default function Hero() {
           fetchpriority={i === 0 ? "high" : "auto"}
           className="absolute inset-0 w-full h-full object-cover"
           initial={{ opacity: 0, scale: 1.12 }}
-          animate={{ opacity: 0.55, scale: 1 }}
+          animate={{ opacity: 0.8, scale: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
         />
       </AnimatePresence>
 
-      {/* Guruji's Watchful Eyes - Balanced Ambient Background Layer (30% Opacity) */}
+      {/* Guruji's Watchful Eyes - Subtle Ambient Background Layer (15% Opacity) */}
       <div 
         aria-hidden="true" 
         className="pointer-events-none absolute inset-0 z-[2] flex items-center justify-center overflow-hidden"
       >
         <div 
-          className="relative w-full max-w-[1100px] aspect-[1153/331] opacity-30 mix-blend-screen scale-110 sm:scale-125 filter blur-[0.4px] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]"
+          className="relative w-full max-w-[1100px] aspect-[1153/331] opacity-15 mix-blend-screen scale-110 sm:scale-125 filter blur-[0.4px] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]"
         >
           <img
             src={gurujiEyesImg}
