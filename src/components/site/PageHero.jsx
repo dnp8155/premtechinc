@@ -9,9 +9,6 @@ export default function PageHero({ kicker, crumb, title, accent, text, img, asid
       {img && <Image src={img} alt={accent ? `${title} ${accent}` : (title || "Prem Technology Inc. Infrastructure")} className="absolute inset-0 w-full h-full object-cover" />}
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/80" />
       <div className="relative max-w-[1440px] mx-auto w-full px-6 sm:px-10">
-        <div className="label-mono text-muted-foreground mb-8">
-          <Link to="/" className="hover:text-primary">Home</Link> <span className="mx-2">›</span> {crumb}
-        </div>
         <div className="flex items-center gap-3 mb-5">
           <span className="w-8 h-px bg-primary" />
           <span className="label-mono text-primary">{kicker}</span>
