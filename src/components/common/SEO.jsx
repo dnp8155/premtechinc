@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
 const SITE_URL = "https://www.premtechinc.com";
-const DEFAULT_IMAGE = "https://media.base44.com/images/public/6ace762a9e43500297e7e4f9/00e06a3b0_PREMTechnologyStructuralBrandingGuide-Edited.png";
+const DEFAULT_IMAGE = "/brand/prem-technology-logo.png";
 const SITE_NAME = "Prem Technology Inc.";
 
 function updateMetaTag(attrName, attrValue, content) {

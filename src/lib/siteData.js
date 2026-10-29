@@ -1,14 +1,14 @@
-export const LOGO_URL = "https://media.base44.com/images/public/6ace762a9e43500297e7e4f9/00e06a3b0_PREMTechnologyStructuralBrandingGuide-Edited.png";
+export const LOGO_URL = "/brand/prem-technology-logo.png";
 
-export const LOGO_ICON_URL = "https://media.base44.com/images/public/6ace762a9e43500297e7e4f9/63ef67fd2_p.png";
+export const LOGO_ICON_URL = "/brand/prem-technology-icon.png";
 
-export const GURU_EYES_URL = "https://media.base44.com/images/public/6ace762a9e43500297e7e4f9/8ab21355b_WiseEyesofanElderlyMan.png";
+export const GURU_EYES_URL = "/guruji-eyes.jpg";
 
-// Poster shown before hover; set this to the new image URL when ready (falls back to GURU_EYES_URL).
+// Poster shown before hover
 export const GURU_EYES_POSTER_URL = "";
 
 // Hover video for the Blessings section.
-export const GURU_EYES_VIDEO_URL = "https://media.base44.com/videos/public/6ace762a9e43500297e7e4f9/884b53e53_VideoProject41.mp4";
+export const GURU_EYES_VIDEO_URL = "";
 
 export const IMG = {
   hero: "/real-images/heavy-civil-metro-hero.jpg",
