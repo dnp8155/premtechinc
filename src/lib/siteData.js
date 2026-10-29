@@ -52,21 +52,25 @@ export const SERVICES = [
   {
     n: "01",
     title: "Transmission & Substation Structures",
+    to: "/expertise?tab=transmission",
     text: "Lattice towers, monopoles, substation gantries, conductor load calculations, wind/ice combination analysis and PE certification."
   },
   {
     n: "02",
     title: "Temporary Works & Shoring Engineering",
+    to: "/expertise?tab=temporary-works",
     text: "Deep excavation support, secant pile walls, soldier pile & lagging, falsework, scaffolding, and live-sequence construction staging."
   },
   {
     n: "03",
     title: "Heavy Civil, LRT & Metro Transit",
+    to: "/expertise?tab=heavy-civil",
     text: "Viaduct structures, elevated guideways, transit station substructures, cut-and-cover shafts, and highway overpass rehabilitation."
   },
   {
     n: "04",
     title: "Water/Wastewater & Environmental Concrete",
+    to: "/expertise?tab=water-wastewater",
     text: "ACI 350-compliant sanitary structures, clarifiers, aeration basins, pump wet wells, waterstop joint layouts and flotation buoyancy design."
   },
 ];

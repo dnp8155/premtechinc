@@ -22,7 +22,7 @@ export default function Services() {
         <div className="lg:col-span-7 border-t hairline">
           {SERVICES.map((s, i) => (
             <Reveal key={s.n} delay={i * 0.05} y={20}>
-              <Link to="/services" className="group grid grid-cols-[auto_1fr_auto] gap-6 items-center py-8 border-b hairline hover:bg-white/[0.03] hover:px-4 transition-all duration-500">
+              <Link to={s.to || "/services"} className="group grid grid-cols-[auto_1fr_auto] gap-6 items-center py-8 border-b hairline hover:bg-white/[0.03] hover:px-4 transition-all duration-500">
                 <span className="label-mono text-muted-foreground group-hover:text-primary">{s.n}</span>
                 <div>
                   <h3 className="font-display font-bold text-2xl sm:text-3xl group-hover:text-primary transition-colors">{s.title}</h3>
