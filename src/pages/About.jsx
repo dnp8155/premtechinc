@@ -25,7 +25,8 @@ const ICONS = [Compass, Layers, Globe2, ShieldCheck];
 const TAGS = [
   "Transmission & High Voltage Grids", 
   "Bridge Cantilever Overhangs", 
-  "Deep Excavation & Shoring", 
+  "Underground & Excavation Shoring", 
+  "Above-Ground Formwork & Falsework",
   "Heavy Civil Transit Infrastructure",
   "ACI 350 Water & Wastewater",
   "Vendor-Neutral Equipment Procurement"

@@ -57,9 +57,9 @@ export const SERVICES = [
   },
   {
     n: "02",
-    title: "Temporary Works & Shoring Engineering",
+    title: "Temporary Works, Formwork, Falsework & Shoring",
     to: "/expertise?tab=temporary-works",
-    text: "Deep excavation support, secant pile walls, soldier pile & lagging, falsework, scaffolding, and live-sequence construction staging."
+    text: "Underground deep shoring & earth retention alongside above-ground modular falsework, slab formwork, high-load shoring towers, and staged construction engineering."
   },
   {
     n: "03",
@@ -123,7 +123,8 @@ export const TECH_SERVICES = [
 ];
 
 export const CORE_AREAS = [
-  { label: "Deep Shoring & Foundation Systems", img: "/real-images/temporary-works-construction.jpg" },
+  { label: "Underground & Excavation Shoring", img: "/real-images/temporary-works-construction.jpg" },
+  { label: "Above-Ground Formwork & Falsework", img: "/real-images/aluminum-shoring-frames.jfif" },
   { label: "Highways, Bridges & Viaducts", img: "/real-images/bridge-overhang-civil-infrastructure.jpg" },
   { label: "Power Transmission Corridors", img: "/real-images/power-transmission-grid.jfif" },
 ];

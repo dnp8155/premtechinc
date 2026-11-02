@@ -29,11 +29,11 @@ export const SERVICE_GROUPS = [
   {
     id: "temporary-works",
     n: "03", 
-    title: "Temporary Works & Shoring Engineering",
-    scope: "Deep excavation support (soldier pile & lagging, secant/tangent piles, sheet piling), multi-tier tieback anchors, falsework, heavy access scaffolding.",
-    applications: "Deep urban basements, multi-level underground parking, bridge falsework, heavy civil excavation pits.",
-    deliverables: "Geotechnical interface reviews, structural shoring drawings, deflection monitoring plans, stamped submittals.",
-    interfaces: "General contractors, shoring specialty trade contractors, and geotechnical consultants.",
+    title: "Temporary Works, Formwork, Falsework & Shoring",
+    scope: "Comprehensive above-ground and underground temporary structures: modular formwork, heavy-duty falsework towers, slab reshoring, cantilever overhang systems, and deep excavation shoring (soldier pile & lagging, secant/tangent piles, sheet piling, multi-tier tiebacks).",
+    applications: "High-rise core & slab construction, bridge falsework & deck cantilevers, commercial multi-level underground parking, deep urban basements, and heavy civil excavation pits.",
+    deliverables: "PE/P.Eng stamped formwork & falsework drawings, reshoring cycle analysis, structural shoring calculation packages, geotechnical interface reviews, deflection monitoring plans.",
+    interfaces: "General contractors, concrete forming contractors, shoring specialty trades, equipment rental suppliers, and geotechnical consultants.",
     link: "/services#temporary-works",
   },
   {
@@ -72,11 +72,11 @@ export const EXPERTISE = [
   { 
     id: "temporary-works",
     n: "01", 
-    title: "Substructure & Deep Shoring", 
+    title: "Substructure & Excavation Shoring", 
     category: "temporary-works",
-    text: "Engineered excavation support systems, secant piles, soldier pile & lagging, multi-tier tieback anchors, and structural monitoring protecting adjacent utilities.",
+    text: "Underground earth retention systems: secant & tangent piles, soldier pile & lagging, multi-tier tieback anchors, hydraulic struts, and structural monitoring protecting adjacent utilities.",
     img: "/real-images/substructure-deep-shoring.png",
-    tag: "Excavation · ERSS"
+    tag: "Underground · Shoring"
   },
   { 
     id: "bridge-brackets",
@@ -99,11 +99,11 @@ export const EXPERTISE = [
   { 
     id: "temporary-works",
     n: "04", 
-    title: "Temporary Works & Shoring", 
+    title: "Above-Ground Formwork, Falsework & Shoring", 
     category: "temporary-works",
-    text: "Heavy-duty falsework, scaffolding towers, hydraulic trench shoring, and multi-tier reshoring engineered around the live construction sequence.",
+    text: "Over-ground temporary structures: modular high-load shoring towers, wall & column formwork gang systems, bridge falsework, heavy access platforms, and multi-tier slab reshoring.",
     img: "/real-images/temporary-works-construction.jpg",
-    tag: "Falsework · Shoring"
+    tag: "Overground · Falsework"
   },
   { 
     id: "water-wastewater",
@@ -159,7 +159,7 @@ export const DELIVERABLES = [
 
 export const APPLICATIONS = [
   { n: "01", title: "Transmission Infrastructure", sector: "Transmission & Power Structures", challenge: "Tower and lattice structures where loading conditions, tower geometry and foundation interface govern the structural response.", scope: "Structural analysis, load calculations, member/connection review, engineering documentation, certification support.", where: "Transmission lines, lattice towers and girders, substation structures, power infrastructure." },
-  { n: "02", title: "Temporary Works", sector: "Temporary & Construction Structures", challenge: "Temporary structures that must carry construction loads safely while allowing permanent work to proceed.", scope: "Shoring & excavation support design, formwork & falsework engineering, scaffold/access structures, site inspection.", where: "Excavations and deep basements, bridge erection, heavy construction access, temporary support systems." },
+  { n: "02", title: "Formwork, Falsework & Shoring (Underground & Above-Ground)", sector: "Temporary & Construction Structures", challenge: "Temporary structures that must carry construction loads safely while allowing permanent work to proceed.", scope: "Underground deep shoring & excavation support, above-ground modular falsework towers, concrete wall & slab formwork engineering, scaffold/access structures, site inspection.", where: "Excavations and deep basements, elevated slabs and high-rise cores, bridge erection & falsework, heavy construction access." },
   { n: "03", title: "LRT & Transit", sector: "Heavy Civil & Infrastructure", challenge: "Transit infrastructure delivered within operating corridors, under strict geometry, staging and access constraints.", scope: "Structural design support, guideway & station structure review, constructability assessment, technical reporting.", where: "LRT and metro corridors, guideways and viaducts, station and platform structures, transit facilities." },
   { n: "04", title: "Bridges & Overpasses", sector: "Heavy Civil & Infrastructure", challenge: "Erection, staging and support conditions for bridge structures, where temporary conditions often govern the design.", scope: "Structural review, erection and temporary support engineering, falsework design, construction-phase documentation.", where: "Highway overpasses, river crossings, grade separations, structural rehabilitation." },
   { n: "05", title: "Tunnel & Underground", sector: "Heavy Civil & Infrastructure", challenge: "Underground construction where ground conditions, support systems and staged excavation control the sequence.", scope: "Temporary works engineering, excavation support review, structural interfaces, site engineering support.", where: "Transit tunnels, shafts and portals, underground stations, underground civil structures." },
