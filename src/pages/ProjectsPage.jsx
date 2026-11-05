@@ -77,9 +77,15 @@ export default function ProjectsPage() {
                       </p>
                     </div>
                   </div>
+
+                  {/* Portfolio Disclaimer */}
+                  <div className="mt-6 p-4 rounded-2xl bg-black/40 border border-white/10 text-xs text-muted-foreground leading-relaxed">
+                    <span className="font-mono text-primary font-bold block mb-1">DISCLAIMER:</span>
+                    These photographs are for portfolio and display purposes only, showcasing projects successfully executed by Prem Technology Inc. (PTI). Do not copy, replicate, or implement this structural shoring and beam support setup without certified engineering load calculations and explicit written approval from PTI.
+                  </div>
                 </div>
 
-                <div className="mt-10 pt-6 border-t hairline flex items-center justify-between">
+                <div className="mt-8 pt-6 border-t hairline flex items-center justify-between">
                   <span className="label-mono text-xs text-muted-foreground">Detailed project briefing</span>
                   <Link
                     to="/contact"
