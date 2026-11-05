@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
-import { HERO_SLIDES, COORDS } from "@/lib/siteData";
-import gurujiEyesImg from "@/assets/guruji-eyes.jpg";
+import { HERO_SLIDES, COORDS, GURU_EYES_URL } from "@/lib/siteData";
 
 const line = (delay) => ({
   initial: { y: "110%" },
@@ -27,7 +26,7 @@ export default function Hero() {
           src={HERO_SLIDES[i].img}
           alt={HERO_SLIDES[i].label}
           loading={i === 0 ? "eager" : "lazy"}
-          fetchpriority={i === 0 ? "high" : "auto"}
+          {...(i === 0 ? { fetchPriority: "high" } : {})}
           className="absolute inset-0 w-full h-full object-cover"
           initial={{ opacity: 0, scale: 1.12 }}
           animate={{ opacity: 0.8, scale: 1 }}
@@ -45,7 +44,7 @@ export default function Hero() {
           className="relative w-full max-w-[1100px] aspect-[1153/331] opacity-15 mix-blend-screen scale-110 sm:scale-125 filter blur-[0.4px] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]"
         >
           <img
-            src={gurujiEyesImg}
+            src={GURU_EYES_URL}
             alt=""
             className="w-full h-full object-cover object-center select-none"
           />
