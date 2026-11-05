@@ -41,16 +41,16 @@ export default function ProjectsPage() {
   return (
     <>
       <SEO
-        title="Industrial Building Steel Support Project | Prem Technology Inc."
-        description="Project showcase: Industrial building steel support, modular falsework towers, and beam shoring engineered by Prem Technology Inc."
-        keywords="industrial building steel support, structural shoring project, high bay falsework, temporary works engineering, beam support calculations"
+        title="Industrial Building Steel Beam Support Project | Prem Technology Inc."
+        description="Project showcase: Industrial building steel beam support, modular falsework towers, and beam shoring engineered by Prem Technology Inc."
+        keywords="industrial building steel beam support, structural shoring project, high bay falsework, temporary works engineering, beam support calculations"
         canonical="/projects"
       />
       <PageHero
         crumb="Projects"
         kicker="Featured Project Delivery"
         title="Industrial Building"
-        accent="Steel Support."
+        accent="Steel Beam Support."
         text="Specialized structural temporary works, high-load falsework shoring towers, and sequential beam support engineering for major industrial facility upgrades."
         img="/projects/industrial-steel-support/steel-support-1.jpg"
         aside={{ label: "Project Status", value: "Executed", sub: "Successfully Completed by PTI" }}
@@ -116,7 +116,7 @@ export default function ProjectsPage() {
                     Structural Temporary Works & High-Bay Shoring
                   </span>
                   <h2 className="mt-4 font-display font-black text-2xl sm:text-3xl lg:text-4xl text-foreground tracking-tight leading-tight">
-                    Industrial Building Steel Support & Beam Shoring
+                    Industrial Building Steel Beam Support
                   </h2>
                   <p className="mt-5 text-muted-foreground text-sm sm:text-base leading-relaxed">
                     Engineered temporary heavy falsework towers and high-capacity beam support system designed to carry massive overhead roof girder reactions during building foundation excavation and structural column retrofit.
