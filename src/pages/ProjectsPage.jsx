@@ -3,7 +3,6 @@ import SEO from "@/components/common/SEO";
 import PageHero from "@/components/site/PageHero";
 import CtaBand from "@/components/site/CtaBand";
 import Reveal from "@/components/arcvolt/Reveal";
-import { Image } from "@/components/ui/image";
 import { Link } from "react-router-dom";
 import { ArrowUpRight, ShieldAlert, CheckCircle2 } from "lucide-react";
 import { IMG } from "@/lib/siteData";
@@ -48,6 +47,7 @@ export default function ProjectsPage() {
         canonical="/projects"
       />
       <PageHero
+        crumb="Projects"
         kicker="Featured Project Delivery"
         title="Industrial Building"
         accent="Steel Support."
@@ -64,7 +64,7 @@ export default function ProjectsPage() {
               <div className="lg:col-span-7 flex flex-col justify-between bg-black/40 border-b lg:border-b-0 lg:border-r hairline p-5 sm:p-8">
                 {/* Main Selected Image */}
                 <div className="relative aspect-[4/3] sm:aspect-[16/11] rounded-2xl overflow-hidden border hairline bg-black">
-                  <Image
+                  <img
                     src={PROJECT_PHOTOS[activePhotoIdx].src}
                     alt={PROJECT_PHOTOS[activePhotoIdx].title}
                     className="w-full h-full object-cover transition-all duration-500"
@@ -99,7 +99,7 @@ export default function ProjectsPage() {
                           : "border-white/10 opacity-60 hover:opacity-100 hover:border-white/30"
                       }`}
                     >
-                      <Image
+                      <img
                         src={photo.src}
                         alt={photo.title}
                         className="w-full h-full object-cover"
