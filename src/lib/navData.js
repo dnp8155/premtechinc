@@ -34,7 +34,6 @@ export const NAV_MENU = [
   { label: "Bridge Brackets", to: "/bridge-brackets" },
   { label: "Material Resourcing", to: "/procurement" },
   { label: "Projects", to: "/projects" },
-  { label: "Construction Heroes", to: "/podcast" },
   { label: "Insights", to: "/insights" },
   { label: "Careers", to: "/careers" },
   { label: "Contact", to: "/contact" },
