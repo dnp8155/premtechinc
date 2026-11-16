@@ -93,38 +93,46 @@ export default function PodcastPage() {
       />
 
       {/* CHOT Official Brand Banner */}
-      <section className="bg-[#0e141d] border-b hairline py-6">
-        <div className="max-w-[1440px] mx-auto px-6 sm:px-10 flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-4">
-            <img
-              src="/podcasts/chot-logo.png"
-              alt="CHOT - Construction Heroes of the World Official Logo"
-              className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl border-2 border-primary/30 shadow-xl object-cover bg-card shrink-0"
-            />
+      <section className="bg-gradient-to-r from-[#0b1017] via-[#111927] to-[#0b1017] border-b hairline py-8 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent pointer-events-none" />
+        <div className="max-w-[1440px] mx-auto px-6 sm:px-10 relative flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-5">
+            <div className="relative group">
+              <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-primary to-amber-500 opacity-40 blur-md group-hover:opacity-75 transition duration-500" />
+              <img
+                src="/podcasts/chot-logo.png"
+                alt="CHOT - Construction Heroes of the World Official Logo"
+                className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-2xl border-2 border-primary/40 shadow-2xl object-cover bg-black shrink-0"
+              />
+            </div>
             <div>
-              <div className="flex items-center gap-2">
-                <span className="px-2.5 py-0.5 rounded-full bg-primary/20 text-primary font-mono text-[11px] font-bold tracking-wider uppercase border border-primary/30">
+              <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 mb-1.5">
+                <span className="px-3 py-0.5 rounded-full bg-primary/20 text-primary font-mono text-xs font-bold tracking-widest uppercase border border-primary/40">
                   CHOT Series
                 </span>
-                <span className="text-xs text-muted-foreground font-mono">Official Show</span>
+                <span className="px-2.5 py-0.5 rounded-full bg-white/10 text-white/80 font-mono text-xs tracking-wider">
+                  Official Brand & Podcast
+                </span>
               </div>
-              <h3 className="font-display font-bold text-lg sm:text-xl text-foreground mt-1">
-                Construction Heroes of the World (CHOT)
+              <h3 className="font-display font-extrabold text-xl sm:text-2xl text-foreground">
+                Construction Heroes of the World <span className="text-primary font-mono text-lg font-bold">(CHOT)</span>
               </h3>
-              <p className="text-xs sm:text-sm text-muted-foreground">
-                Hosted by Mehulbhai Patel & Prem Technology Inc.
+              <p className="text-xs sm:text-sm text-muted-foreground mt-1 max-w-xl">
+                The premier podcast series celebrating legendary infrastructure leaders, heavy civil pioneers, and master engineers behind the world's greatest construction milestones.
               </p>
             </div>
           </div>
 
-          <a
-            href="https://www.youtube.com/@ConstructionHeroesoftheWorld?sub_confirmation=1"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-primary hover:bg-primary-hover text-primary-foreground px-6 py-2.5 text-xs sm:text-sm font-bold tracking-wide transition shadow-lg shrink-0"
-          >
-            <Youtube className="w-4 h-4 text-red-600 fill-current" /> Subscribe to Channel <ArrowUpRight className="w-4 h-4" />
-          </a>
+          <div className="flex items-center gap-3 shrink-0">
+            <a
+              href="https://www.youtube.com/@ConstructionHeroesoftheWorld?sub_confirmation=1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-[#ff0000] hover:bg-[#e60000] text-white px-6 py-3 text-xs sm:text-sm font-bold tracking-wide transition shadow-lg shadow-red-600/25"
+            >
+              <Youtube className="w-5 h-5 fill-current" /> Subscribe to CHOT <ArrowUpRight className="w-4 h-4" />
+            </a>
+          </div>
         </div>
       </section>
 

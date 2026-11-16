@@ -47,7 +47,7 @@ export const FOOTER_NAV = [
   { label: "Bridge Brackets", to: "/bridge-brackets" },
   { label: "Material Procurement", to: "/procurement" },
   { label: "Projects", to: "/projects" },
-  { label: "Construction Heroes", to: "/podcast" },
+  { label: "Podcast (CHOT)", to: "/podcast" },
   { label: "Insights", to: "/insights" },
   { label: "Careers", to: "/careers" },
   { label: "Contact", to: "/contact" },
