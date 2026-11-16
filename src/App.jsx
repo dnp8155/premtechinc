@@ -22,6 +22,7 @@ const PrivacyPage = lazy(() => import('./pages/PrivacyPage'));
 const TermsPage = lazy(() => import('./pages/TermsPage'));
 const BridgeBracketsPage = lazy(() => import('./pages/BridgeBracketsPage'));
 const ProcurementPage = lazy(() => import('./pages/ProcurementPage'));
+const PodcastPage = lazy(() => import('./pages/PodcastPage'));
 // Add page imports here
 
 const AuthenticatedApp = () => {
@@ -59,6 +60,8 @@ const AuthenticatedApp = () => {
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/expertise" element={<ExpertisePage />} />
           <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/podcast" element={<PodcastPage />} />
+          <Route path="/construction-heroes" element={<PodcastPage />} />
           <Route path="/bridge-brackets" element={<BridgeBracketsPage />} />
           <Route path="/procurement" element={<ProcurementPage />} />
           <Route path="/contact" element={<ContactPage />} />
