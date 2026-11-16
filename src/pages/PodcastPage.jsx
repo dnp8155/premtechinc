@@ -84,13 +84,49 @@ export default function PodcastPage() {
 
       <PageHero
         crumb="Podcasts"
-        kicker="Original Series / Podcast"
+        kicker="Original Series · CHOT Podcast"
         title="Construction Heroes"
         accent="of the World."
         text="Untold stories, legendary engineering feats, and masterclasses from the pioneers who built North America's most demanding infrastructure."
         img="/projects/industrial-steel-support/steel-support-2.jpg"
         aside={{ label: "Episodes", value: "02 + 01", sub: "2 Completed · 1 Coming Soon" }}
       />
+
+      {/* CHOT Official Brand Banner */}
+      <section className="bg-[#0e141d] border-b hairline py-6">
+        <div className="max-w-[1440px] mx-auto px-6 sm:px-10 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div className="flex items-center gap-4">
+            <img
+              src="/podcasts/chot-logo.png"
+              alt="CHOT - Construction Heroes of the World Official Logo"
+              className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl border-2 border-primary/30 shadow-xl object-cover bg-card shrink-0"
+            />
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="px-2.5 py-0.5 rounded-full bg-primary/20 text-primary font-mono text-[11px] font-bold tracking-wider uppercase border border-primary/30">
+                  CHOT Series
+                </span>
+                <span className="text-xs text-muted-foreground font-mono">Official Show</span>
+              </div>
+              <h3 className="font-display font-bold text-lg sm:text-xl text-foreground mt-1">
+                Construction Heroes of the World (CHOT)
+              </h3>
+              <p className="text-xs sm:text-sm text-muted-foreground">
+                Hosted by Mehulbhai Patel & Prem Technology Inc.
+              </p>
+            </div>
+          </div>
+
+          <a
+            href="https://www.youtube.com/@ConstructionHeroesoftheWorld?sub_confirmation=1"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full bg-primary hover:bg-primary-hover text-primary-foreground px-6 py-2.5 text-xs sm:text-sm font-bold tracking-wide transition shadow-lg shrink-0"
+          >
+            <Youtube className="w-4 h-4 text-red-600 fill-current" /> Subscribe to Channel <ArrowUpRight className="w-4 h-4" />
+          </a>
+        </div>
+      </section>
 
       {/* Featured Video Player Section */}
       <section className="bg-[#0b0f15] border-b hairline py-12 sm:py-16 lg:py-20 text-foreground">
