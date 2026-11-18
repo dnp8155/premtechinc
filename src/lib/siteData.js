@@ -23,8 +23,8 @@ export const IMG = {
 export const CONTACT = {
   phone: "942-880-4032",
   phoneHref: "tel:9428804032",
-  email: "info@pt.com",
-  emailHref: "mailto:info@pt.com",
+  email: "virag@premtechinc.com",
+  emailHref: "mailto:virag@premtechinc.com",
   legacyEmail: "premtechinc@yahoo.ca",
   legacyEmailHref: "mailto:premtechinc@yahoo.ca",
 };
