@@ -17,6 +17,7 @@ const InsightsPage = lazy(() => import('./pages/InsightsPage'));
 const ServicesPage = lazy(() => import('./pages/ServicesPage'));
 const ExpertisePage = lazy(() => import('./pages/ExpertisePage'));
 const ProjectsPage = lazy(() => import('./pages/ProjectsPage'));
+const ProjectDetailPage = lazy(() => import('./pages/ProjectDetailPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
 const PrivacyPage = lazy(() => import('./pages/PrivacyPage'));
 const TermsPage = lazy(() => import('./pages/TermsPage'));
@@ -60,6 +61,7 @@ const AuthenticatedApp = () => {
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/expertise" element={<ExpertisePage />} />
           <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/projects/:slug" element={<ProjectDetailPage />} />
           <Route path="/podcast" element={<PodcastPage />} />
           <Route path="/construction-heroes" element={<PodcastPage />} />
           <Route path="/bridge-brackets" element={<BridgeBracketsPage />} />
