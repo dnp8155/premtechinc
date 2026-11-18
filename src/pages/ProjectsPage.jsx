@@ -168,135 +168,126 @@ export default function ProjectsPage() {
           </div>
         </Reveal>
 
-        {/* Minimal Classic Project Cards List */}
-        <div className="space-y-12 sm:space-y-16">
+        {/* Clean Architectural 2-Column Grid Cards */}
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
           {PROJECTS_DATA.map((proj, pIdx) => (
-            <Reveal key={proj.id} delay={pIdx * 0.1} y={20}>
-              <div className="rounded-3xl border hairline bg-card/60 backdrop-blur-sm p-6 sm:p-10 lg:p-12 hover:border-primary/60 transition-all duration-300 group">
-                <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-                  
-                  {/* Left Column: Visual Showcase (Main preview + compact thumb row) */}
-                  <div className="lg:col-span-6">
-                    <div 
-                      onClick={() => openProjectModal(proj, 0)}
-                      className="relative aspect-[16/10] rounded-2xl overflow-hidden border hairline bg-black cursor-pointer group/img"
-                    >
-                      <img
-                        src={proj.photos[0].src}
-                        alt={proj.title}
-                        className="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-700 ease-out"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover/img:opacity-60 transition-opacity" />
-                      
-                      {/* Top Badges */}
-                      <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
-                        <span className="label-mono bg-black/85 backdrop-blur-md border border-white/20 px-3.5 py-1 rounded-full text-xs font-semibold text-white">
-                          {proj.photos.length} High-Res Photos
-                        </span>
-                        <span className="label-mono bg-primary text-primary-foreground px-3.5 py-1 rounded-full text-xs font-semibold">
-                          {proj.statusLabel}
-                        </span>
-                      </div>
+            <Reveal key={proj.id} delay={pIdx * 0.12} y={20}>
+              <div className="rounded-3xl border hairline bg-[#0d131c] overflow-hidden hover:border-primary/70 transition-all duration-300 flex flex-col justify-between h-full group hover:shadow-2xl hover:shadow-primary/5">
+                
+                <div>
+                  {/* Hero Cover Image (Architectural ratio with overlay & photo badge) */}
+                  <div 
+                    onClick={() => openProjectModal(proj, 0)}
+                    className="relative aspect-[16/10] overflow-hidden bg-black cursor-pointer group/img"
+                  >
+                    <img
+                      src={proj.photos[0].src}
+                      alt={proj.title}
+                      className="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-700 ease-out"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-black/20 group-hover/img:opacity-80 transition-opacity" />
 
-                      {/* Click overlay prompt */}
-                      <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white">
-                        <span className="text-xs font-mono text-white/90 truncate max-w-[80%]">
-                          {proj.photos[0].title}
-                        </span>
-                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-xs font-semibold text-white group-hover/img:bg-primary group-hover/img:text-primary-foreground transition-colors shrink-0">
-                          View Gallery <ArrowUpRight className="w-3.5 h-3.5" />
-                        </span>
-                      </div>
+                    {/* Top Status & Badge Bar */}
+                    <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-10">
+                      <span className="label-mono bg-black/85 backdrop-blur-md border border-white/20 px-3 py-1 rounded-full text-[11px] font-semibold text-white tracking-wider">
+                        {proj.photos.length} Site Photos
+                      </span>
+                      <span className="label-mono bg-primary text-primary-foreground px-3 py-1 rounded-full text-[11px] font-semibold tracking-wider">
+                        {proj.statusLabel}
+                      </span>
                     </div>
 
-                    {/* Compact Thumb Strip */}
-                    <div className="grid grid-cols-5 gap-2 mt-3">
-                      {proj.photos.slice(0, 5).map((photo, thumbIdx) => (
-                        <button
-                          key={thumbIdx}
-                          onClick={() => openProjectModal(proj, thumbIdx)}
-                          className="relative aspect-square rounded-xl overflow-hidden border border-white/10 hover:border-primary transition-all opacity-75 hover:opacity-100 group/thumb"
-                        >
-                          <img
-                            src={photo.src}
-                            alt={photo.title}
-                            className="w-full h-full object-cover group-hover/thumb:scale-110 transition-transform duration-300"
-                          />
-                          {thumbIdx === 4 && proj.photos.length > 5 && (
-                            <div className="absolute inset-0 bg-black/75 backdrop-blur-[2px] flex items-center justify-center font-mono text-xs font-bold text-primary">
-                              +{proj.photos.length - 5}
-                            </div>
-                          )}
-                        </button>
+                    {/* Hover Prompt on image */}
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover/img:opacity-100 transition-opacity duration-300">
+                      <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary/95 text-primary-foreground font-semibold text-xs tracking-wide shadow-xl transform scale-95 group-hover/img:scale-100 transition-transform">
+                        Explore Gallery ({proj.photos.length} Photos) <ArrowUpRight className="w-4 h-4" />
+                      </span>
+                    </div>
+
+                    {/* Bottom Caption on Image */}
+                    <div className="absolute bottom-3 left-4 right-4 text-xs font-mono text-white/80 line-clamp-1 pointer-events-none">
+                      {proj.photos[0].title}
+                    </div>
+                  </div>
+
+                  {/* Horizontal Thumbnail Preview Strip (Click directly to open that photo) */}
+                  <div className="grid grid-cols-5 gap-1.5 p-3 bg-black/40 border-b hairline">
+                    {proj.photos.slice(0, 5).map((ph, tIdx) => (
+                      <button
+                        key={tIdx}
+                        onClick={() => openProjectModal(proj, tIdx)}
+                        className="relative aspect-[4/3] rounded-lg overflow-hidden border border-white/10 hover:border-primary transition-all opacity-70 hover:opacity-100 group/thumb"
+                        title={ph.title}
+                      >
+                        <img src={ph.src} alt={ph.title} className="w-full h-full object-cover group-hover/thumb:scale-110 transition-transform duration-300" />
+                        {tIdx === 4 && proj.photos.length > 5 && (
+                          <div className="absolute inset-0 bg-black/80 backdrop-blur-[2px] flex items-center justify-center font-mono text-[11px] font-bold text-primary">
+                            +{proj.photos.length - 5}
+                          </div>
+                        )}
+                      </button>
+                    ))}
+                  </div>
+
+                  {/* Content Body */}
+                  <div className="p-6 sm:p-8">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="label-mono text-primary text-xs uppercase tracking-wider font-bold">
+                        {proj.tag}
+                      </span>
+                    </div>
+
+                    <h3 className="font-display font-extrabold text-xl sm:text-2xl text-foreground group-hover:text-primary transition-colors leading-snug">
+                      {proj.title}
+                    </h3>
+
+                    <p className="mt-3 text-sm text-muted-foreground leading-relaxed line-clamp-3">
+                      {proj.description}
+                    </p>
+
+                    {/* Architectural Technical Specs Box */}
+                    <div className="mt-6 p-4 rounded-2xl bg-card border hairline space-y-2.5">
+                      {proj.specs.map((spec, sIdx) => (
+                        <div key={sIdx} className="flex items-start gap-2.5 text-xs">
+                          <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-1.5" />
+                          <div className="leading-relaxed">
+                            <span className="font-mono text-[11px] font-semibold text-primary uppercase mr-1.5">
+                              {spec.label}:
+                            </span>
+                            <span className="text-foreground/90">{spec.value}</span>
+                          </div>
+                        </div>
                       ))}
                     </div>
-                  </div>
 
-                  {/* Right Column: Clean Editorial Typography & Structured Data */}
-                  <div className="lg:col-span-6 flex flex-col justify-between">
-                    <div>
-                      <div className="flex items-center gap-3 mb-3">
-                        <span className="text-primary font-mono text-xs font-bold tracking-widest uppercase">
-                          {proj.tag}
-                        </span>
-                        <span className="w-1.5 h-1.5 rounded-full bg-primary/40" />
-                        <span className="text-muted-foreground font-mono text-xs">
-                          {proj.category}
-                        </span>
+                    {/* Disclaimer Box */}
+                    <div className="mt-5 p-3.5 rounded-xl bg-black/50 border hairline text-[11px] text-muted-foreground leading-relaxed">
+                      <div className="flex items-center gap-1.5 text-primary font-mono font-bold mb-1 uppercase tracking-wider text-[10px]">
+                        <ShieldAlert className="w-3 h-3 shrink-0" />
+                        Notice:
                       </div>
-
-                      <h3 className="font-display font-extrabold text-2xl sm:text-3xl text-foreground group-hover:text-primary transition-colors leading-snug">
-                        {proj.title}
-                      </h3>
-
-                      <p className="mt-4 text-muted-foreground text-sm sm:text-base leading-relaxed">
-                        {proj.description}
-                      </p>
-
-                      {/* Clean Technical Specs Grid */}
-                      <div className="mt-6 pt-5 border-t hairline space-y-2.5">
-                        {proj.specs.map((spec, sIdx) => (
-                          <div key={sIdx} className="flex items-start gap-2.5 text-xs sm:text-sm">
-                            <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2" />
-                            <p className="text-foreground/90 leading-relaxed">
-                              <strong className="text-foreground font-semibold mr-1.5 font-mono text-xs uppercase tracking-wide">
-                                {spec.label}:
-                              </strong>
-                              <span className="text-muted-foreground">{spec.value}</span>
-                            </p>
-                          </div>
-                        ))}
-                      </div>
-
-                      {/* Minimal Disclaimer Accordion / Card */}
-                      <div className="mt-6 p-4 rounded-xl bg-black/40 border hairline text-xs text-muted-foreground leading-relaxed">
-                        <div className="flex items-center gap-2 text-primary font-mono font-bold mb-1 text-[11px] uppercase tracking-wider">
-                          <ShieldAlert className="w-3.5 h-3.5 shrink-0" />
-                          Portfolio Notice:
-                        </div>
-                        {proj.disclaimer}
-                      </div>
-                    </div>
-
-                    {/* Action Bar */}
-                    <div className="mt-8 pt-5 border-t hairline flex flex-wrap items-center justify-between gap-4">
-                      <button
-                        onClick={() => openProjectModal(proj, 0)}
-                        className="inline-flex items-center gap-2 rounded-full bg-card hover:bg-white/10 border hairline px-5 py-2.5 text-xs sm:text-sm font-semibold text-foreground transition"
-                      >
-                        Explore Photo Gallery ({proj.photos.length}) <ArrowUpRight className="w-4 h-4 text-primary" />
-                      </button>
-
-                      <Link
-                        to="/contact"
-                        className="inline-flex items-center gap-2 rounded-full bg-primary hover:bg-primary-hover text-primary-foreground px-5 py-2.5 text-xs sm:text-sm font-semibold transition shadow-lg shadow-primary/20"
-                      >
-                        Inquire About Scope <ArrowUpRight className="w-4 h-4" />
-                      </Link>
+                      {proj.disclaimer}
                     </div>
                   </div>
-
                 </div>
+
+                {/* Card Footer */}
+                <div className="p-6 sm:p-8 pt-0 flex items-center justify-between border-t hairline mt-4 pt-4">
+                  <button
+                    onClick={() => openProjectModal(proj, 0)}
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-foreground hover:text-primary transition"
+                  >
+                    View Photos ({proj.photos.length}) <ArrowUpRight className="w-3.5 h-3.5 text-primary" />
+                  </button>
+
+                  <Link
+                    to="/contact"
+                    className="inline-flex items-center gap-1.5 rounded-full bg-primary hover:bg-primary-hover text-primary-foreground px-4 py-2 text-xs font-semibold transition shadow-md shadow-primary/20"
+                  >
+                    Discuss Scope <ArrowUpRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
+
               </div>
             </Reveal>
           ))}
@@ -305,23 +296,24 @@ export default function ProjectsPage() {
 
       {/* Lightbox / Gallery Modal for Full View */}
       {selectedProjectForModal && (
-        <div className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 lg:p-10 animate-in fade-in duration-200">
-          <div className="relative w-full max-w-5xl bg-[#0d131c] border hairline rounded-3xl overflow-hidden shadow-2xl flex flex-col max-h-[90vh]">
+        <div className="fixed inset-0 z-50 bg-black/95 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 lg:p-8 animate-in fade-in duration-200">
+          <div className="relative w-full max-w-5xl bg-[#0d131c] border hairline rounded-3xl overflow-hidden shadow-2xl flex flex-col max-h-[92vh]">
             
             {/* Modal Header */}
-            <div className="px-6 py-4 border-b hairline flex items-center justify-between bg-card/50">
-              <div>
-                <span className="label-mono text-primary text-xs uppercase tracking-wider">
+            <div className="px-6 py-4 border-b hairline flex items-center justify-between bg-card/60">
+              <div className="flex items-center gap-3">
+                <span className="label-mono text-primary text-xs uppercase tracking-wider font-bold">
                   {selectedProjectForModal.tag}
                 </span>
-                <h4 className="font-display font-bold text-base sm:text-lg text-foreground line-clamp-1">
+                <span className="text-white/30 hidden sm:inline">•</span>
+                <h4 className="font-display font-bold text-sm sm:text-base text-foreground line-clamp-1">
                   {selectedProjectForModal.title}
                 </h4>
               </div>
 
               <button
                 onClick={closeProjectModal}
-                className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center font-mono text-base transition"
+                className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center font-mono text-sm transition shrink-0 ml-3"
                 aria-label="Close Gallery"
               >
                 ✕
@@ -329,11 +321,11 @@ export default function ProjectsPage() {
             </div>
 
             {/* Modal Main Image */}
-            <div className="relative flex-1 bg-black flex items-center justify-center overflow-hidden min-h-[300px] sm:min-h-[460px]">
+            <div className="relative flex-1 bg-black flex items-center justify-center overflow-hidden min-h-[300px] sm:min-h-[480px]">
               <img
                 src={selectedProjectForModal.photos[modalPhotoIdx].src}
                 alt={selectedProjectForModal.photos[modalPhotoIdx].title}
-                className="max-h-[60vh] w-auto max-w-full object-contain mx-auto transition-all duration-300"
+                className="max-h-[62vh] w-auto max-w-full object-contain mx-auto transition-all duration-300"
               />
 
               {/* Prev / Next controls */}
@@ -341,26 +333,26 @@ export default function ProjectsPage() {
                 <>
                   <button
                     onClick={() => setModalPhotoIdx((prev) => (prev > 0 ? prev - 1 : selectedProjectForModal.photos.length - 1))}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black/70 hover:bg-primary text-white hover:text-primary-foreground border border-white/20 flex items-center justify-center transition"
+                    className="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/75 hover:bg-primary text-white hover:text-primary-foreground border border-white/20 flex items-center justify-center transition shadow-xl text-lg font-bold"
                     aria-label="Previous photo"
                   >
-                    ←
+                    ‹
                   </button>
                   <button
                     onClick={() => setModalPhotoIdx((prev) => (prev < selectedProjectForModal.photos.length - 1 ? prev + 1 : 0))}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black/70 hover:bg-primary text-white hover:text-primary-foreground border border-white/20 flex items-center justify-center transition"
+                    className="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/75 hover:bg-primary text-white hover:text-primary-foreground border border-white/20 flex items-center justify-center transition shadow-xl text-lg font-bold"
                     aria-label="Next photo"
                   >
-                    →
+                    ›
                   </button>
                 </>
               )}
 
               {/* Bottom Caption Overlay */}
-              <div className="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-black/95 via-black/80 to-transparent">
+              <div className="absolute bottom-0 inset-x-0 p-4 sm:p-5 bg-gradient-to-t from-black/95 via-black/85 to-transparent">
                 <div className="flex items-center justify-between text-xs text-primary font-mono mb-1">
                   <span>Photo {modalPhotoIdx + 1} of {selectedProjectForModal.photos.length}</span>
-                  <span>{selectedProjectForModal.statusLabel}</span>
+                  <span className="hidden sm:inline">{selectedProjectForModal.statusLabel}</span>
                 </div>
                 <p className="font-display font-semibold text-sm sm:text-base text-white">
                   {selectedProjectForModal.photos[modalPhotoIdx].title}
@@ -372,7 +364,7 @@ export default function ProjectsPage() {
             </div>
 
             {/* Modal Bottom Thumbnail Bar */}
-            <div className="p-3 bg-black/60 border-t hairline overflow-x-auto flex gap-2">
+            <div className="p-3 bg-black/70 border-t hairline overflow-x-auto flex gap-2">
               {selectedProjectForModal.photos.map((ph, idx) => (
                 <button
                   key={idx}
