@@ -17,6 +17,7 @@ const PROJECTS_DATA = [
     specs: [
       { label: "Structure", value: "High-Bay Industrial Steel Roof Girders & Columns" },
       { label: "System", value: "Multi-tier modular falsework towers with leveling screw jacks & tensioned guy-wire guying" },
+      { label: "Safety Standard", value: "Verified against live roof/construction loads, lateral stability (guy-wire bracing), and progressive foundation excavation sequence." },
       { label: "Scope", value: "Temporary works engineering, progressive load distribution analysis & certified shop drawings by Prem Technology Inc." }
     ],
     statusLabel: "Executed by PTI",
@@ -35,7 +36,7 @@ const PROJECTS_DATA = [
       {
         src: "/projects/industrial-steel-support/steel-support-3.jpg",
         title: "Base Anchorage & Guy-Wire Guying",
-        caption: "Heavy-duty tensioned ratchet guy-wires providing lateral overturning stability against construction wind loads."
+        caption: "Heavy-duty tensioned ratchet guy-wires providing lateral stability and overturning resistance during progressive foundation excavation."
       },
       {
         src: "/projects/industrial-steel-support/steel-support-4.jpg",
