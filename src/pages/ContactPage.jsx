@@ -44,11 +44,8 @@ export default function ContactPage() {
               <a href={CONTACT.emailHref} className={rowCls}>
                 <span className={iconCls}><Mail className="w-4 h-4" /></span>
                 <div>
-                  <div className="label-mono text-black/50">Official email (Primary)</div>
+                  <div className="label-mono text-black/50">Official email</div>
                   <div className="font-semibold">{CONTACT.email}</div>
-                  {CONTACT.legacyEmail && (
-                    <div className="text-xs text-black/60 mt-0.5">Merging with: {CONTACT.legacyEmail}</div>
-                  )}
                 </div>
               </a>
               <div className={rowCls}>

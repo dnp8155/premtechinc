@@ -25,8 +25,6 @@ export const CONTACT = {
   phoneHref: "tel:9428804032",
   email: "virag@premtechinc.com",
   emailHref: "mailto:virag@premtechinc.com",
-  legacyEmail: "premtechinc@yahoo.ca",
-  legacyEmailHref: "mailto:premtechinc@yahoo.ca",
 };
 
 export const COORDS = "45.4215° N, 75.6972° W";
