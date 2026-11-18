@@ -120,243 +120,281 @@ const PROJECTS_DATA = [
 ];
 
 export default function ProjectsPage() {
-  const [activeProjectIdx, setActiveProjectIdx] = useState(0);
-  const [photoIndices, setPhotoIndices] = useState({ 0: 0, 1: 0 });
+  const [selectedProjectForModal, setSelectedProjectForModal] = useState(null);
+  const [modalPhotoIdx, setModalPhotoIdx] = useState(0);
 
-  const activeProject = PROJECTS_DATA[activeProjectIdx];
-  const currentPhotoIdx = photoIndices[activeProjectIdx] || 0;
+  const openProjectModal = (proj, initialIdx = 0) => {
+    setSelectedProjectForModal(proj);
+    setModalPhotoIdx(initialIdx);
+  };
 
-  const handleSelectPhoto = (projIdx, photoIdx) => {
-    setPhotoIndices((prev) => ({ ...prev, [projIdx]: photoIdx }));
+  const closeProjectModal = () => {
+    setSelectedProjectForModal(null);
   };
 
   return (
     <>
       <SEO
-        title="Featured Projects | Heavy Civil Wall Formwork & Structural Steel Shoring | Prem Technology Inc."
-        description="Explore Prem Technology Inc.'s featured project deliveries: Heavy Civil Infrastructure 15' wall formwork & shoring, and Industrial building steel beam support falsework towers. P.Eng. stamped temporary works engineering."
-        keywords="heavy civil wall formwork, 15 high concrete wall formwork, push pull braces shoring, industrial building steel beam support, structural shoring project, P.Eng. stamped shop drawings, Prem Technology projects"
+        title="Featured Projects | Structural Steel Shoring & Heavy Civil Formwork | Prem Technology Inc."
+        description="Explore Prem Technology Inc.'s certified project portfolio: Industrial steel beam support falsework towers and heavy civil 15' wall formwork with heavy-duty push-pull bracing. P.Eng. stamped engineering."
+        keywords="heavy civil wall formwork, industrial building steel beam support, structural shoring project, P.Eng. stamped shop drawings, Prem Technology projects"
         canonical="/projects"
       />
       <PageHero
         crumb="Projects"
-        kicker="Featured Project Showcase"
+        kicker="Portfolio & Field Deliveries"
         title="Engineered Field"
         accent="Deliveries."
-        text="Real-world temporary works engineering, heavy civil formwork, and high-load structural shoring executed and P.Eng. stamped across North America."
+        text="Certified temporary works engineering, heavy civil formwork, and high-capacity structural shoring executed across North America."
         img="/projects/wall-formwork-shoring/wall-formwork-4.jpg"
-        aside={{ label: "Featured Projects", value: "02", sub: "P.Eng. Stamped & Field-Verified" }}
+        aside={{ label: "Certified Projects", value: "02", sub: "P.Eng. Stamped & Field-Verified" }}
       />
 
-      <section className="max-w-[1440px] mx-auto px-6 sm:px-10 py-12 sm:py-16 lg:py-20">
-        {/* Project Selector Tabs */}
+      <section className="max-w-[1440px] mx-auto px-6 sm:px-10 py-16 sm:py-24">
+        {/* Section Header */}
         <Reveal y={15}>
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 mb-10 pb-6 border-b hairline">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 sm:mb-16 border-b hairline pb-8">
             <div>
               <span className="label-mono text-primary text-xs uppercase tracking-widest block">
-                Project Portfolio
+                Engineering Case Studies
               </span>
-              <h2 className="display-title text-2xl sm:text-3xl lg:text-4xl mt-2">
-                Proven Field <span className="text-primary">Execution.</span>
+              <h2 className="display-title text-3xl sm:text-4xl lg:text-5xl mt-2 tracking-tight">
+                Selected Works & <span className="text-primary">Deliveries.</span>
               </h2>
             </div>
-
-            {/* Quick Switcher Buttons */}
-            <div className="inline-flex p-1.5 rounded-2xl bg-black/60 border hairline self-start sm:self-auto">
-              {PROJECTS_DATA.map((proj, idx) => (
-                <button
-                  key={proj.id}
-                  onClick={() => setActiveProjectIdx(idx)}
-                  className={`px-4 sm:px-6 py-2.5 rounded-xl font-mono text-xs sm:text-sm font-semibold transition-all ${
-                    activeProjectIdx === idx
-                      ? "bg-primary text-primary-foreground shadow-lg shadow-primary/25"
-                      : "text-muted-foreground hover:text-foreground hover:bg-white/5"
-                  }`}
-                >
-                  {idx === 0 ? "Project 1: Steel Beam Support" : "Project 2: Wall Formwork & Shoring"}
-                </button>
-              ))}
-            </div>
+            <p className="max-w-md text-muted-foreground text-sm sm:text-base leading-relaxed">
+              Every project represents strict compliance with North American design codes, stamped engineering packages, and rigorous field execution.
+            </p>
           </div>
         </Reveal>
 
-        {/* Selected Project Full Showcase Card */}
-        <Reveal key={activeProject.id} y={20}>
-          <div className="rounded-[2.5rem] border hairline bg-card overflow-hidden hover:border-primary transition-all duration-300 shadow-2xl">
-            <div className="grid lg:grid-cols-12 gap-0">
-              {/* Project Image Gallery Display */}
-              <div className="lg:col-span-7 flex flex-col justify-between bg-black/50 border-b lg:border-b-0 lg:border-r hairline p-5 sm:p-8">
-                {/* Main Selected Image */}
-                <div className="relative aspect-[4/3] sm:aspect-[16/11] rounded-2xl overflow-hidden border hairline bg-black shadow-inner">
-                  <img
-                    src={activeProject.photos[currentPhotoIdx].src}
-                    alt={activeProject.photos[currentPhotoIdx].title}
-                    className="w-full h-full object-cover transition-all duration-500"
-                  />
-                  <div className="absolute top-4 left-4 z-10 flex flex-wrap gap-2">
-                    <span className="label-mono bg-black/85 backdrop-blur-md border border-white/20 px-3.5 py-1.5 rounded-full text-xs font-semibold text-white tracking-wider">
-                      Photo {currentPhotoIdx + 1} of {activeProject.photos.length}
-                    </span>
-                    <span className="label-mono bg-primary text-primary-foreground px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wider">
-                      {activeProject.statusLabel}
-                    </span>
-                  </div>
-                  <div className="absolute bottom-0 inset-x-0 p-4 sm:p-6 bg-gradient-to-t from-black/95 via-black/75 to-transparent">
-                    <p className="font-display font-bold text-base sm:text-lg text-white">
-                      {activeProject.photos[currentPhotoIdx].title}
-                    </p>
-                    <p className="text-xs sm:text-sm text-foreground/80 mt-1 line-clamp-2">
-                      {activeProject.photos[currentPhotoIdx].caption}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Thumbnail Strip */}
-                <div className="mt-4">
-                  <div className="flex items-center justify-between text-xs text-muted-foreground mb-2 font-mono">
-                    <span>Click photo to enlarge preview</span>
-                    <span>{activeProject.photos.length} High-Res Site Photos</span>
-                  </div>
-                  <div className={`grid gap-2 ${activeProject.photos.length > 5 ? "grid-cols-5 sm:grid-cols-10" : "grid-cols-5"}`}>
-                    {activeProject.photos.map((photo, idx) => (
-                      <button
-                        key={idx}
-                        onClick={() => handleSelectPhoto(activeProjectIdx, idx)}
-                        className={`relative aspect-square rounded-xl overflow-hidden border transition-all ${
-                          currentPhotoIdx === idx
-                            ? "ring-2 ring-primary border-primary scale-[1.05] shadow-lg shadow-primary/25 z-10"
-                            : "border-white/10 opacity-60 hover:opacity-100 hover:border-white/30"
-                        }`}
-                        title={photo.title}
-                      >
-                        <img
-                          src={photo.src}
-                          alt={photo.title}
-                          className="w-full h-full object-cover"
-                        />
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {/* Project Details */}
-              <div className="lg:col-span-5 p-8 sm:p-12 flex flex-col justify-between">
-                <div>
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="px-3 py-1 rounded-full bg-primary/15 text-primary border border-primary/30 font-mono text-[11px] font-bold tracking-wider uppercase">
-                      {activeProject.tag}
-                    </span>
-                  </div>
-
-                  <h3 className="font-display font-black text-2xl sm:text-3xl lg:text-4xl text-foreground tracking-tight leading-tight">
-                    {activeProject.title}
-                  </h3>
-
-                  <p className="mt-4 text-muted-foreground text-sm sm:text-base leading-relaxed">
-                    {activeProject.description}
-                  </p>
-
-                  {/* Bullet Specs matching client prompt */}
-                  <div className="mt-6 space-y-3.5 border-t hairline pt-6">
-                    {activeProject.specs.map((spec, sIdx) => (
-                      <div key={sIdx} className="flex items-start gap-3">
-                        <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                        <p className="text-xs sm:text-sm text-foreground/90 leading-relaxed">
-                          <strong className="text-primary font-mono uppercase tracking-wider text-xs mr-1.5">
-                            * {spec.label}:
-                          </strong>
-                          {spec.value}
-                        </p>
+        {/* Minimal Classic Project Cards List */}
+        <div className="space-y-12 sm:space-y-16">
+          {PROJECTS_DATA.map((proj, pIdx) => (
+            <Reveal key={proj.id} delay={pIdx * 0.1} y={20}>
+              <div className="rounded-3xl border hairline bg-card/60 backdrop-blur-sm p-6 sm:p-10 lg:p-12 hover:border-primary/60 transition-all duration-300 group">
+                <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                  
+                  {/* Left Column: Visual Showcase (Main preview + compact thumb row) */}
+                  <div className="lg:col-span-6">
+                    <div 
+                      onClick={() => openProjectModal(proj, 0)}
+                      className="relative aspect-[16/10] rounded-2xl overflow-hidden border hairline bg-black cursor-pointer group/img"
+                    >
+                      <img
+                        src={proj.photos[0].src}
+                        alt={proj.title}
+                        className="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-700 ease-out"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover/img:opacity-60 transition-opacity" />
+                      
+                      {/* Top Badges */}
+                      <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
+                        <span className="label-mono bg-black/85 backdrop-blur-md border border-white/20 px-3.5 py-1 rounded-full text-xs font-semibold text-white">
+                          {proj.photos.length} High-Res Photos
+                        </span>
+                        <span className="label-mono bg-primary text-primary-foreground px-3.5 py-1 rounded-full text-xs font-semibold">
+                          {proj.statusLabel}
+                        </span>
                       </div>
-                    ))}
-                  </div>
 
-                  {/* Portfolio Disclaimer */}
-                  <div className="mt-6 p-4 sm:p-5 rounded-2xl bg-black/60 border border-primary/30 text-xs text-muted-foreground leading-relaxed shadow-inner">
-                    <div className="flex items-center gap-2 text-primary font-mono font-bold mb-1.5 text-[11px] uppercase tracking-wider">
-                      <ShieldAlert className="w-4 h-4 text-primary shrink-0" />
-                      DISCLAIMER:
+                      {/* Click overlay prompt */}
+                      <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white">
+                        <span className="text-xs font-mono text-white/90 truncate max-w-[80%]">
+                          {proj.photos[0].title}
+                        </span>
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-xs font-semibold text-white group-hover/img:bg-primary group-hover/img:text-primary-foreground transition-colors shrink-0">
+                          View Gallery <ArrowUpRight className="w-3.5 h-3.5" />
+                        </span>
+                      </div>
                     </div>
-                    {activeProject.disclaimer}
-                  </div>
-                </div>
 
-                <div className="mt-8 pt-6 border-t hairline flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                  <span className="label-mono text-xs text-muted-foreground">Certified Stamped Packages</span>
-                  <Link
-                    to="/contact"
-                    className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-6 h-11 text-xs sm:text-sm font-semibold hover:brightness-110 transition shadow-lg shadow-primary/20 shrink-0"
-                  >
-                    Discuss Similar Project <ArrowUpRight className="w-4 h-4" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Reveal>
-
-        {/* Secondary View: Show Both Projects as Cards Below for Quick Browsing */}
-        <div className="mt-16 sm:mt-20">
-          <div className="flex items-center justify-between mb-8">
-            <h3 className="font-display font-bold text-xl sm:text-2xl">
-              All Executed Projects ({PROJECTS_DATA.length})
-            </h3>
-            <span className="label-mono text-xs text-primary">Browse All</span>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {PROJECTS_DATA.map((proj, pIdx) => (
-              <div
-                key={proj.id}
-                onClick={() => {
-                  setActiveProjectIdx(pIdx);
-                  window.scrollTo({ top: 350, behavior: "smooth" });
-                }}
-                className={`cursor-pointer rounded-3xl border hairline bg-card p-6 sm:p-7 hover:border-primary transition-all duration-300 flex flex-col justify-between group ${
-                  activeProjectIdx === pIdx ? "border-primary ring-1 ring-primary/40 bg-primary/[0.02]" : ""
-                }`}
-              >
-                <div>
-                  <div className="relative aspect-[16/10] rounded-2xl overflow-hidden border hairline bg-black mb-5">
-                    <img
-                      src={proj.photos[0].src}
-                      alt={proj.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute top-3 left-3">
-                      <span className="label-mono bg-black/85 backdrop-blur-md border border-white/20 px-3 py-1 rounded-full text-[11px] font-semibold text-white">
-                        {proj.photos.length} Photos
-                      </span>
+                    {/* Compact Thumb Strip */}
+                    <div className="grid grid-cols-5 gap-2 mt-3">
+                      {proj.photos.slice(0, 5).map((photo, thumbIdx) => (
+                        <button
+                          key={thumbIdx}
+                          onClick={() => openProjectModal(proj, thumbIdx)}
+                          className="relative aspect-square rounded-xl overflow-hidden border border-white/10 hover:border-primary transition-all opacity-75 hover:opacity-100 group/thumb"
+                        >
+                          <img
+                            src={photo.src}
+                            alt={photo.title}
+                            className="w-full h-full object-cover group-hover/thumb:scale-110 transition-transform duration-300"
+                          />
+                          {thumbIdx === 4 && proj.photos.length > 5 && (
+                            <div className="absolute inset-0 bg-black/75 backdrop-blur-[2px] flex items-center justify-center font-mono text-xs font-bold text-primary">
+                              +{proj.photos.length - 5}
+                            </div>
+                          )}
+                        </button>
+                      ))}
                     </div>
                   </div>
 
-                  <span className="label-mono text-primary text-xs uppercase tracking-wider">
-                    {proj.tag}
-                  </span>
-                  <h4 className="font-display font-bold text-xl text-foreground mt-1 group-hover:text-primary transition-colors">
-                    {proj.title}
-                  </h4>
-                  <p className="text-xs sm:text-sm text-muted-foreground mt-2 line-clamp-2">
-                    {proj.description}
-                  </p>
-                </div>
+                  {/* Right Column: Clean Editorial Typography & Structured Data */}
+                  <div className="lg:col-span-6 flex flex-col justify-between">
+                    <div>
+                      <div className="flex items-center gap-3 mb-3">
+                        <span className="text-primary font-mono text-xs font-bold tracking-widest uppercase">
+                          {proj.tag}
+                        </span>
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary/40" />
+                        <span className="text-muted-foreground font-mono text-xs">
+                          {proj.category}
+                        </span>
+                      </div>
 
-                <div className="mt-5 pt-4 border-t hairline flex items-center justify-between">
-                  <span className="text-xs font-mono text-primary">{proj.statusLabel}</span>
-                  <span className="text-xs font-semibold text-foreground flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                    View Project Gallery <ArrowUpRight className="w-3.5 h-3.5" />
-                  </span>
+                      <h3 className="font-display font-extrabold text-2xl sm:text-3xl text-foreground group-hover:text-primary transition-colors leading-snug">
+                        {proj.title}
+                      </h3>
+
+                      <p className="mt-4 text-muted-foreground text-sm sm:text-base leading-relaxed">
+                        {proj.description}
+                      </p>
+
+                      {/* Clean Technical Specs Grid */}
+                      <div className="mt-6 pt-5 border-t hairline space-y-2.5">
+                        {proj.specs.map((spec, sIdx) => (
+                          <div key={sIdx} className="flex items-start gap-2.5 text-xs sm:text-sm">
+                            <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2" />
+                            <p className="text-foreground/90 leading-relaxed">
+                              <strong className="text-foreground font-semibold mr-1.5 font-mono text-xs uppercase tracking-wide">
+                                {spec.label}:
+                              </strong>
+                              <span className="text-muted-foreground">{spec.value}</span>
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* Minimal Disclaimer Accordion / Card */}
+                      <div className="mt-6 p-4 rounded-xl bg-black/40 border hairline text-xs text-muted-foreground leading-relaxed">
+                        <div className="flex items-center gap-2 text-primary font-mono font-bold mb-1 text-[11px] uppercase tracking-wider">
+                          <ShieldAlert className="w-3.5 h-3.5 shrink-0" />
+                          Portfolio Notice:
+                        </div>
+                        {proj.disclaimer}
+                      </div>
+                    </div>
+
+                    {/* Action Bar */}
+                    <div className="mt-8 pt-5 border-t hairline flex flex-wrap items-center justify-between gap-4">
+                      <button
+                        onClick={() => openProjectModal(proj, 0)}
+                        className="inline-flex items-center gap-2 rounded-full bg-card hover:bg-white/10 border hairline px-5 py-2.5 text-xs sm:text-sm font-semibold text-foreground transition"
+                      >
+                        Explore Photo Gallery ({proj.photos.length}) <ArrowUpRight className="w-4 h-4 text-primary" />
+                      </button>
+
+                      <Link
+                        to="/contact"
+                        className="inline-flex items-center gap-2 rounded-full bg-primary hover:bg-primary-hover text-primary-foreground px-5 py-2.5 text-xs sm:text-sm font-semibold transition shadow-lg shadow-primary/20"
+                      >
+                        Inquire About Scope <ArrowUpRight className="w-4 h-4" />
+                      </Link>
+                    </div>
+                  </div>
+
                 </div>
               </div>
-            ))}
-          </div>
+            </Reveal>
+          ))}
         </div>
       </section>
 
+      {/* Lightbox / Gallery Modal for Full View */}
+      {selectedProjectForModal && (
+        <div className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 lg:p-10 animate-in fade-in duration-200">
+          <div className="relative w-full max-w-5xl bg-[#0d131c] border hairline rounded-3xl overflow-hidden shadow-2xl flex flex-col max-h-[90vh]">
+            
+            {/* Modal Header */}
+            <div className="px-6 py-4 border-b hairline flex items-center justify-between bg-card/50">
+              <div>
+                <span className="label-mono text-primary text-xs uppercase tracking-wider">
+                  {selectedProjectForModal.tag}
+                </span>
+                <h4 className="font-display font-bold text-base sm:text-lg text-foreground line-clamp-1">
+                  {selectedProjectForModal.title}
+                </h4>
+              </div>
+
+              <button
+                onClick={closeProjectModal}
+                className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center font-mono text-base transition"
+                aria-label="Close Gallery"
+              >
+                ✕
+              </button>
+            </div>
+
+            {/* Modal Main Image */}
+            <div className="relative flex-1 bg-black flex items-center justify-center overflow-hidden min-h-[300px] sm:min-h-[460px]">
+              <img
+                src={selectedProjectForModal.photos[modalPhotoIdx].src}
+                alt={selectedProjectForModal.photos[modalPhotoIdx].title}
+                className="max-h-[60vh] w-auto max-w-full object-contain mx-auto transition-all duration-300"
+              />
+
+              {/* Prev / Next controls */}
+              {selectedProjectForModal.photos.length > 1 && (
+                <>
+                  <button
+                    onClick={() => setModalPhotoIdx((prev) => (prev > 0 ? prev - 1 : selectedProjectForModal.photos.length - 1))}
+                    className="absolute left-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black/70 hover:bg-primary text-white hover:text-primary-foreground border border-white/20 flex items-center justify-center transition"
+                    aria-label="Previous photo"
+                  >
+                    ←
+                  </button>
+                  <button
+                    onClick={() => setModalPhotoIdx((prev) => (prev < selectedProjectForModal.photos.length - 1 ? prev + 1 : 0))}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black/70 hover:bg-primary text-white hover:text-primary-foreground border border-white/20 flex items-center justify-center transition"
+                    aria-label="Next photo"
+                  >
+                    →
+                  </button>
+                </>
+              )}
+
+              {/* Bottom Caption Overlay */}
+              <div className="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-black/95 via-black/80 to-transparent">
+                <div className="flex items-center justify-between text-xs text-primary font-mono mb-1">
+                  <span>Photo {modalPhotoIdx + 1} of {selectedProjectForModal.photos.length}</span>
+                  <span>{selectedProjectForModal.statusLabel}</span>
+                </div>
+                <p className="font-display font-semibold text-sm sm:text-base text-white">
+                  {selectedProjectForModal.photos[modalPhotoIdx].title}
+                </p>
+                <p className="text-xs text-muted-foreground mt-0.5 line-clamp-2">
+                  {selectedProjectForModal.photos[modalPhotoIdx].caption}
+                </p>
+              </div>
+            </div>
+
+            {/* Modal Bottom Thumbnail Bar */}
+            <div className="p-3 bg-black/60 border-t hairline overflow-x-auto flex gap-2">
+              {selectedProjectForModal.photos.map((ph, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setModalPhotoIdx(idx)}
+                  className={`relative w-16 h-12 rounded-lg overflow-hidden shrink-0 border transition-all ${
+                    modalPhotoIdx === idx
+                      ? "border-primary ring-2 ring-primary scale-105"
+                      : "border-white/10 opacity-60 hover:opacity-100"
+                  }`}
+                >
+                  <img src={ph.src} alt={ph.title} className="w-full h-full object-cover" />
+                </button>
+              ))}
+            </div>
+
+          </div>
+        </div>
+      )}
+
       <CtaBand 
-        title="Need wall formwork or structural shoring engineering?" 
-        text="Send us your civil project drawings, wall heights, and concrete pour rates. Our team provides P.Eng. stamped shop drawings and calculation submittals across North America."
+        title="Need certified formwork or structural shoring engineering?" 
+        text="Send us your structural drawings, site constraints, and design criteria. Prem Technology Inc. provides P.Eng. stamped shop drawings and calculations across North America."
         button="Discuss Your Project"
       />
     </>
