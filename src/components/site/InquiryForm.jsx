@@ -112,109 +112,25 @@ export default function InquiryForm() {
       if (response.ok) {
         setBusy(false);
         setSent(true);
+        setSelectedFile(null);
+        e.target.reset();
         return;
       } else {
         const errJson = await response.json().catch(() => null);
         if (errJson?.error) {
           setError(errJson.error);
+        } else {
+          setError("Failed to dispatch email. Please verify connection.");
         }
       }
     } catch {
-      // In local dev without serverless api, gracefully fallback
+      setError("Network error. Please try again or email virag@premtechinc.com directly.");
     }
-
-    // Prepare nicely formatted email body for fallback
-    const subject = encodeURIComponent(`Project Enquiry: ${category} — ${fullName}`);
-    const bodyText = `Hello Prem Technology Inc. Team,
-
-I would like to submit a new project enquiry with the following details:
-
-========================================
-CLIENT & PROJECT INFORMATION
-========================================
-* Client Name: ${fullName}
-* Email Address: ${email}
-* Company / Organization: ${company}
-* Phone Number: ${phone}
-* Project Location: ${location}
-* Practice Area / Category: ${category}
-* Project Stage: ${stage}
-${attachmentName ? `* Attached Drawing/File: ${attachmentName} (${(attachmentSize / 1024).toFixed(1)} KB)` : ""}
-
-========================================
-PROJECT SCOPE & REQUIREMENTS:
-========================================
-${details}
-
-========================================
-(Please find any relevant drawings or engineering specifications attached.)
-
-Best regards,
-${fullName}`;
-
-    const encodedBody = encodeURIComponent(bodyText);
-
-    // Direct Web Gmail compose URL & universal mailto fallback
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=virag@premtechinc.com&su=${subject}&body=${encodedBody}`;
-    const mailtoUrl = `mailto:virag@premtechinc.com?subject=${subject}&body=${encodedBody}`;
 
     setBusy(false);
-    setSent(true);
-
-    const newTab = window.open(gmailUrl, "_blank");
-    if (!newTab || newTab.closed || typeof newTab.closed === "undefined") {
-      window.location.href = mailtoUrl;
-    }
   };
 
-  if (sent && submittedData) {
-    const subject = encodeURIComponent(`Project Enquiry: ${submittedData.category} — ${submittedData.fullName}`);
-    const bodyText = encodeURIComponent(`Client Name: ${submittedData.fullName}\nEmail: ${submittedData.email}\nPhone: ${submittedData.phone}\nCompany: ${submittedData.company}\nCategory: ${submittedData.category}\nDetails:\n${submittedData.details}`);
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=virag@premtechinc.com&su=${subject}&body=${bodyText}`;
-    const mailtoUrl = `mailto:virag@premtechinc.com?subject=${subject}&body=${bodyText}`;
-
-    return (
-      <div className="py-12 sm:py-16 text-center">
-        <span className="w-16 h-16 rounded-full bg-primary text-primary-foreground grid place-items-center mx-auto shadow-xl shadow-primary/20">
-          <Check className="w-8 h-8" />
-        </span>
-        <h3 className="mt-6 font-display font-black text-2xl sm:text-3xl text-[#0c1420]">
-          Enquiry Prepared for Sending!
-        </h3>
-        <p className="mt-3 text-sm text-[#3a4757] max-w-md mx-auto leading-relaxed">
-          Your message has been pre-formatted and sent to <strong>virag@premtechinc.com</strong>.
-        </p>
-
-        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-          <a
-            href={gmailUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-[#ea4335] hover:bg-[#d93025] text-white px-6 py-3 text-xs sm:text-sm font-bold shadow-lg transition"
-          >
-            <Mail className="w-4 h-4" /> Open in Gmail <ExternalLink className="w-3.5 h-3.5" />
-          </a>
-          <a
-            href={mailtoUrl}
-            className="inline-flex items-center gap-2 rounded-full bg-black hover:bg-neutral-800 text-white px-6 py-3 text-xs sm:text-sm font-semibold transition"
-          >
-            Open in Outlook / Mail App <ExternalLink className="w-3.5 h-3.5" />
-          </a>
-        </div>
-
-        <button
-          onClick={() => {
-            setSent(false);
-            setSubmittedData(null);
-          }}
-          className="mt-6 text-xs text-[#0c1420]/60 underline hover:text-primary transition"
-        >
-          Submit another inquiry
-        </button>
-      </div>
-    );
-  }
-
+  // If sent, form stays cleanly visible with green button and message
   return (
     <form onSubmit={submit} className="space-y-5">
       <div className="grid sm:grid-cols-2 gap-5">
@@ -260,9 +176,40 @@ ${fullName}`;
         I agree to the privacy policy and consent to being contacted at virag@premtechinc.com about this enquiry.
       </label>
       {error && <p className="text-sm text-red-600">{error}</p>}
-      <button type="submit" disabled={!agree || busy} className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-7 h-12 font-semibold hover:brightness-110 transition disabled:opacity-50">
-        {busy ? <><Loader2 className="w-4 h-4 animate-spin" /> Preparing...</> : <>Send project enquiry <ArrowRight className="w-4 h-4" /></>}
-      </button>
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+        <button
+          type="submit"
+          disabled={!agree || busy || sent}
+          className={`inline-flex items-center justify-center gap-2.5 rounded-full px-8 h-13 font-bold text-sm tracking-wide transition-all shadow-lg ${
+            sent
+              ? "bg-[#16a34a] hover:bg-[#15803d] text-white shadow-green-600/30 scale-[1.02]"
+              : "bg-primary hover:bg-primary-hover text-primary-foreground shadow-primary/20 hover:scale-[1.01]"
+          } disabled:opacity-60 disabled:cursor-not-allowed`}
+        >
+          {busy ? (
+            <>
+              <Loader2 className="w-4 h-4 animate-spin" />
+              <span>Sending Enquiry...</span>
+            </>
+          ) : sent ? (
+            <>
+              <Check className="w-5 h-5 text-white" />
+              <span>Inquiry Sent Successfully!</span>
+            </>
+          ) : (
+            <>
+              <span>Send Project Enquiry</span>
+              <ArrowRight className="w-4 h-4" />
+            </>
+          )}
+        </button>
+
+        {sent && (
+          <span className="text-xs text-green-700 font-semibold font-mono flex items-center gap-1.5 animate-in fade-in duration-300">
+            <Check className="w-4 h-4 text-green-600" /> Dispatched to virag@premtechinc.com
+          </span>
+        )}
+      </div>
     </form>
   );
 }
