@@ -17,6 +17,29 @@ export default function InquiryForm() {
   const [error, setError] = useState("");
   const [submittedData, setSubmittedData] = useState(null);
 
+  const [fileError, setFileError] = useState("");
+  const [selectedFile, setSelectedFile] = useState(null);
+
+  // Gmail strict attachment limit is 25 MB
+  const MAX_FILE_SIZE = 25 * 1024 * 1024; // 25 MB in bytes
+
+  const handleFileChange = (e) => {
+    const file = e.target.files?.[0];
+    setFileError("");
+
+    if (file) {
+      if (file.size > MAX_FILE_SIZE) {
+        setFileError(`File "${file.name}" is ${(file.size / (1024 * 1024)).toFixed(1)}MB. Gmail attachment limit is 25MB.`);
+        setSelectedFile(null);
+        e.target.value = "";
+        return;
+      }
+      setSelectedFile(file);
+    } else {
+      setSelectedFile(null);
+    }
+  };
+
   const submit = async (e) => {
     e.preventDefault();
     setBusy(true);
@@ -32,6 +55,36 @@ export default function InquiryForm() {
     const stage = f.get("stage") || "Planning";
     const details = f.get("details") || "";
 
+    // Read attachment as base64 if present
+    let attachmentData = null;
+    let attachmentName = null;
+    let attachmentType = null;
+    let attachmentSize = 0;
+
+    if (selectedFile) {
+      if (selectedFile.size > MAX_FILE_SIZE) {
+        setError("Attached file exceeds Gmail's 25MB limit. Please attach a smaller file.");
+        setBusy(false);
+        return;
+      }
+
+      try {
+        const base64 = await new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onload = () => resolve(reader.result);
+          reader.onerror = reject;
+          reader.readAsDataURL(selectedFile);
+        });
+
+        attachmentData = base64;
+        attachmentName = selectedFile.name;
+        attachmentType = selectedFile.type;
+        attachmentSize = selectedFile.size;
+      } catch (err) {
+        console.error("Error reading file:", err);
+      }
+    }
+
     const inquiryDetails = {
       fullName,
       email,
@@ -41,10 +94,36 @@ export default function InquiryForm() {
       category,
       stage,
       details,
+      attachmentName,
+      attachmentData,
+      attachmentType,
+      attachmentSize,
     };
     setSubmittedData(inquiryDetails);
 
-    // Prepare nicely formatted email body for virag@premtechinc.com
+    // Send directly to backend Gmail SMTP endpoint (/api/send-inquiry)
+    try {
+      const response = await fetch("/api/send-inquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(inquiryDetails),
+      });
+
+      if (response.ok) {
+        setBusy(false);
+        setSent(true);
+        return;
+      } else {
+        const errJson = await response.json().catch(() => null);
+        if (errJson?.error) {
+          setError(errJson.error);
+        }
+      }
+    } catch {
+      // In local dev without serverless api, gracefully fallback
+    }
+
+    // Prepare nicely formatted email body for fallback
     const subject = encodeURIComponent(`Project Enquiry: ${category} — ${fullName}`);
     const bodyText = `Hello Prem Technology Inc. Team,
 
@@ -60,6 +139,7 @@ CLIENT & PROJECT INFORMATION
 * Project Location: ${location}
 * Practice Area / Category: ${category}
 * Project Stage: ${stage}
+${attachmentName ? `* Attached Drawing/File: ${attachmentName} (${(attachmentSize / 1024).toFixed(1)} KB)` : ""}
 
 ========================================
 PROJECT SCOPE & REQUIREMENTS:
@@ -74,31 +154,13 @@ ${fullName}`;
 
     const encodedBody = encodeURIComponent(bodyText);
 
-    // Send directly to backend Gmail SMTP endpoint (/api/send-inquiry)
-    try {
-      const response = await fetch("/api/send-inquiry", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(inquiryDetails),
-      });
-
-      if (response.ok) {
-        setBusy(false);
-        setSent(true);
-        return;
-      }
-    } catch {
-      // In local dev without serverless api, gracefully fallback
-    }
-
-    // Direct Web Gmail compose URL & universal mailto fallback if /api/ not active locally
+    // Direct Web Gmail compose URL & universal mailto fallback
     const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=virag@premtechinc.com&su=${subject}&body=${encodedBody}`;
     const mailtoUrl = `mailto:virag@premtechinc.com?subject=${subject}&body=${encodedBody}`;
 
     setBusy(false);
     setSent(true);
 
-    // Open Gmail directly in a new tab; if popup blocked, fallback opens mail client
     const newTab = window.open(gmailUrl, "_blank");
     if (!newTab || newTab.closed || typeof newTab.closed === "undefined") {
       window.location.href = mailtoUrl;
@@ -174,7 +236,25 @@ ${fullName}`;
         </div>
       </div>
       <div><label className={labelCls}>Project details / brief description *</label><Textarea name="details" required rows={5} placeholder="Scope, constraints, sequence, key challenge..." className={fieldCls} /></div>
-      <div><label className={labelCls}>Optional drawing or specification files</label><input name="file" type="file" className="block w-full text-sm text-[#3a4757] file:mr-4 file:rounded-full file:border-0 file:bg-black file:text-white file:px-4 file:py-2" /></div>
+      <div>
+        <div className="flex items-center justify-between mb-1.5">
+          <label className={labelCls}>Drawing or specification file attachment</label>
+          <span className="text-[11px] font-mono text-muted-foreground">Max 25 MB (Gmail Limit)</span>
+        </div>
+        <input
+          name="file"
+          type="file"
+          onChange={handleFileChange}
+          accept=".pdf,.dwg,.dxf,.zip,.rar,.png,.jpg,.jpeg,.doc,.docx,.xls,.xlsx"
+          className="block w-full text-xs sm:text-sm text-[#3a4757] file:mr-4 file:rounded-full file:border-0 file:bg-black file:text-white file:px-4 file:py-2 hover:file:bg-primary hover:file:text-primary-foreground file:transition-all cursor-pointer"
+        />
+        {selectedFile && (
+          <p className="mt-1.5 text-xs text-primary font-mono flex items-center gap-1.5">
+            📎 Selected: <strong>{selectedFile.name}</strong> ({(selectedFile.size / (1024 * 1024)).toFixed(2)} MB)
+          </p>
+        )}
+        {fileError && <p className="mt-1.5 text-xs text-red-600 font-semibold">{fileError}</p>}
+      </div>
       <label className="flex items-start gap-3 text-xs text-[#3a4757]">
         <input type="checkbox" checked={agree} onChange={(e) => setAgree(e.target.checked)} className="mt-0.5" required />
         I agree to the privacy policy and consent to being contacted at virag@premtechinc.com about this enquiry.

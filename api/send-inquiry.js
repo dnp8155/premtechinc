@@ -1,5 +1,13 @@
 import nodemailer from 'nodemailer';
 
+export const config = {
+  api: {
+    bodyParser: {
+      sizeLimit: '25mb',
+    },
+  },
+};
+
 export default async function handler(req, res) {
   // Set CORS headers
   res.setHeader('Access-Control-Allow-Credentials', true);
@@ -19,10 +27,31 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { fullName, email, phone, company, location, category, stage, details } = req.body || {};
+    const { 
+      fullName, 
+      email, 
+      phone, 
+      company, 
+      location, 
+      category, 
+      stage, 
+      details, 
+      attachmentName, 
+      attachmentData, 
+      attachmentType,
+      attachmentSize 
+    } = req.body || {};
 
     if (!fullName || !email) {
       return res.status(400).json({ error: 'Full name and email are required.' });
+    }
+
+    // Gmail strict limit check: maximum 25 MB
+    const MAX_SIZE_BYTES = 25 * 1024 * 1024;
+    if (attachmentSize && attachmentSize > MAX_SIZE_BYTES) {
+      return res.status(400).json({ 
+        error: 'Attachment exceeds Gmail limit of 25MB. Please upload a smaller file or send download link.' 
+      });
     }
 
     const transporter = nodemailer.createTransport({
@@ -35,84 +64,165 @@ export default async function handler(req, res) {
       },
     });
 
+    const attachments = [];
+    if (attachmentData && attachmentName) {
+      attachments.push({
+        filename: attachmentName,
+        content: attachmentData.includes('base64,') ? attachmentData.split('base64,')[1] : attachmentData,
+        encoding: 'base64',
+        contentType: attachmentType || 'application/octet-stream',
+      });
+    }
+
+    const formattedDate = new Date().toLocaleString('en-US', {
+      timeZone: 'America/Toronto',
+      dateStyle: 'full',
+      timeStyle: 'short'
+    });
+
     const htmlContent = `
       <!DOCTYPE html>
-      <html>
+      <html lang="en">
       <head>
         <meta charset="utf-8">
-        <style>
-          body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #0b0f15; color: #ffffff; padding: 20px; margin: 0; }
-          .container { max-width: 600px; margin: 0 auto; background-color: #111827; border-radius: 16px; border: 1px solid #1f2937; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
-          .header { background: linear-gradient(135deg, #1e293b, #0f172a); padding: 30px 25px; border-bottom: 2px solid #3b82f6; text-align: left; }
-          .brand { font-size: 13px; font-weight: 700; color: #60a5fa; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
-          .title { font-size: 24px; font-weight: 800; color: #ffffff; margin: 0; }
-          .content { padding: 30px 25px; }
-          .badge { display: inline-block; padding: 4px 12px; background-color: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.3); color: #93c5fd; border-radius: 9999px; font-size: 12px; font-weight: 600; margin-bottom: 20px; }
-          .grid { width: 100%; border-collapse: collapse; margin-bottom: 25px; }
-          .grid td { padding: 12px 10px; border-bottom: 1px solid #1f2937; font-size: 14px; }
-          .label { color: #9ca3af; width: 35%; font-weight: 600; text-transform: uppercase; font-size: 11px; letter-spacing: 1px; }
-          .val { color: #f3f4f6; font-weight: 500; }
-          .message-box { background-color: #0d131c; border: 1px solid #1f2937; border-radius: 12px; padding: 20px; margin-top: 15px; }
-          .message-label { font-size: 11px; font-weight: 700; color: #60a5fa; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 10px; }
-          .message-text { font-size: 14px; line-height: 1.6; color: #e5e7eb; white-space: pre-wrap; margin: 0; }
-          .footer { background-color: #0b0f15; padding: 20px 25px; text-align: center; border-top: 1px solid #1f2937; font-size: 12px; color: #6b7280; }
-          .reply-btn { display: inline-block; background-color: #2563eb; color: #ffffff !important; text-decoration: none; font-weight: 700; font-size: 13px; padding: 12px 24px; border-radius: 9999px; margin-top: 20px; }
-        </style>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>New Project Inquiry</title>
       </head>
-      <body>
-        <div class="container">
-          <div class="header">
-            <div class="brand">Prem Technology Inc. · Project Inquiry</div>
-            <h1 class="title">New Client Scope Submission</h1>
-          </div>
-          <div class="content">
-            <span class="badge">${category || 'Engineering Scope'} · ${stage || 'Planning'}</span>
-            
-            <table class="grid">
-              <tr>
-                <td class="label">Full Name</td>
-                <td class="val"><strong>${fullName}</strong></td>
-              </tr>
-              <tr>
-                <td class="label">Email Address</td>
-                <td class="val"><a href="mailto:${email}" style="color: #60a5fa; text-decoration: none;">${email}</a></td>
-              </tr>
-              <tr>
-                <td class="label">Phone Number</td>
-                <td class="val">${phone || 'Not Provided'}</td>
-              </tr>
-              <tr>
-                <td class="label">Organization</td>
-                <td class="val">${company || 'Not Provided'}</td>
-              </tr>
-              <tr>
-                <td class="label">Project Location</td>
-                <td class="val">${location || 'Canada'}</td>
-              </tr>
-              <tr>
-                <td class="label">Project Category</td>
-                <td class="val">${category || 'General'}</td>
-              </tr>
-              <tr>
-                <td class="label">Project Stage</td>
-                <td class="val">${stage || 'Planning'}</td>
-              </tr>
-            </table>
+      <body style="margin: 0; padding: 30px 10px; background-color: #080c12; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased;">
+        <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 640px; background-color: #0f1622; border: 1px solid #1e293b; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.6);">
+          
+          <!-- BRAND TOP BAR -->
+          <tr>
+            <td style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); padding: 35px 35px 25px 35px; border-bottom: 2px solid #2563eb;">
+              <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                  <td>
+                    <div style="font-size: 11px; font-weight: 800; color: #60a5fa; letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 8px;">
+                      PREM TECHNOLOGY INC. · PORTAL INTAKE
+                    </div>
+                    <h1 style="margin: 0; font-size: 24px; font-weight: 800; color: #ffffff; letter-spacing: -0.5px; line-height: 1.2;">
+                      New Client Project Inquiry
+                    </h1>
+                    <div style="color: #94a3b8; font-size: 12px; margin-top: 6px;">
+                      Received: ${formattedDate} (EST)
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
 
-            <div class="message-box">
-              <div class="message-label">Scope &amp; Engineering Requirements</div>
-              <p class="message-text">${details || 'No detailed brief provided.'}</p>
-            </div>
+          <!-- MAIN CONTENT BODY -->
+          <tr>
+            <td style="padding: 35px 35px 25px 35px;">
 
-            <div style="text-align: center;">
-              <a href="mailto:${email}?subject=RE: Prem Technology Inc. Project Inquiry - ${fullName}" class="reply-btn">Reply to ${fullName}</a>
-            </div>
-          </div>
-          <div class="footer">
-            Received via Prem Technology Inc. (premtechinc.com) Official Web Portal.<br>
-            Direct response standard: Technical review performed by licensed engineering staff.
-          </div>
-        </div>
+              <!-- BADGES -->
+              <div style="margin-bottom: 25px;">
+                <span style="display: inline-block; padding: 5px 14px; background-color: rgba(37, 99, 235, 0.15); border: 1px solid rgba(59, 130, 246, 0.4); color: #93c5fd; border-radius: 9999px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;">
+                  ${category || 'Structural Engineering'}
+                </span>
+                <span style="display: inline-block; padding: 5px 14px; background-color: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); color: #f1f5f9; border-radius: 9999px; font-size: 12px; font-weight: 600; margin-left: 6px;">
+                  Stage: ${stage || 'Planning'}
+                </span>
+              </div>
+
+              <!-- CLIENT SPECS TABLE -->
+              <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse; margin-bottom: 30px; background-color: #0a0e17; border: 1px solid #1e293b; border-radius: 14px; overflow: hidden;">
+                <tr>
+                  <td style="padding: 14px 18px; border-bottom: 1px solid #1e293b; width: 36%; color: #94a3b8; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
+                    Client Name
+                  </td>
+                  <td style="padding: 14px 18px; border-bottom: 1px solid #1e293b; color: #ffffff; font-size: 14px; font-weight: 700;">
+                    ${fullName}
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 14px 18px; border-bottom: 1px solid #1e293b; color: #94a3b8; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
+                    Email Address
+                  </td>
+                  <td style="padding: 14px 18px; border-bottom: 1px solid #1e293b; font-size: 14px; font-weight: 600;">
+                    <a href="mailto:${email}" style="color: #60a5fa; text-decoration: none;">${email}</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 14px 18px; border-bottom: 1px solid #1e293b; color: #94a3b8; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
+                    Phone Number
+                  </td>
+                  <td style="padding: 14px 18px; border-bottom: 1px solid #1e293b; color: #f1f5f9; font-size: 14px; font-weight: 500;">
+                    ${phone ? `<a href="tel:${phone}" style="color: #f1f5f9; text-decoration: none;">${phone}</a>` : '<span style="color:#64748b;">Not Provided</span>'}
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 14px 18px; border-bottom: 1px solid #1e293b; color: #94a3b8; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
+                    Company / Organization
+                  </td>
+                  <td style="padding: 14px 18px; border-bottom: 1px solid #1e293b; color: #f1f5f9; font-size: 14px; font-weight: 600;">
+                    ${company || '<span style="color:#64748b;">Not Provided</span>'}
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 14px 18px; border-bottom: 1px solid #1e293b; color: #94a3b8; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
+                    Project Location
+                  </td>
+                  <td style="padding: 14px 18px; border-bottom: 1px solid #1e293b; color: #f1f5f9; font-size: 14px; font-weight: 600;">
+                    📍 ${location || 'Canada'}
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 14px 18px; border-bottom: 1px solid #1e293b; color: #94a3b8; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
+                    Project Category
+                  </td>
+                  <td style="padding: 14px 18px; border-bottom: 1px solid #1e293b; color: #60a5fa; font-size: 14px; font-weight: 700;">
+                    ${category || 'General Structural'}
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 14px 18px; color: #94a3b8; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
+                    Attachment Status
+                  </td>
+                  <td style="padding: 14px 18px; font-size: 14px;">
+                    ${attachmentName 
+                      ? `<span style="color: #4ade80; font-weight: 700;">📎 Attached: ${attachmentName}</span>` 
+                      : '<span style="color: #64748b;">No files attached</span>'}
+                  </td>
+                </tr>
+              </table>
+
+              <!-- SCOPE & BRIEF BOX -->
+              <div style="background-color: #0a0e17; border: 1px solid #1e293b; border-left: 4px solid #3b82f6; border-radius: 12px; padding: 22px; margin-bottom: 30px;">
+                <div style="font-size: 11px; font-weight: 800; color: #60a5fa; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 10px;">
+                  PROJECT SCOPE &amp; ENGINEERING BRIEF
+                </div>
+                <p style="margin: 0; font-size: 14px; line-height: 1.7; color: #e2e8f0; white-space: pre-wrap; font-family: inherit;">
+${details || 'No detailed brief description provided.'}
+                </p>
+              </div>
+
+              <!-- DIRECT REPLY CTA -->
+              <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                  <td align="center">
+                    <a href="mailto:${email}?subject=RE: Prem Technology Inc. Project Inquiry - ${fullName}" 
+                       style="display: inline-block; background: linear-gradient(135deg, #2563eb, #1d4ed8); color: #ffffff !important; text-decoration: none; font-weight: 700; font-size: 14px; padding: 14px 32px; border-radius: 9999px; box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4); text-align: center; letter-spacing: 0.3px;">
+                      Reply Directly to ${fullName} →
+                    </a>
+                  </td>
+                </tr>
+              </table>
+
+            </td>
+          </tr>
+
+          <!-- FOOTER -->
+          <tr>
+            <td style="background-color: #0a0e17; padding: 25px 35px; border-top: 1px solid #1e293b; text-align: center; font-size: 12px; line-height: 1.6; color: #64748b;">
+              <strong>Prem Technology Inc.</strong> · Structural Engineering Practice<br>
+              Direct Response Standard: Technical review performed directly by licensed engineering staff.<br>
+              <a href="https://www.premtechinc.com" style="color: #94a3b8; text-decoration: underline;">www.premtechinc.com</a> · Canada &amp; USA
+            </td>
+          </tr>
+
+        </table>
       </body>
       </html>
     `;
@@ -121,12 +231,13 @@ export default async function handler(req, res) {
       from: `"Prem Technology Web Portal" <virag@premtechinc.com>`,
       to: 'virag@premtechinc.com',
       replyTo: email,
-      subject: `[New Inquiry] ${fullName} — ${category} (${location})`,
-      text: `New Inquiry from ${fullName} (${email})\nPhone: ${phone}\nCompany: ${company}\nCategory: ${category}\nLocation: ${location}\nStage: ${stage}\n\nDetails:\n${details}`,
+      subject: `[Project Inquiry] ${fullName} — ${category} (${location})`,
+      text: `New Client Project Inquiry\n\nClient: ${fullName}\nEmail: ${email}\nPhone: ${phone}\nCompany: ${company}\nLocation: ${location}\nCategory: ${category}\nStage: ${stage}\n\nProject Scope & Requirements:\n${details}\n\nAttachment: ${attachmentName || 'None'}`,
       html: htmlContent,
+      attachments,
     });
 
-    return res.status(200).json({ success: true, message: 'Inquiry email dispatched successfully.' });
+    return res.status(200).json({ success: true, message: 'Inquiry and attachment dispatched successfully via Gmail.' });
   } catch (error) {
     console.error('SMTP Send Error:', error);
     return res.status(500).json({ error: error.message || 'Failed to dispatch email.' });
