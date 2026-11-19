@@ -176,37 +176,37 @@ export default function InquiryForm() {
         I agree to the privacy policy and consent to being contacted at virag@premtechinc.com about this enquiry.
       </label>
       {error && <p className="text-sm text-red-600">{error}</p>}
-      <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
         <button
           type="submit"
           disabled={!agree || busy || sent}
-          className={`inline-flex items-center justify-center gap-2.5 rounded-full px-8 h-13 font-bold text-sm tracking-wide transition-all shadow-lg ${
+          className={`inline-flex items-center justify-center gap-3 rounded-full px-8 py-3.5 min-h-[48px] font-bold text-sm tracking-wide transition-all shadow-md shrink-0 ${
             sent
-              ? "bg-[#16a34a] hover:bg-[#15803d] text-white shadow-green-600/30 scale-[1.02]"
-              : "bg-primary hover:bg-primary-hover text-primary-foreground shadow-primary/20 hover:scale-[1.01]"
+              ? "bg-[#16a34a] hover:bg-[#15803d] text-white shadow-green-600/30"
+              : "bg-primary hover:bg-primary-hover text-primary-foreground shadow-primary/25 hover:shadow-lg"
           } disabled:opacity-60 disabled:cursor-not-allowed`}
         >
           {busy ? (
             <>
-              <Loader2 className="w-4 h-4 animate-spin" />
+              <Loader2 className="w-4 h-4 animate-spin shrink-0" />
               <span>Sending Enquiry...</span>
             </>
           ) : sent ? (
             <>
-              <Check className="w-5 h-5 text-white" />
+              <Check className="w-5 h-5 text-white shrink-0" />
               <span>Inquiry Sent Successfully!</span>
             </>
           ) : (
             <>
               <span>Send Project Enquiry</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 shrink-0" />
             </>
           )}
         </button>
 
         {sent && (
           <span className="text-xs text-green-700 font-semibold font-mono flex items-center gap-1.5 animate-in fade-in duration-300">
-            <Check className="w-4 h-4 text-green-600" /> Dispatched to virag@premtechinc.com
+            <Check className="w-4 h-4 text-green-600 shrink-0" /> Dispatched to virag@premtechinc.com
           </span>
         )}
       </div>
