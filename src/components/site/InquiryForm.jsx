@@ -74,34 +74,26 @@ ${fullName}`;
 
     const encodedBody = encodeURIComponent(bodyText);
 
-    // Direct Web Gmail compose URL & universal mailto fallback
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=virag@premtechinc.com&su=${subject}&body=${encodedBody}`;
-    const mailtoUrl = `mailto:virag@premtechinc.com?subject=${subject}&body=${encodedBody}`;
-
-    // Try saving record into local backend if running
+    // Send directly to backend Gmail SMTP endpoint (/api/send-inquiry)
     try {
-      const file = f.get("file");
-      let attachment_uri;
-      if (file && file.size > 0 && base44?.integrations?.Core?.UploadPrivateFile) {
-        const res = await base44.integrations.Core.UploadPrivateFile({ file });
-        attachment_uri = res.file_uri;
-      }
-      if (base44?.entities?.Inquiry?.create) {
-        await base44.entities.Inquiry.create({
-          full_name: fullName,
-          email,
-          company: company !== "N/A" ? company : undefined,
-          phone: phone !== "N/A" ? phone : undefined,
-          location,
-          category,
-          stage,
-          details,
-          attachment_uri,
-        });
+      const response = await fetch("/api/send-inquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(inquiryDetails),
+      });
+
+      if (response.ok) {
+        setBusy(false);
+        setSent(true);
+        return;
       }
     } catch {
-      // Non-blocking: continue even if backend is offline
+      // In local dev without serverless api, gracefully fallback
     }
+
+    // Direct Web Gmail compose URL & universal mailto fallback if /api/ not active locally
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=virag@premtechinc.com&su=${subject}&body=${encodedBody}`;
+    const mailtoUrl = `mailto:virag@premtechinc.com?subject=${subject}&body=${encodedBody}`;
 
     setBusy(false);
     setSent(true);
