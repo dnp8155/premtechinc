@@ -19,7 +19,19 @@ function DesktopItem({ item }) {
 
   return (
     <div className="relative" onMouseEnter={() => setOpen(true)} onMouseLeave={() => { setOpen(false); setHoveredIdx(null); }}>
-      <Link to={item.to} className={`flex items-center gap-1.5 py-2 text-sm font-semibold transition-colors ${active || open ? "text-primary" : "text-slate-900 hover:text-primary"}`}>
+      <Link
+        to={item.to}
+        className={`flex items-center gap-1.5 py-2 text-sm font-semibold transition-colors ${
+          item.isPodcast ? "group/pod" : ""
+        } ${active || open ? "text-primary" : "text-slate-900 hover:text-primary"}`}
+      >
+        {item.badgeLogo && (
+          <img
+            src={item.badgeLogo}
+            alt="CHOT Podcast"
+            className="w-5 h-5 rounded-full object-cover border border-primary/40 shadow-sm group-hover/pod:scale-110 transition-transform shrink-0"
+          />
+        )}
         {item.label}
         {item.children && <ChevronDown className={`w-3.5 h-3.5 transition-transform ${open ? "rotate-180" : ""}`} />}
       </Link>
@@ -59,7 +71,7 @@ export default function SiteHeader() {
         <Link to="/" className="relative flex items-center" aria-label="PREM Technology Inc. home">
           <Image src={LOGO_ICON_URL} alt="PREM Technology Inc." fittingType="fit" className="h-12 w-11 sm:h-14 sm:w-[52px] p-1" />
         </Link>
-        <nav className="relative hidden lg:flex items-center gap-5 xl:gap-8">
+        <nav className="relative hidden lg:flex items-center gap-4 xl:gap-6">
           {NAV_MENU.map((n) => <DesktopItem key={n.label} item={n} />)}
         </nav>
         <div className="relative flex items-center gap-2">
@@ -75,7 +87,16 @@ export default function SiteHeader() {
         <div className="lg:hidden mt-2 mx-auto max-w-[1440px] rounded-3xl border border-black/10 bg-white text-slate-900 shadow-lg p-5 sm:p-6 max-h-[80vh] overflow-y-auto space-y-5">
           {NAV_MENU.map((n) => (
             <div key={n.label}>
-              <NavLink to={n.to} onClick={() => setOpen(false)} className="font-display font-bold text-xl">{n.label}</NavLink>
+              <NavLink to={n.to} onClick={() => setOpen(false)} className="font-display font-bold text-xl flex items-center gap-2">
+                {n.badgeLogo && (
+                  <img
+                    src={n.badgeLogo}
+                    alt="CHOT Podcast"
+                    className="w-6 h-6 rounded-full object-cover border border-primary/40 shadow-sm"
+                  />
+                )}
+                {n.label}
+              </NavLink>
               {n.children && (
                 <div className="mt-2 ml-3 flex flex-col gap-2">
                   {n.children.map((c) => <Link key={c.to} to={c.to} onClick={() => setOpen(false)} className="text-sm text-slate-600">{c.label}</Link>)}
