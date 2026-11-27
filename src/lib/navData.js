@@ -40,8 +40,11 @@ export const NAV_MENU = [
     isPodcast: true,
     badgeLogo: "/podcasts/chot-logo-circle.png",
   },
-  { label: "Insights", to: "/insights" },
-  { label: "Careers", to: "/careers" },
+  {
+    label: "Finan Formworks",
+    to: "https://www.finanformworks.com/",
+    isExternal: true,
+  },
   { label: "Contact", to: "/contact" },
 ];
 
