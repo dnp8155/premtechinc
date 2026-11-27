@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { ArrowUpRight, Phone, Mail, Globe, ShieldCheck, CheckCircle2, Building2, HardHat, Compass, FileCheck } from "lucide-react";
 import Reveal from "./Reveal";
 
@@ -116,13 +117,13 @@ export default function FinanFormworkSection() {
                 <span className="text-xs text-primary font-mono font-bold uppercase">Direct Support</span>
                 <p className="text-sm font-semibold text-white">Full Tender Support &amp; PE / P.Eng. Stamped Drawings</p>
               </div>
-              <a
-                href="mailto:Virag@premtechinc.com"
+              <Link
+                to="/contact"
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-primary-foreground text-xs sm:text-sm font-bold hover:brightness-110 transition shadow-sm"
               >
                 <span>Inquire Now</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />
-              </a>
+              </Link>
             </div>
           </Reveal>
 
