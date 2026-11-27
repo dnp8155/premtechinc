@@ -4,6 +4,7 @@ import Hero from "@/components/arcvolt/Hero";
 import Marquee from "@/components/arcvolt/Marquee";
 import Manifesto from "@/components/arcvolt/Manifesto";
 import Services from "@/components/arcvolt/Services";
+import FinanFormworkSection from "@/components/arcvolt/FinanFormworkSection";
 import CtaBand from "@/components/site/CtaBand";
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
       />
       <Hero />
       <Marquee />
+      <FinanFormworkSection />
       <Manifesto />
       <Services />
       <div className="pt-20">
