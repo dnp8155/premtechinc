@@ -156,30 +156,29 @@ export default function FinanFormworksPage() {
       />
 
       {/* Real Project Banner & Co-Branding Bar */}
-      <section className="py-8 bg-slate-950 text-white border-b border-white/10">
+      <section className="py-5 bg-slate-950 text-white border-b border-white/10">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-10">
-          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+          <div className="flex flex-col xl:flex-row xl:items-center justify-between gap-5">
             
-            <div className="flex items-center gap-4">
-              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 border border-primary/40 text-primary text-xs font-bold uppercase tracking-wider">
+            {/* Left Tag & Scope */}
+            <div className="flex flex-wrap items-center gap-3">
+              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/20 border border-primary/40 text-primary text-xs font-bold uppercase tracking-wider whitespace-nowrap">
                 Official Representation 🇺🇸 🇨🇦 🇲🇽 🇬🇧
               </span>
-              <span className="text-xs text-slate-400 hidden sm:inline">
+              <span className="text-xs text-slate-400 font-medium">
                 High-Rise Cores · Perimeter Screens · Modular Formwork · Hoists
               </span>
             </div>
 
-            {/* Brochures & Logo Pill Group */}
+            {/* Right Action Bar: Single Straight Row */}
             <div className="flex flex-wrap items-center gap-3">
               <a
                 href="/docs/finan-capability-in-action-brochure.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="h-11 inline-flex items-center gap-2 px-4 rounded-xl bg-white/10 hover:bg-white text-white hover:text-slate-900 border border-white/20 transition-all font-semibold text-xs shadow-sm group"
+                className="h-10 inline-flex items-center gap-2 px-3.5 rounded-xl bg-white/10 hover:bg-white text-white hover:text-slate-900 border border-white/15 transition-all font-semibold text-xs whitespace-nowrap group shadow-sm"
               >
-                <div className="w-5 h-5 rounded bg-red-600 text-white font-black text-[9px] flex items-center justify-center shrink-0">
-                  PDF
-                </div>
+                <span className="px-1.5 py-0.5 rounded bg-red-600 text-white font-black text-[9px] leading-tight">PDF</span>
                 <span>Systems Brochure</span>
                 <ArrowUpRight className="w-3.5 h-3.5 opacity-70 group-hover:opacity-100" />
               </a>
@@ -188,30 +187,28 @@ export default function FinanFormworksPage() {
                 href="/docs/finan-formwork-and-edge-protection-brochure.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="h-11 inline-flex items-center gap-2 px-4 rounded-xl bg-white/10 hover:bg-white text-white hover:text-slate-900 border border-white/20 transition-all font-semibold text-xs shadow-sm group"
+                className="h-10 inline-flex items-center gap-2 px-3.5 rounded-xl bg-white/10 hover:bg-white text-white hover:text-slate-900 border border-white/15 transition-all font-semibold text-xs whitespace-nowrap group shadow-sm"
               >
-                <div className="w-5 h-5 rounded bg-red-600 text-white font-black text-[9px] flex items-center justify-center shrink-0">
-                  PDF
-                </div>
+                <span className="px-1.5 py-0.5 rounded bg-red-600 text-white font-black text-[9px] leading-tight">PDF</span>
                 <span>Projects &amp; Specs</span>
                 <ArrowUpRight className="w-3.5 h-3.5 opacity-70 group-hover:opacity-100" />
               </a>
 
-              {/* Co-Branding Logos Pill (Isolated styles to prevent any CSS leak) */}
-              <div className="h-11 flex items-center gap-2.5 bg-white/10 backdrop-blur-md px-3 rounded-xl border border-white/15">
-                <div className="bg-white rounded-lg px-2.5 py-1 flex items-center justify-center overflow-hidden" style={{ height: "30px", width: "95px" }}>
+              {/* Seamless Dual-Logo Card */}
+              <div className="h-10 inline-flex items-center gap-2.5 bg-white/10 backdrop-blur-md px-3 rounded-xl border border-white/15">
+                <div className="bg-white rounded-lg px-2 py-0.5 flex items-center justify-center h-7">
                   <img 
                     src="/brand/prem-technology-logo.png" 
                     alt="Prem Technology Inc." 
-                    style={{ height: "20px", width: "auto", maxWidth: "85px", objectFit: "contain", display: "block" }} 
+                    className="h-4.5 max-h-[18px] w-auto object-contain block" 
                   />
                 </div>
-                <span className="text-white/60 font-semibold text-sm leading-none">×</span>
-                <div className="bg-white rounded-lg px-2.5 py-1 flex items-center justify-center overflow-hidden" style={{ height: "30px", width: "95px" }}>
+                <span className="text-white/40 font-light text-xs leading-none">×</span>
+                <div className="bg-white rounded-lg px-2 py-0.5 flex items-center justify-center h-7">
                   <img 
                     src="/brand/finan-formworks-logo.png" 
                     alt="Finan Formworks Ltd." 
-                    style={{ height: "20px", width: "auto", maxWidth: "85px", objectFit: "contain", display: "block" }} 
+                    className="h-4.5 max-h-[18px] w-auto object-contain block" 
                   />
                 </div>
               </div>
