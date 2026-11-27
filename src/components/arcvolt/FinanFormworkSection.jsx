@@ -111,17 +111,12 @@ export default function FinanFormworkSection() {
         {/* Hero Visual Card + Feature Callout */}
         <div className="mt-12 lg:mt-16 grid lg:grid-cols-12 gap-8 items-center">
           <Reveal delay={0.2} className="lg:col-span-7">
-            <div className="relative rounded-3xl overflow-hidden border border-white/15 group aspect-[16/10] bg-slate-800">
+            <div className="relative rounded-3xl overflow-hidden border border-white/20 shadow-2xl group bg-slate-950">
               <img
-                src="/brand/finan-jumpform-hero.jpg"
-                alt="Finan Formworks Hydraulic Jump Form and Climbing Core Systems"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                src="/brand/prem-finan-collaboration-banner.jpg"
+                alt="Prem Technology Inc. and Finan Formworks Exclusive North American Representation"
+                className="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6">
-                <span className="text-xs uppercase tracking-wider text-primary font-bold font-mono">British Engineering × North American PE Stamping</span>
-                <p className="mt-1 text-lg sm:text-xl font-bold text-white">Hydraulic Jump Forms, Climbing Cores &amp; Vertical Access</p>
-              </div>
             </div>
           </Reveal>
 
