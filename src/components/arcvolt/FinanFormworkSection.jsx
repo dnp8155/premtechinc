@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ArrowUpRight, Phone, Mail, Globe, ShieldCheck, CheckCircle2, Building2, HardHat, Compass, FileCheck } from "lucide-react";
+import { ArrowUpRight, Phone, Mail, Globe, ShieldCheck, CheckCircle2, Building2, HardHat, Compass, FileCheck, FileText } from "lucide-react";
 import Reveal from "./Reveal";
 
 export default function FinanFormworkSection() {
@@ -67,14 +67,44 @@ export default function FinanFormworkSection() {
               </span>
             </div>
 
-            {/* Co-Branding Badges with white background pill matching footer */}
-            <div className="flex items-center gap-3 bg-white/10 backdrop-blur-md p-1.5 rounded-2xl border border-white/15 self-start md:self-auto">
-              <div className="bg-white rounded-xl px-3 py-1.5 flex items-center">
-                <img src="/brand/prem-technology-logo.png" alt="Prem Technology Inc." className="h-7 w-auto object-contain" />
+            {/* Co-Branding Badges & PDF Brochures */}
+            <div className="flex flex-wrap items-center gap-3 self-start md:self-auto">
+              {/* Logo Pill */}
+              <div className="flex items-center gap-3 bg-white/10 backdrop-blur-md p-1.5 rounded-2xl border border-white/15">
+                <div className="bg-white rounded-xl px-3 py-1.5 flex items-center">
+                  <img src="/brand/prem-technology-logo.png" alt="Prem Technology Inc." className="h-7 w-auto object-contain" />
+                </div>
+                <span className="text-white/60 font-semibold text-lg px-1">×</span>
+                <div className="bg-white rounded-xl px-3 py-1.5 flex items-center">
+                  <img src="/brand/finan-formworks-logo.png" alt="Finan Formworks Ltd." className="h-7 w-auto object-contain" />
+                </div>
               </div>
-              <span className="text-white/60 font-semibold text-lg px-1">×</span>
-              <div className="bg-white rounded-xl px-3 py-1.5 flex items-center">
-                <img src="/brand/finan-formworks-logo.png" alt="Finan Formworks Ltd." className="h-7 w-auto object-contain" />
+
+              {/* PDF Brochure Buttons beside logos */}
+              <div className="flex items-center gap-2">
+                <a
+                  href="/docs/finan-capability-in-action-brochure.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-3.5 py-2.5 rounded-xl bg-white/10 hover:bg-white text-white hover:text-slate-900 border border-white/20 transition-all font-semibold text-xs shadow-sm group"
+                  title="View Finan Formwork & Edge Protection Solutions Brochure"
+                >
+                  <FileText className="w-4 h-4 text-red-400 group-hover:text-red-600 transition-colors" />
+                  <span>Systems Brochure</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 opacity-70 group-hover:opacity-100" />
+                </a>
+
+                <a
+                  href="/docs/finan-formwork-and-edge-protection-brochure.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-3.5 py-2.5 rounded-xl bg-primary/20 hover:bg-primary text-primary-foreground border border-primary/40 hover:border-primary transition-all font-semibold text-xs shadow-sm group"
+                  title="View Finan Selected Previous Projects & Capabilities"
+                >
+                  <FileText className="w-4 h-4 text-primary group-hover:text-primary-foreground transition-colors" />
+                  <span>Projects &amp; Specs</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 opacity-70 group-hover:opacity-100" />
+                </a>
               </div>
             </div>
           </div>
