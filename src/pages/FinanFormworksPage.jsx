@@ -193,14 +193,22 @@ export default function FinanFormworksPage() {
                 <ArrowUpRight className="w-3.5 h-3.5 opacity-70 group-hover:opacity-100" />
               </a>
 
-              {/* Co-Branding Logos Pill (Clean fixed sizes) */}
+              {/* Co-Branding Logos Pill (Isolated styles to prevent any CSS leak) */}
               <div className="h-11 flex items-center gap-2.5 bg-white/10 backdrop-blur-md px-3 rounded-xl border border-white/15">
-                <div className="bg-white rounded-lg px-2.5 py-1 flex items-center">
-                  <img src="/brand/prem-technology-logo.png" alt="Prem Technology Inc." className="h-4.5 max-h-[20px] max-w-[90px] w-auto object-contain block" />
+                <div className="bg-white rounded-lg px-2.5 py-1 flex items-center justify-center overflow-hidden" style={{ height: "30px", width: "95px" }}>
+                  <img 
+                    src="/brand/prem-technology-logo.png" 
+                    alt="Prem Technology Inc." 
+                    style={{ height: "20px", width: "auto", maxWidth: "85px", objectFit: "contain", display: "block" }} 
+                  />
                 </div>
                 <span className="text-white/60 font-semibold text-sm leading-none">×</span>
-                <div className="bg-white rounded-lg px-2.5 py-1 flex items-center">
-                  <img src="/brand/finan-formworks-logo.png" alt="Finan Formworks Ltd." className="h-4.5 max-h-[20px] max-w-[90px] w-auto object-contain block" />
+                <div className="bg-white rounded-lg px-2.5 py-1 flex items-center justify-center overflow-hidden" style={{ height: "30px", width: "95px" }}>
+                  <img 
+                    src="/brand/finan-formworks-logo.png" 
+                    alt="Finan Formworks Ltd." 
+                    style={{ height: "20px", width: "auto", maxWidth: "85px", objectFit: "contain", display: "block" }} 
+                  />
                 </div>
               </div>
             </div>
