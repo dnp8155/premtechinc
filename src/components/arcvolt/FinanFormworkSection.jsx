@@ -67,44 +67,47 @@ export default function FinanFormworkSection() {
               </span>
             </div>
 
-            {/* Co-Branding Badges & PDF Brochures */}
+            {/* Top Right Group: First PDFs, then Logos with exact equal height */}
             <div className="flex flex-wrap items-center gap-3 self-start md:self-auto">
-              {/* Logo Pill */}
-              <div className="flex items-center gap-3 bg-white/10 backdrop-blur-md p-1.5 rounded-2xl border border-white/15">
-                <div className="bg-white rounded-xl px-3 py-1.5 flex items-center">
-                  <img src="/brand/prem-technology-logo.png" alt="Prem Technology Inc." className="h-7 w-auto object-contain" />
+              {/* PDF Brochure 1 */}
+              <a
+                href="/docs/finan-capability-in-action-brochure.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="h-12 inline-flex items-center gap-2.5 px-4 rounded-2xl bg-white/10 hover:bg-white text-white hover:text-slate-900 border border-white/20 transition-all font-semibold text-xs shadow-sm group"
+                title="View Finan Formwork & Edge Protection Solutions Brochure"
+              >
+                <div className="w-6 h-6 rounded bg-red-600 text-white font-black text-[9px] flex items-center justify-center shrink-0 shadow-sm tracking-tight">
+                  PDF
                 </div>
-                <span className="text-white/60 font-semibold text-lg px-1">×</span>
-                <div className="bg-white rounded-xl px-3 py-1.5 flex items-center">
-                  <img src="/brand/finan-formworks-logo.png" alt="Finan Formworks Ltd." className="h-7 w-auto object-contain" />
+                <span>Systems Brochure</span>
+                <ArrowUpRight className="w-3.5 h-3.5 opacity-70 group-hover:opacity-100" />
+              </a>
+
+              {/* PDF Brochure 2 */}
+              <a
+                href="/docs/finan-formwork-and-edge-protection-brochure.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="h-12 inline-flex items-center gap-2.5 px-4 rounded-2xl bg-white/10 hover:bg-white text-white hover:text-slate-900 border border-white/20 transition-all font-semibold text-xs shadow-sm group"
+                title="View Finan Selected Previous Projects & Capabilities"
+              >
+                <div className="w-6 h-6 rounded bg-red-600 text-white font-black text-[9px] flex items-center justify-center shrink-0 shadow-sm tracking-tight">
+                  PDF
                 </div>
-              </div>
+                <span>Projects &amp; Specs</span>
+                <ArrowUpRight className="w-3.5 h-3.5 opacity-70 group-hover:opacity-100" />
+              </a>
 
-              {/* PDF Brochure Buttons beside logos */}
-              <div className="flex items-center gap-2">
-                <a
-                  href="/docs/finan-capability-in-action-brochure.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-3.5 py-2.5 rounded-xl bg-white/10 hover:bg-white text-white hover:text-slate-900 border border-white/20 transition-all font-semibold text-xs shadow-sm group"
-                  title="View Finan Formwork & Edge Protection Solutions Brochure"
-                >
-                  <FileText className="w-4 h-4 text-red-400 group-hover:text-red-600 transition-colors" />
-                  <span>Systems Brochure</span>
-                  <ArrowUpRight className="w-3.5 h-3.5 opacity-70 group-hover:opacity-100" />
-                </a>
-
-                <a
-                  href="/docs/finan-formwork-and-edge-protection-brochure.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-3.5 py-2.5 rounded-xl bg-primary/20 hover:bg-primary text-primary-foreground border border-primary/40 hover:border-primary transition-all font-semibold text-xs shadow-sm group"
-                  title="View Finan Selected Previous Projects & Capabilities"
-                >
-                  <FileText className="w-4 h-4 text-primary group-hover:text-primary-foreground transition-colors" />
-                  <span>Projects &amp; Specs</span>
-                  <ArrowUpRight className="w-3.5 h-3.5 opacity-70 group-hover:opacity-100" />
-                </a>
+              {/* Co-Branding Logos Pill (Same Height: h-12) */}
+              <div className="h-12 flex items-center gap-3 bg-white/10 backdrop-blur-md px-3 rounded-2xl border border-white/15">
+                <div className="bg-white rounded-xl px-2.5 py-1 flex items-center h-8">
+                  <img src="/brand/prem-technology-logo.png" alt="Prem Technology Inc." className="h-5 w-auto object-contain" />
+                </div>
+                <span className="text-white/60 font-semibold text-base leading-none">×</span>
+                <div className="bg-white rounded-xl px-2.5 py-1 flex items-center h-8">
+                  <img src="/brand/finan-formworks-logo.png" alt="Finan Formworks Ltd." className="h-5 w-auto object-contain" />
+                </div>
               </div>
             </div>
           </div>
