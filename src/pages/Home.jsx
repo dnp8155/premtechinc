@@ -18,8 +18,8 @@ export default function Home() {
       />
       <Hero />
       <Marquee />
-      <FinanFormworkSection />
       <Manifesto />
+      <FinanFormworkSection />
       <Services />
       <div className="pt-20">
         <CtaBand 
