@@ -66,12 +66,14 @@ export default function FinanFormworkSection() {
               </span>
             </div>
 
-            {/* Co-Branding Badges */}
-            <div className="flex items-center gap-4 bg-white/5 backdrop-blur-md px-4 py-2 rounded-xl border border-white/10 self-start md:self-auto">
-              <img src="/brand/prem-technology-logo.png" alt="Prem Technology Inc." className="h-7 object-contain brightness-0 invert" />
-              <span className="text-white/40 font-light text-lg">×</span>
-              <div className="bg-white px-2.5 py-1 rounded">
-                <img src="/brand/finan-formworks-logo.png" alt="Finan Formworks Ltd." className="h-6 object-contain" />
+            {/* Co-Branding Badges with white background pill matching footer */}
+            <div className="flex items-center gap-3 bg-white/10 backdrop-blur-md p-1.5 rounded-2xl border border-white/15 self-start md:self-auto">
+              <div className="bg-white rounded-xl px-3 py-1.5 flex items-center">
+                <img src="/brand/prem-technology-logo.png" alt="Prem Technology Inc." className="h-7 w-auto object-contain" />
+              </div>
+              <span className="text-white/60 font-semibold text-lg px-1">×</span>
+              <div className="bg-white rounded-xl px-3 py-1.5 flex items-center">
+                <img src="/brand/finan-formworks-logo.png" alt="Finan Formworks Ltd." className="h-7 w-auto object-contain" />
               </div>
             </div>
           </div>
