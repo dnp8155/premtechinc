@@ -42,8 +42,7 @@ export const NAV_MENU = [
   },
   {
     label: "Finan Formworks",
-    to: "https://www.finanformworks.com/",
-    isExternal: true,
+    to: "/finan-formworks",
   },
   { label: "Contact", to: "/contact" },
 ];
@@ -53,6 +52,7 @@ export const FOOTER_NAV = [
   { label: "About", to: "/about" },
   { label: "Services", to: "/services" },
   { label: "Expertise", to: "/expertise" },
+  { label: "Finan Formworks", to: "/finan-formworks" },
   { label: "Bridge Brackets", to: "/bridge-brackets" },
   { label: "Material Procurement", to: "/procurement" },
   { label: "Projects", to: "/projects" },

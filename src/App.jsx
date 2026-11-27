@@ -21,6 +21,7 @@ import TermsPage from './pages/TermsPage';
 import BridgeBracketsPage from './pages/BridgeBracketsPage';
 import ProcurementPage from './pages/ProcurementPage';
 import PodcastPage from './pages/PodcastPage';
+import FinanFormworksPage from './pages/FinanFormworksPage';
 
 const AuthenticatedApp = () => {
   return (
@@ -38,6 +39,7 @@ const AuthenticatedApp = () => {
         <Route path="/construction-heroes" element={<PodcastPage />} />
         <Route path="/bridge-brackets" element={<BridgeBracketsPage />} />
         <Route path="/procurement" element={<ProcurementPage />} />
+        <Route path="/finan-formworks" element={<FinanFormworksPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/privacy" element={<PrivacyPage />} />
         <Route path="/terms" element={<TermsPage />} />

@@ -150,13 +150,22 @@ export default function FinanFormworkSection() {
                 <span className="text-xs text-primary font-mono font-bold uppercase">Direct Support</span>
                 <p className="text-sm font-semibold text-white">Full Tender Support &amp; PE / P.Eng. Stamped Drawings</p>
               </div>
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-primary-foreground text-xs sm:text-sm font-bold hover:brightness-110 transition shadow-sm"
-              >
-                <span>Inquire Now</span>
-                <ArrowUpRight className="w-3.5 h-3.5" />
-              </Link>
+              <div className="flex items-center gap-2">
+                <Link
+                  to="/finan-formworks"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white text-slate-900 text-xs sm:text-sm font-bold hover:bg-slate-100 transition shadow-sm"
+                >
+                  <span>Explore Division</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </Link>
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-primary-foreground text-xs sm:text-sm font-bold hover:brightness-110 transition shadow-sm"
+                >
+                  <span>Inquire Now</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
             </div>
           </Reveal>
 
