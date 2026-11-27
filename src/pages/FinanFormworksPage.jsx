@@ -143,10 +143,12 @@ export default function FinanFormworksPage() {
 
       {/* Hero Section */}
       <PageHero
-        title="Formwork & Vertical Access Division"
-        category="Finan Formworks Ltd. (UK) × Prem Technology Inc."
-        description="Exclusive North American representation across the United States, Canada, and Mexico. Combining British-engineered high-rise and infrastructure formwork systems at competitive direct-supply pricing with local licensed PE / P.Eng. structural engineering backing."
-        bgImage="/brand/finan-site-oneleadenhall.jpg"
+        kicker="Finan Formworks Ltd. (UK) × Prem Technology Inc."
+        title="Formwork &"
+        accent="Vertical Access Division."
+        text="Exclusive North American representation across the United States, Canada, and Mexico. Combining British-engineered high-rise and infrastructure formwork systems at competitive direct-supply pricing with local licensed PE / P.Eng. structural engineering backing."
+        img="/brand/finan-site-oneleadenhall.jpg"
+        aside={{ label: "Representation", value: "US · CA · MX", sub: "British Engineering × Licensed PE/P.Eng." }}
       />
 
       {/* Real Project Banner & Co-Branding Bar */}
@@ -191,13 +193,14 @@ export default function FinanFormworksPage() {
                 <ArrowUpRight className="w-3.5 h-3.5 opacity-70 group-hover:opacity-100" />
               </a>
 
+              {/* Co-Branding Logos Pill (Clean fixed sizes) */}
               <div className="h-11 flex items-center gap-2.5 bg-white/10 backdrop-blur-md px-3 rounded-xl border border-white/15">
-                <div className="bg-white rounded-lg px-2 py-0.5 flex items-center h-7">
-                  <img src="/brand/prem-technology-logo.png" alt="Prem Technology Inc." className="h-4.5 w-auto object-contain" />
+                <div className="bg-white rounded-lg px-2.5 py-1 flex items-center">
+                  <img src="/brand/prem-technology-logo.png" alt="Prem Technology Inc." className="h-4.5 max-h-[20px] max-w-[90px] w-auto object-contain block" />
                 </div>
                 <span className="text-white/60 font-semibold text-sm leading-none">×</span>
-                <div className="bg-white rounded-lg px-2 py-0.5 flex items-center h-7">
-                  <img src="/brand/finan-formworks-logo.png" alt="Finan Formworks Ltd." className="h-4.5 w-auto object-contain" />
+                <div className="bg-white rounded-lg px-2.5 py-1 flex items-center">
+                  <img src="/brand/finan-formworks-logo.png" alt="Finan Formworks Ltd." className="h-4.5 max-h-[20px] max-w-[90px] w-auto object-contain block" />
                 </div>
               </div>
             </div>
