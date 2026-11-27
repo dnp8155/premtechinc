@@ -99,36 +99,40 @@ export default function FinanFormworksPage() {
 
   const realProjects = [
     {
-      title: "One Leadenhall Commercial Tower",
+      title: "One Leadenhall",
+      link: "https://www.finanformworks.com/one-leadenhall/",
       location: "City of London, UK",
-      partner: "PJ Carey & Multiplex",
-      stats: "37 Floors · Central RC Core",
-      image: "/brand/finan-site-oneleadenhall.jpg",
-      desc: "Complete temporary works design, certification, and shared site supervision of an electrically climbed Jumpform system for a 37-story commercial core in central London."
+      partner: "PJ Careys & Multiplex",
+      stats: "37-Floor High-Rise Commercial Tower",
+      image: "/brand/case-one-leadenhall.jpg",
+      desc: "Very pleased to have succeeded in working with team PJ Careys & Multiplex for the delivery of the central concrete core rising to 37 floors with our Innovative Jumpform system. This 37-floor high-rise commercial tower in the heart of London presented significant challenges, demanding the utmost from our team."
     },
     {
-      title: "105 Victoria Street",
-      location: "London, UK",
-      partner: "Careys Group",
-      stats: "16-Storey Commercial · West & East Cores",
-      image: "/brand/finan-site-screens.jpg",
-      desc: "Engineered temporary works and jumpform climbing core solution for dual reinforced concrete cores on a high-profile sustainable commercial development."
-    },
-    {
-      title: "Marston Box Bridge (HS2 Rail)",
+      title: "Marston Box",
+      link: "https://www.finanformworks.com/marston-box/",
       location: "Warwickshire, UK",
       partner: "MPB Structures / HS2",
       stats: "National High-Speed Rail Infrastructure",
-      image: "/real-images/falsework-bridge.png",
-      desc: "Formwork and temporary works engineering for the UK's first Box Slide Bridge, constructed off-site and slid into position over a guide raft slab."
+      image: "/brand/case-marston-box.jpg",
+      desc: "We were delighted to have been chosen by our valued Client MPB structures to provide engineering support for the delivery of this fantastic civil structure at Marston Box."
     },
     {
       title: "Hirwaun Gas Fired Power Plant",
+      link: "https://www.finanformworks.com/hirwaun-gas-fired-power-plant/",
       location: "Cynon Valley, Wales",
-      partner: "PJ Hegarty",
-      stats: "Heavy Energy Infrastructure",
-      image: "/real-images/heavy-civil-metro-hero.jpg",
-      desc: "High-level temporary works design drawings, heavy civil formwork systems, and ongoing site engineering supervision for national energy advancement."
+      partner: "Hirwaun Power / DRAX Energy",
+      stats: "299MW Critical Power Infrastructure",
+      image: "/brand/case-hirwaun-power.jpg",
+      desc: "At Finan Formworks Ltd, we were honored to contribute to the construction of the 299MW gas power plant in the Hirwaun Industrial Estate. This project, spearheaded by Hirwaun Power, a subsidiary of DRAX Energy, stands as a testament to our commitment to supporting critical infrastructure development."
+    },
+    {
+      title: "Jumpform Innovation at 105 Victoria Street",
+      link: "https://www.finanformworks.com/jumpform-innovation-at-105-victoria-street-a-sustainable-approach-to-high-rise-construction/",
+      location: "Westminster, London, UK",
+      partner: "Careys Group",
+      stats: "Landmark Sustainable High-Rise Construction",
+      image: "/brand/case-105-victoria-street.jpg",
+      desc: "Located in the heart of Westminster, 105 Victoria Street is a landmark construction project pushing the boundaries of vertical building efficiency and innovation. Central concrete core delivered with high-performance jumpform climbing technology."
     }
   ];
 
@@ -402,13 +406,22 @@ export default function FinanFormworksPage() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {realProjects.map((p) => (
-              <div key={p.title} className="rounded-2xl bg-white/[0.04] border border-white/10 overflow-hidden flex flex-col justify-between group hover:border-primary/40 transition-colors">
-                <div className="aspect-[16/10] overflow-hidden bg-slate-950">
+              <a
+                key={p.title}
+                href={p.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-2xl bg-white/[0.04] border border-white/10 overflow-hidden flex flex-col justify-between group hover:border-primary/60 hover:bg-white/[0.07] transition-all cursor-pointer"
+              >
+                <div className="aspect-[16/10] overflow-hidden bg-slate-950 relative">
                   <img
                     src={p.image}
                     alt={p.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
+                  <div className="absolute top-3 right-3 w-7 h-7 rounded-full bg-slate-950/80 backdrop-blur-md text-white grid place-items-center opacity-80 group-hover:opacity-100 group-hover:bg-primary transition-all">
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </div>
                 </div>
                 <div className="p-5 flex-1 flex flex-col justify-between">
                   <div>
@@ -416,13 +429,18 @@ export default function FinanFormworksPage() {
                       <MapPin className="w-3.5 h-3.5" />
                       <span>{p.location}</span>
                     </div>
-                    <h4 className="text-base font-bold text-white mb-1">{p.title}</h4>
+                    <h4 className="text-base font-bold text-white mb-1 group-hover:text-primary transition-colors flex items-center justify-between">
+                      <span>{p.title}</span>
+                    </h4>
                     <span className="text-xs font-semibold text-slate-300 block mb-2">{p.stats}</span>
                     <p className="text-xs text-slate-400 leading-relaxed mb-4">{p.desc}</p>
                   </div>
-                  <span className="text-[11px] font-mono text-slate-500 pt-2 border-t border-white/10">Partner: {p.partner}</span>
+                  <div className="flex items-center justify-between text-[11px] font-mono text-slate-400 pt-2 border-t border-white/10">
+                    <span>{p.partner}</span>
+                    <span className="text-primary font-semibold flex items-center gap-1 group-hover:underline">Read Case Study ↗</span>
+                  </div>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
